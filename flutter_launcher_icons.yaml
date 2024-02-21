@@ -5,4 +5,5 @@ flutter_launcher_icons:
   ios: true # can specify file name here e.g. "My-Launcher-Icon"
   min_sdk_android: 21
   remove_alpha_ios: true
-  # adaptive_icon_background: "#60BBD9"
+  adaptive_icon_background: "#60BBD9"
+  # adaptive_icon_foreground: "assets/background.png"
