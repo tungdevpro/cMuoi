@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:gen_artify/common/routes/routes.dart';
 
 import 'common/constants/config_localization.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,7 +21,8 @@ class _GenArtifyState extends State<GenArtify> {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: ConfigLocalization.loads(),
       supportedLocales: ConfigLocalization.supportedLocales(),
-      home: _RootApp(),
+      onGenerateRoute: Routings.generateRoutes,
+      initialRoute: RoutePath.initial,
     );
   }
 }
