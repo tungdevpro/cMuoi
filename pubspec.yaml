@@ -30,10 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   get_it: ^7.6.4
   injectable: ^2.3.2
   freezed_annotation: ^2.4.1
+  intl: ^0.18.1
 
   core:
     path: core
@@ -43,6 +46,7 @@ dependencies:
     path: domain
   
   cupertino_icons: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
@@ -60,7 +64,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
