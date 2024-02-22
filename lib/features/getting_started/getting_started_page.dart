@@ -152,6 +152,6 @@ abstract class _LiveConfig {
 
   static const String appId = '50b9f01c0840477dab3b783a94fdb59e';
   static const String token =
-      '007eJxSYCibf2aOJ7fByrr1Ihnhs1SPfbes3sQdNf+i6bN1p46dO5CgwGBqkGSZZmCYbGBhYmBibp6SmGScZG5hnGhpkpaSZGqZevfItdSGQEYGM4/HzIwMjAwsDIwMID4TmGQGkyxgEgQAAQAA//91bCIW';
-  static const String channelId = 'e6b70aeb29474f4da930afbc6c706a54';
+      '007eJxTYFjHqvFyrgf3vjcqYQIByjnBOav3HWI8/zX1dsqJ6BjXSRcVGEwNkizTDAyTDSxMDEzMzVMSk4yTzC2MEy1N0lKSTC1TT4lcT20IZGQ4J5LCyMgAgSA+D0NJanFJZl56fE5mWSoDAwAlPCJn';
+  static const String channelId = 'testing_live';
 }
