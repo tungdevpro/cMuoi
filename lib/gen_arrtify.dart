@@ -15,14 +15,15 @@ class GenArtify extends StatefulWidget {
 class _GenArtifyState extends State<GenArtify> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: AppNavigator().navigatorKey,
+    return MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: ConfigLocalization.loads(),
       supportedLocales: ConfigLocalization.supportedLocales(),
-      onGenerateRoute: Routings.generateRoutes,
-      initialRoute: RoutePath.initial,
+      routerConfig: Routings.router,
+      builder: (context, child) {
+        return AppOverlayLoading.instance().initialize().call(context, child);
+      },
     );
   }
 }

@@ -11,7 +11,7 @@ class AppNavigator {
 
   AppNavigator._();
 
-  factory AppNavigator() => _instance ??= AppNavigator._();
+  factory AppNavigator.instance() => _instance ??= AppNavigator._();
 
   BuildContext? _context;
 
@@ -60,7 +60,7 @@ class AppNavigator {
 
 NavigatorState _navigator(BuildContext? context, {bool useRoot = false}) {
   assert(!(useRoot && (context != null)), "only (useRoot = true) or (context != null) can be specified, not both");
-  final rootState = AppNavigator().navigatorKey.currentState;
+  final rootState = AppNavigator.instance().navigatorKey.currentState;
   if (useRoot) return rootState!;
 
   return context != null ? Navigator.of(context) : (AppNavigator.nestedNavigatorKey?.currentState ?? rootState!);

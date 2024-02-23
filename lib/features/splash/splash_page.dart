@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../common/routes/routes.dart';
 
@@ -22,7 +23,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: TextButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(RoutePath.gettingStarted);
+              context.go("/main");
             },
             child: Text("data")),
       ),
