@@ -8,6 +8,8 @@
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true"
+        android:exported="true"
+        android:enableOnBackInvokedCallback="true"
         >
         <activity
             android:name=".MainActivity"
