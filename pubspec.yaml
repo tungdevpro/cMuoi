@@ -51,6 +51,9 @@ dependencies:
     path: data
   domain:
     path: domain
+
+  firebase_module:
+    path: 3rd_party/firebase_module
   
   cupertino_icons: ^1.0.2
 
