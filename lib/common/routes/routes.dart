@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:core/core.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/getting_started/getting_started_page.dart';
@@ -13,20 +16,16 @@ abstract class Routings {
 
   static GoRouter get router => GoRouter(
         navigatorKey: AppNavigator.instance().navigatorKey,
+        initialLocation: RoutePath.main,
+        observers: <NavigatorObserver>[
+          GoRouterObserver(),
+        ],
         routes: <RouteBase>[
           GoRoute(
             path: RoutePath.initial,
             builder: (BuildContext context, GoRouterState state) {
               return const SplashPage();
             },
-            // routes: <RouteBase>[
-            //   GoRoute(
-            //     path: 'details',
-            //     builder: (BuildContext context, GoRouterState state) {
-            //       return const DetailsScreen();
-            //     },
-            //   ),
-            // ],
           ),
           GoRoute(
             path: RoutePath.main,
@@ -49,18 +48,26 @@ abstract class Routings {
           ),
         ),
       );
+}
 
-  // static Map<String, WidgetBuilder> routes = {
-  //   RoutePath.initial: (_) => const SplashPage(),
-  //   RoutePath.gettingStarted: (_) => const GettingStartedPage(),
-  // };
+class GoRouterObserver extends NavigatorObserver {
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (kDebugMode) log('didPush: ${route.settings.name}');
+  }
 
-  // static Route<dynamic> generateRoutes(RouteSettings settings) {
-  //   String? routeName = settings.name?.split('?').first;
+  @override
+  void didPop(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (kDebugMode) log('didPop: ${route.settings.name}');
+  }
 
-  //   return CupertinoPageRoute(
-  //       builder: routes[routeName] ??
-  //           (_) => const Scaffold(body: Center(child: Text('Not found'))),
-  //       settings: settings);
-  // }
+  @override
+  void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    if (kDebugMode) log('didRemove: ${route.settings.name}');
+  }
+
+  @override
+  void didReplace({Route<dynamic>? newRoute, Route<dynamic>? oldRoute}) {
+    if (kDebugMode) log('didReplace: ${newRoute?.settings.name}');
+  }
 }

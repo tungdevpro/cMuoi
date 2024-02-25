@@ -1,6 +1,6 @@
 library data;
 
-import 'package:data/di/locator.dart';
+import 'package:data/di/di.dart';
 
 abstract class DataLayer {
   const DataLayer._();

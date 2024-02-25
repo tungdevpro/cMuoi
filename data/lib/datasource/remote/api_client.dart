@@ -1,11 +1,11 @@
-import 'package:get_it/get_it.dart';
-
+import 'package:data/datasource/remote/service/sign_up_service.dart';
+import 'package:injectable/injectable.dart';
 import '../../network/dio_client.dart';
 
+@singleton
 class ApiClient {
-  ApiClient() {
-    _dio = GetIt.instance<DioClient>()..build();
-  }
+  final DioClient dio;
+  ApiClient(this.dio) {}
 
-  late DioClient _dio;
+  SignUpService get signup => SignUpService(dio.build());
 }

@@ -11,7 +11,8 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../common/bloc/app_bloc.dart' as _i3;
+import '../common/app/app_bloc.dart' as _i3;
+import '../common/auth/auth_bloc.dart' as _i4;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -25,6 +26,7 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.singleton<_i3.AppBloc>(_i3.AppBloc());
+    gh.singleton<_i4.AuthBloc>(_i4.AuthBloc());
     return this;
   }
 }

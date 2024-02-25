@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomBlocObserver extends BlocObserver {
@@ -11,28 +12,28 @@ class CustomBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-    log('[BLOC_CREATE]: $bloc (${DateTime.now().millisecondsSinceEpoch})');
+    if (kDebugMode) log('[BLOC_CREATE]: $bloc (${DateTime.now().millisecondsSinceEpoch})');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
     super.onError(bloc, error, stackTrace);
-    log('[BLOC_ERROR]: $error');
+    if (kDebugMode) log('[BLOC_ERROR]: $error');
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    super.onTransition(bloc, transition);
+    if (kDebugMode) super.onTransition(bloc, transition);
   }
 
   @override
   void onClose(BlocBase bloc) {
     super.onClose(bloc);
-    log('[BLOC_CLOSE]: $bloc (${DateTime.now().millisecondsSinceEpoch})');
+    if (kDebugMode) log('[BLOC_CLOSE]: $bloc (${DateTime.now().millisecondsSinceEpoch})');
   }
 
   @override
   void onEvent(Bloc bloc, Object? event) {
-    super.onEvent(bloc, event);
+    if (kDebugMode) super.onEvent(bloc, event);
   }
 }
