@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:gen_artify/common/constants/image_resource.dart';
 
-import '../../common/routes/routes.dart';
-import 'package:firebase_module/firebase_module.dart';
+import '../../common/constants/constants.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -20,7 +19,10 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(),
+      backgroundColor: AppColor.primary,
+      body: Center(
+        child: Image.asset(ImageResource.imgLogo),
+      ),
     );
   }
 }
