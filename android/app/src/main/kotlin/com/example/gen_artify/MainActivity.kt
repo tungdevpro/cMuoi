@@ -1,4 +1,4 @@
-package com.example.gen_artify
+package com.yh.gen_artify
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -16,8 +16,8 @@ class FirebaseModule {
 
   static final FirebaseModule _instance = FirebaseModule._internal();
 
-  Future<void> initialize() async {
-    await Firebase.initializeApp();
+  Future<void> initialize({FirebaseOptions? options}) async {
+    await Firebase.initializeApp(options: options);
   }
 
   Future<void> requestPermission() async {

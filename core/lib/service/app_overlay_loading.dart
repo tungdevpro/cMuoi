@@ -18,7 +18,7 @@ class AppOverlayLoading extends BaseUILoading {
   @override
   void show() {}
 
-  TransitionBuilder initialize() {
+  TransitionBuilder build() {
     return EasyLoading.init();
   }
 }

@@ -6,7 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gen_artify/common/bloc/app_bloc.dart';
 import 'package:gen_artify/di/di.dart';
-import 'package:gen_artify/gen_arrtify.dart';
+import 'package:gen_artify/gen_artify.dart';
+import 'package:firebase_module/firebase_module.dart';
 
 void main() async {
   await _prepare();
@@ -23,9 +24,10 @@ void main() async {
 Future<void> _prepare() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = CustomBlocObserver();
+  await FirebaseModule().initialize();
   DataLayer.init();
   DomainLayer.init();
   configureDependencies();
 
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
 }
