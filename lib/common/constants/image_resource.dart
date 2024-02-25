@@ -1,5 +1,5 @@
 abstract class ImageResource {
-	const ImageResource._();
+  const ImageResource._();
 
-	static const String imgLogo = 'assets/images/logo.png';
+  static const String logo = 'assets/images/logo.png';
 }

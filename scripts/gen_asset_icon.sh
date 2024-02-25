@@ -1,33 +1,75 @@
 #!/bin/bash
 
-# Đường dẫn đến thư mục bạn muốn lấy danh sách tên file
-folderPath="assets/icons/"
+type=$1
+className=""
+op=""
+idir=""
 
-# Lấy danh sách tên file
-fileNames=$(ls $folderPath)
+if [ "$type" == "image" ]; 
+then
+    className="ImageResource"
+    op="image_resource"
+    idir="images"
+else
+    className="IconResource"
+    op="icon_resource"
+    idir="icons"
+fi
 
-# Khai báo mảng dữ liệu
-declare -a data=()
+# Đường dẫn tới thư mục chứa các icon SVG
+iconsDir="assets/$idir/"
 
-# Hàm chuyển đổi sang kiểu snake_case
-function snake_case {
-    local text="$1"
-    local a=$(echo "$text" | tr '[:upper:]' '[:lower:]' | sed -E 's/[-_\s.]+(.)?/\U\1/g')
-    echo "${a:0:1}${a:1}"
-}
+# Tạo tệp output Dart
+outputFile="lib/common/constants/$op.dart"
 
-# Thêm tên file vào danh sách dữ liệu
-for fileName in $fileNames; do
-    r=$(snake_case "${fileName::-3}")
-    data+=("static const String ic$(echo $r | awk '{print toupper(substr($0,1,1)) substr($0,2)}') = 'assets/icons/$fileName';")
-done
+# Xóa tệp output cũ nếu có
+if [ -f "$outputFile" ]; then
+  rm "$outputFile"
+fi
 
-# Ghi dữ liệu vào tập tin
-outputFile="lib/common/constants/icon_resource.dart"
-echo "abstract class IconResource {" > $outputFile
-echo -e "\tconst IconResource._();" >> $outputFile
-echo >> $outputFile
-for line in "${data[@]}"; do
-    echo -e "\t$line" >> $outputFile
-done
-echo "}" >> $outputFile
+# Viết phần khởi tạo của tệp Dart
+echo "abstract class $className {" >> "$outputFile"
+echo "  const $className._();" >> "$outputFile"
+echo "" >> "$outputFile"
+
+# Lặp qua các file trong thư mục icon|image
+if [ "$type" == "image" ]; 
+then
+    for imageFile in "$iconsDir"*.png; do
+        echo "f... $imageFile"
+        # Lấy tên file mà không có đường dẫn
+        imageName=$(basename "$imageFile")
+    
+        # Loại bỏ phần mở rộng của file
+        imageBaseName="${imageName%.*}"
+
+        # Chuyển đổi tên thành dạng UpperCamelCase
+        imageConstantName=$(echo "$imageBaseName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g')
+    
+        # Tạo hằng số
+        echo "  static const String $imageConstantName = '$iconsDir$imageName';" >> "$outputFile"
+    done
+else
+    for svgFile in "$iconsDir"*.svg; do
+        echo "svgFile... $svgFile"
+        # Lấy tên file mà không có đường dẫn
+        iconFileName=$(basename "$svgFile")
+        
+        # Loại bỏ phần mở rộng .svg
+        iconName="${iconFileName%.*}"
+
+        # Chuyển đổi tên thành dạng camelCase
+        iconNameCamelCase=$(echo "$iconName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g')
+        
+        # Tạo hằng số
+        echo "  static const String $iconNameCamelCase = '$svgFile';" >> "$outputFile"
+    done
+fi
+
+
+
+# Đóng class IconResource
+echo "" >> "$outputFile"
+echo "}" >> "$outputFile"
+
+echo "Đã tạo xong các hằng số trong Dart từ danh sách file icon $className."
