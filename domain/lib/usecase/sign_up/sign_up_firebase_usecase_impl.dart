@@ -4,7 +4,7 @@ import 'package:domain/usecase/sign_up/sign_up_usecase.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: SignUpUsecase)
-class SignUpFirebaseUseCaseImpl extends SignUpUsecase {
+class SignUpFirebaseUsecaseImpl extends SignUpUsecase {
   @override
   Future<Result<UserInfoEntity>> invoke(SignUpParam params) async {
     throw UnimplementedError();

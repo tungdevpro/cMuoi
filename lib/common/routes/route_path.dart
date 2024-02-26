@@ -7,6 +7,8 @@ abstract class RoutePath {
   static const String gettingStarted = "$initial" "getting-started";
   static const String main = "/main";
   static const String home = "/home";
+  static const String auth = "/auth";
+  static const String signUp = "$auth/sign-up";
 }
 
 extension RouteLocationExts on String {

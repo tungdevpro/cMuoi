@@ -1,11 +1,10 @@
 import 'dart:developer';
 
 import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gen_artify/features/sign_up/sign_up_page.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/getting_started/getting_started_page.dart';
 import '../../features/main/main_page.dart';
 import '../../features/splash/splash_page.dart';
 
@@ -34,12 +33,20 @@ abstract class Routings {
               return const MainPage();
             },
           ),
+          GoRoute(
+            path: RoutePath.auth,
+            name: RoutePath.auth.toNamed(),
+            builder: (BuildContext context, GoRouterState state) {
+              return const Scaffold();
+            },
+          ),
+          GoRoute(
+            path: RoutePath.signUp,
+            builder: (context, state) => Scaffold(),
+          )
         ],
         errorBuilder: (context, state) => Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: true,
-            title: const Text("Error Screen"),
-          ),
+          appBar: AppBar(automaticallyImplyLeading: true, title: const Text("Error Screen")),
           body: Center(
             child: ElevatedButton(
               onPressed: () => context.go("/"),

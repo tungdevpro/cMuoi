@@ -28,7 +28,7 @@ extension GetItInjectableX on _i1.GetIt {
       environmentFilter,
     );
     gh.factory<_i3.ConfigUsecase>(() => _i4.ConfigUsecaseImpl());
-    gh.factory<_i5.SignUpUsecase>(() => _i6.SignUpFirebaseUseCaseImpl());
+    gh.factory<_i5.SignUpUsecase>(() => _i6.SignUpFirebaseUsecaseImpl());
     return this;
   }
 }
