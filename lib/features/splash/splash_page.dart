@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gen_artify/common/constants/image_resource.dart';
-import 'package:gen_artify/common/routes/routes.dart';
-import 'package:go_router/go_router.dart';
+import 'package:gen_artify/features/sign_up/sign_up_page.dart';
 
 import '../../common/constants/constants.dart';
 
@@ -15,9 +13,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.pushReplacement(RoutePath.main);
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {});
     super.initState();
   }
 
@@ -26,7 +22,14 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: AppColor.primary,
       body: Center(
-        child: Image.asset(ImageResource.logo),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(ImageResource.logo),
+          ],
+        ),
       ),
     );
   }

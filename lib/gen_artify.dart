@@ -4,6 +4,7 @@ import 'package:gen_artify/common/routes/routes.dart';
 import 'package:gen_artify/common/theme/app_theme.dart';
 
 import 'common/constants/config_localization.dart';
+import 'common/routes/router_observer.dart';
 
 class GenArtify extends StatefulWidget {
   const GenArtify({super.key});
@@ -15,15 +16,17 @@ class GenArtify extends StatefulWidget {
 class _GenArtifyState extends State<GenArtify> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Gen Artify',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: ConfigLocalization.loads(),
       supportedLocales: ConfigLocalization.supportedLocales(),
-      routerConfig: Routings.router,
       theme: AppTheme.light,
       themeMode: ThemeMode.light,
       darkTheme: AppTheme.dark,
+      initialRoute: RoutePath.initial,
+      onGenerateRoute: Routings.generateRoutes,
+      navigatorObservers: [CustomRouterObserver()],
       builder: (context, child) {
         return AppOverlayLoading.instance().build().call(context, child);
       },

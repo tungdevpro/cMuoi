@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gen_artify/common/routes/routes.dart';
-import 'package:go_router/go_router.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,9 +17,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () {
-            context.go(RoutePath.signUp);
-          },
+          onPressed: () {},
           child: Text("data"),
         ),
       ),
