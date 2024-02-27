@@ -42,11 +42,11 @@ class _AuthBackgroundWidgetState extends State<AuthBackgroundWidget> with Single
             const Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(child: Divider(color: AppColor.text)),
+                Expanded(child: Divider(color: AppColor.line)),
                 SizedBox(width: AppSize.paddingSM),
                 Text('Via social media', style: TextStyle(color: AppColor.text)),
                 SizedBox(width: AppSize.paddingSM),
-                Expanded(child: Divider(color: AppColor.text)),
+                Expanded(child: Divider(color: AppColor.line)),
               ],
             ),
             Gap.xl(),
