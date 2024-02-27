@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared_widget/auth_background_widget.dart';
+import '../../shared/widgets/auth_background_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

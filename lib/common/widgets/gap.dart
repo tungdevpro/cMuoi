@@ -7,6 +7,7 @@ class Gap extends StatelessWidget {
 
   factory Gap.sm() => const Gap(height: AppSize.paddingSM);
   factory Gap.lg() => const Gap(height: AppSize.paddingLG);
+  factory Gap.xl() => const Gap(height: AppSize.paddingXL);
   factory Gap.xxl() => const Gap(height: AppSize.paddingXXL);
 
   @override
