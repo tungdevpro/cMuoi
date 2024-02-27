@@ -68,7 +68,7 @@ class _AuthBackgroundWidgetState extends State<AuthBackgroundWidget> with Single
             Container(
               height: 56,
               decoration: BoxDecoration(
-                color: AppColor.background,
+                color: AppColor.background2,
                 // color: Colors.grey,
                 borderRadius: BorderRadius.circular(40.0),
               ),
@@ -83,6 +83,7 @@ class _AuthBackgroundWidgetState extends State<AuthBackgroundWidget> with Single
                 indicatorColor: Colors.red,
                 indicatorWeight: 0,
                 dividerColor: Colors.transparent,
+                enableFeedback: true,
                 tabs: const [
                   Tab(text: 'Enter account'),
                   Tab(text: 'Sign up'),
