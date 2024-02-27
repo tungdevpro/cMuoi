@@ -9,6 +9,7 @@ abstract class RoutePath {
   static const String home = "/home";
   static const String auth = "/auth";
   static const String signUp = "$auth/sign-up";
+  static const String login = "$auth/login";
 }
 
 extension RouteLocationExts on String {

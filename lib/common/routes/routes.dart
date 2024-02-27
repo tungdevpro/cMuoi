@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gen_artify/features/sign_up/sign_up_page.dart';
 import '../../features/getting_started/getting_started_page.dart';
+import '../../features/login/login_page.dart';
 import '../../features/main/main_page.dart';
 import '../../features/splash/splash_page.dart';
 
@@ -15,6 +16,7 @@ abstract class Routings {
     RoutePath.gettingStarted: (_) => const GettingStartedPage(),
     RoutePath.main: (_) => const MainPage(),
     RoutePath.signUp: (_) => const SignUpPage(),
+    RoutePath.login: (_) => const LoginPage(),
   };
 
   static Route<dynamic> generateRoutes(RouteSettings settings) {

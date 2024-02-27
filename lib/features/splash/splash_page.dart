@@ -1,12 +1,11 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gen_artify/common/common.dart';
-import 'package:gen_artify/features/sign_up/sign_up_page.dart';
 
 import '../../common/auth/auth_bloc.dart';
 import '../../common/auth/auth_state.dart';
 import '../../common/constants/constants.dart';
+import '../login/login_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -27,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return state is AuthNotLoggedInState
-            ? const SignUpPage()
+            ? const LoginPage()
             : Scaffold(
                 backgroundColor: AppColor.primary,
                 body: Center(
