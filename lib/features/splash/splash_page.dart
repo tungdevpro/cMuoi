@@ -1,6 +1,11 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gen_artify/common/common.dart';
 import 'package:gen_artify/features/sign_up/sign_up_page.dart';
 
+import '../../common/auth/auth_bloc.dart';
+import '../../common/auth/auth_state.dart';
 import '../../common/constants/constants.dart';
 
 class SplashPage extends StatefulWidget {
@@ -19,18 +24,25 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.primary,
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(ImageResource.logo),
-          ],
-        ),
-      ),
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        return state is AuthNotLoggedInState
+            ? const SignUpPage()
+            : Scaffold(
+                backgroundColor: AppColor.primary,
+                body: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(ImageResource.logo),
+                      const SizedBox(height: 22, width: 22, child: CircularProgressIndicator(color: Colors.white)),
+                    ],
+                  ),
+                ),
+              );
+      },
     );
   }
 }

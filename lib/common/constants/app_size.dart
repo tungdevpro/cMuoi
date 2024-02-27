@@ -1,0 +1,7 @@
+abstract class AppSize {
+  const AppSize._();
+
+  static const double paddingSM = 12;
+  static const double padding = 16;
+  static const double paddingLG = 18;
+}

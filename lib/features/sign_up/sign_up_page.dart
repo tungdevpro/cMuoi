@@ -26,7 +26,9 @@ class _SignUpPageState extends CoreBindingState<SignUpPage, SignUpBloc> {
         body: SafeArea(
           child: ListView(
             physics: const ClampingScrollPhysics(),
-            children: [Image.asset(ImageResource.logo)],
+            children: [
+              Image.asset(ImageResource.logo),
+            ],
           ),
         ),
       ),

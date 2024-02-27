@@ -14,12 +14,12 @@ class AuthInitialEvent extends AuthEvent {
   List<Object?> get props => [];
 }
 
-class AuthNotAuthorizeEvent extends AuthEvent {
+class NotAuthorizeEvent extends AuthEvent {
   @override
   List<Object?> get props => [];
 }
 
-class AuthSuccessAuthorizeEvent extends AuthEvent {
+class SuccessAuthorizeEvent extends AuthEvent {
   @override
   List<Object?> get props => [];
 }
