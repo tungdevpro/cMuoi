@@ -22,6 +22,8 @@ iconsDir="assets/$idir/"
 # Tạo tệp output Dart
 outputFile="lib/common/constants/$op.dart"
 
+echo ">>> " "$outputFile"
+
 # Xóa tệp output cũ nếu có
 if [ -f "$outputFile" ]; then
   rm "$outputFile"
