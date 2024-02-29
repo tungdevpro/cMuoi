@@ -1,7 +1,7 @@
 abstract class IconResource {
   const IconResource._();
 
-  static const String acoount = 'assets/icons/Acoount.svg';
+  static const String account = 'assets/icons/Account.svg';
   static const String add = 'assets/icons/Add.svg';
   static const String backLeft = 'assets/icons/Back-Left.svg';
   static const String behind = 'assets/icons/Behind.svg';
@@ -30,6 +30,7 @@ abstract class IconResource {
   static const String logoText = 'assets/icons/Logo_text.svg';
   static const String maps = 'assets/icons/Maps.svg';
   static const String maskIntroBackground = 'assets/icons/Mask-Intro-Background.svg';
+  static const String message = 'assets/icons/Message.svg';
   static const String metion = 'assets/icons/Metion.svg';
   static const String navCameraLight = 'assets/icons/Nav-Camera-Light.svg';
   static const String navCameraSelected = 'assets/icons/Nav-Camera-Selected.svg';

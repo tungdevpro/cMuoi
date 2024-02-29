@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../common.dart';
 
-class CustomTextField extends StatefulWidget {
+class CustomTextFieldLabel extends StatefulWidget {
   final String? labelText;
   final String? hintText;
   final TextEditingController? controller;
@@ -12,13 +12,14 @@ class CustomTextField extends StatefulWidget {
   final String? errorText;
   final ValueChanged<String?>? onChanged;
   final TextStyle? hintStyle;
-  const CustomTextField({super.key, this.labelText, this.hintText, this.controller, this.obscureText = false, this.errorText, this.onChanged, this.hintStyle});
+  const CustomTextFieldLabel(
+      {super.key, this.labelText, this.hintText, this.controller, this.obscureText = false, this.errorText, this.onChanged, this.hintStyle});
 
   @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
+  State<CustomTextFieldLabel> createState() => _CustomTextFieldLabelState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _CustomTextFieldLabelState extends State<CustomTextFieldLabel> {
   late FocusNode _focusNode;
   late ValueNotifier<bool> hasClearNotifier;
   late TextEditingController _controller;
@@ -37,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   }
 
   @override
-  void didUpdateWidget(covariant CustomTextField oldWidget) {
+  void didUpdateWidget(covariant CustomTextFieldLabel oldWidget) {
     if (oldWidget.controller != widget.controller) _controller = widget.controller ?? TextEditingController();
 
     super.didUpdateWidget(oldWidget);
