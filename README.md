@@ -84,7 +84,7 @@ Một số lưu ý / Some notes
 
 1, To generate DI
 ```bash
-cd data|domain|presentation
+cd data|domain
 ```
 and run:
 ```bash

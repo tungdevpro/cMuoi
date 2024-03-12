@@ -5,12 +5,15 @@ part 'sign_up_email_dto.g.dart';
 class SignUpEmailDTO {
   @JsonKey(name: 'email')
   String? email;
+  @JsonKey(name: 'fullname')
+  String? fullname;
   @JsonKey(name: 'password')
   String? password;
 
   SignUpEmailDTO({
     this.email,
     this.password,
+    this.fullname,
   });
 
   factory SignUpEmailDTO.fromJson(Map<String, dynamic> json) => _$SignUpEmailDTOFromJson(json);
