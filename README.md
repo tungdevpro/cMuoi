@@ -104,7 +104,7 @@ project
 │  ├─ model
 │  ├─ repository
 │  └─ usecase
-├─ presentation (is where UI is displayed)
+├─ lib (is where UI is displayed)
 │  ├─ common
 |  |  └─ constants (is where project configurations such as color and size are stored)
 │  ├─ core
