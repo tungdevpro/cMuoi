@@ -93,7 +93,7 @@ class HeaderFix extends StatelessWidget implements PreferredSizeWidget {
               onPressed: onLeadingPressed ?? () => _onPop(context),
               icon: Container(
                 padding: const EdgeInsets.only(left: AppSize.padding),
-                child: SvgPicture.asset(IconResource.backLeft, width: 24),
+                child: SvgPicture.asset(IconResource.iconArrowLeft2, width: 24),
               ),
             ),
       centerTitle: centerTitle,
@@ -103,7 +103,7 @@ class HeaderFix extends StatelessWidget implements PreferredSizeWidget {
         child: titleType == AppBarTitle.text
             ? Text(text ?? '', style: titleTextStyle)
             : titleType == AppBarTitle.logo
-                ? SvgPicture.asset(IconResource.backLeft, width: 24)
+                ? SvgPicture.asset(IconResource.iconArrowLeft2, width: 24)
                 : null,
       ),
       actions: actions,
