@@ -91,6 +91,13 @@ and run:
 flutter packages pub run build_runner build  --delete-conflicting-outputs
 ```
 
+2, Run generate splash/icon
+```bash
+dart run flutter_native_splash:create
+flutter pub run flutter_launcher_icons
+```
+
+
 ## Project structure
 
 ```
