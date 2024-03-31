@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gen_artify/common/common.dart';
 
-import '../../common/auth/auth_bloc.dart';
-import '../../common/auth/auth_state.dart';
+import '../../common/auth/auth.dart';
 import '../../common/constants/constants.dart';
 import '../login/login_page.dart';
 
