@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../common/constants.dart';
 
-@singleton
 class DioClient {
   late Dio _dio;
 
