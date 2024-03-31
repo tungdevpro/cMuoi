@@ -49,7 +49,8 @@ class _BaseTextFieldState extends State<BaseTextField> {
 
   @override
   void didUpdateWidget(covariant BaseTextField oldWidget) {
-    if (oldWidget.controller != widget.controller) _controller = widget.controller ?? TextEditingController();
+    if (oldWidget.controller != widget.controller)
+      _controller = widget.controller ?? TextEditingController();
 
     super.didUpdateWidget(oldWidget);
   }
@@ -73,21 +74,25 @@ class _BaseTextFieldState extends State<BaseTextField> {
           child: Container(
             height: 50,
             decoration: BoxDecoration(
-                border: Border.all(width: 1, color: widget.errorText != null && widget.errorText != '' ? AppColor.red : AppColor.line),
+                // border: Border.all(width: 1, color: widget.errorText != null && widget.errorText != '' ? AppColor.red : AppColor.line),
                 borderRadius: BorderRadius.circular(40)),
-            padding: const EdgeInsets.symmetric(vertical: AppSize.padding - 2, horizontal: AppSize.paddingLG),
+            padding: const EdgeInsets.symmetric(
+                vertical: AppSize.padding - 2, horizontal: AppSize.paddingLG),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 if (widget.prefixIcon != null) ...[
-                  widget.prefixIcon is String ? SvgPicture.asset(widget.prefixIcon) : widget.prefixIcon,
+                  widget.prefixIcon is String
+                      ? SvgPicture.asset(widget.prefixIcon)
+                      : widget.prefixIcon,
                 ],
                 ValueListenableBuilder<bool>(
                   valueListenable: _obscureNotifier,
                   builder: (context, obscure, child) => Expanded(
                     child: TextFormField(
-                      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 14),
                       focusNode: _focusNode,
                       controller: _controller,
                       obscureText: obscure,
@@ -103,7 +108,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
                         disabledBorder: InputBorder.none,
                         focusedErrorBorder: InputBorder.none,
                         hintText: widget.hintText,
-                        hintStyle: widget.hintStyle ?? const TextStyle(color: AppColor.text, fontSize: 14, fontWeight: FontWeight.w400),
+                        // hintStyle: widget.hintStyle ?? const TextStyle(color: AppColor.text, fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                     ),
                   ),
@@ -121,10 +126,18 @@ class _BaseTextFieldState extends State<BaseTextField> {
                               onTap: _onToggleVisibility,
                               child: ValueListenableBuilder<bool>(
                                 valueListenable: _obscureNotifier,
-                                builder: (context, obscure, child) => AnimatedSwitcher(
+                                builder: (context, obscure, child) =>
+                                    AnimatedSwitcher(
                                   duration: const ShortDuration(),
-                                  transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
-                                  child: SvgPicture.asset(!obscure ? IconResource.visibilityOn : IconResource.visibilityOff, key: ValueKey('icon_$obscure')),
+                                  transitionBuilder: (Widget child,
+                                          Animation<double> animation) =>
+                                      FadeTransition(
+                                          opacity: animation, child: child),
+                                  child: SvgPicture.asset(
+                                      !obscure
+                                          ? IconResource.iconEye
+                                          : IconResource.iconEyeSlash,
+                                      key: ValueKey('icon_$obscure')),
                                 ),
                               ),
                             )
@@ -144,8 +157,15 @@ class _BaseTextFieldState extends State<BaseTextField> {
               // const SvgViewer(AppIcons.icErrorMessage),
               // const SizedBox(width: 5),
               Expanded(
-                child: Text(widget.errorText!,
-                    style: const TextStyle(color: AppColor.red, fontSize: 13, fontWeight: FontWeight.w500), maxLines: 1, overflow: TextOverflow.ellipsis),
+                child: Text(
+                  widget.errorText!,
+                  style: const TextStyle(
+                      // color: AppColor.red,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
