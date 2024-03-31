@@ -12,8 +12,8 @@ import 'package:domain/usecase/sign_up/sign_up_usecase.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../common/app/app_bloc.dart' as _i3;
-import '../common/auth/auth_bloc.dart' as _i4;
+import '../common/app/bloc/app_bloc.dart' as _i3;
+import '../common/auth/bloc/auth_bloc.dart' as _i4;
 import '../features/login/bloc/login_bloc.dart' as _i5;
 import '../features/sign_up/bloc/sign_up_bloc.dart' as _i6;
 
