@@ -17,7 +17,7 @@ class _GenArtifyState extends State<GenArtify> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Gen Artify',
+      title: 'Express Cart',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: ConfigLocalization.loads(),
       supportedLocales: ConfigLocalization.supportedLocales(),
