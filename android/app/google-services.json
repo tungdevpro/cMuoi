@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "769910920769",
+    "project_id": "expresscart-16358",
+    "storage_bucket": "expresscart-16358.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769910920769:android:a116cc53d9ad7f2d78d8c0",
+        "android_client_info": {
+          "package_name": "com.yh.express_cart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwNSBvxOTkaRZXjTeF7AvIarZ3yoyyVko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

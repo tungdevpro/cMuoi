@@ -1,8 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gen_artify/common/constants/constants.dart';
-import 'package:gen_artify/features/sign_up/bloc/sign_up_bloc.dart';
+import 'package:express_cart/common/constants/constants.dart';
+import 'package:express_cart/features/sign_up/bloc/sign_up_bloc.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

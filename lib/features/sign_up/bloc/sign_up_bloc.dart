@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 import 'package:domain/usecase/sign_up/sign_up_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gen_artify/di/di.dart';
-import 'package:gen_artify/features/sign_up/bloc/sign_up_event.dart';
-import 'package:gen_artify/features/sign_up/bloc/sign_up_state.dart';
+import 'package:express_cart/di/di.dart';
+import 'package:express_cart/features/sign_up/bloc/sign_up_event.dart';
+import 'package:express_cart/features/sign_up/bloc/sign_up_state.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

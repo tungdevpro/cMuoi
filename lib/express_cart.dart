@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:gen_artify/common/routes/routes.dart';
-import 'package:gen_artify/common/theme/app_theme.dart';
+import 'package:express_cart/common/routes/routes.dart';
+import 'package:express_cart/common/theme/app_theme.dart';
 
 import 'common/constants/config_localization.dart';
 import 'common/routes/router_observer.dart';

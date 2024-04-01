@@ -1,11 +1,13 @@
 import 'package:core/core.dart';
 import 'package:data/data.dart';
 import 'package:domain/domain.dart';
+import 'package:express_cart/firebase_options.dart';
+import 'package:firebase_module/firebase_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gen_artify/di/di.dart';
-import 'package:gen_artify/gen_artify.dart';
+import 'package:express_cart/di/di.dart';
+import 'package:express_cart/express_cart.dart';
 
 import 'common/app/bloc/app_bloc.dart';
 import 'common/auth/auth.dart';
@@ -17,8 +19,7 @@ class AppInitializer {
 
   Future<void> run() async {
     WidgetsFlutterBinding.ensureInitialized();
-    _dependencies();
-    _configurations();
+    await Future.wait([_dependencies(), _configurations()]);
     runApp(
       MultiBlocProvider(
         providers: [
@@ -32,6 +33,7 @@ class AppInitializer {
 
   Future<void> _dependencies() async {
     // AppwriteModule.instance().init(AppConfig.appwriteId);
+    await FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform);
     DataLayer.init();
     DomainLayer.init();
     configureDependencies();
@@ -39,8 +41,6 @@ class AppInitializer {
 
   Future<void> _configurations() async {
     Bloc.observer = CustomBlocObserver();
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark));
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
   }
 }

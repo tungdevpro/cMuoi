@@ -1,7 +1,7 @@
 // import 'package:core/core.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:gen_artify/common/common.dart';
+// import 'package:express_cart/common/common.dart';
 
 // import '../social_media_enum.dart';
 

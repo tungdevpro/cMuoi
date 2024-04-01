@@ -1,4 +1,4 @@
-import 'package:gen_artify/common/common.dart';
+import 'package:express_cart/common/common.dart';
 
 enum SocialMedia {
   facebook('facebook', ImageResource.facebook),
