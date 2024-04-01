@@ -10,6 +10,11 @@ then
     className="ImageResource"
     op="image_resource"
     idir="images"
+elif [ "$type" == "lottie" ];
+then
+    className="LottieResource"
+    op="lottie_resource"
+    idir="animations"
 else
     className="IconResource"
     op="icon_resource"
@@ -38,7 +43,7 @@ echo "" >> "$outputFile"
 if [ "$type" == "image" ]; 
 then
     for imageFile in "$iconsDir"*.png; do
-        echo "f... $imageFile"
+        echo "img... $imageFile"
         # Lấy tên file mà không có đường dẫn
         imageName=$(basename "$imageFile")
     
@@ -51,6 +56,22 @@ then
         # Tạo hằng số
         echo "  static const String $imageConstantName = '$iconsDir$imageName';" >> "$outputFile"
     done
+elif [ "$type" == "lottie" ];
+then
+    for aniFile in "$iconsDir"*.json; do
+        echo "lottie... $aniFile"
+        # Lấy tên file mà không có đường dẫn
+        aniFileName=$(basename "$aniFile")
+        
+        # Loại bỏ phần mở rộng .svg
+        aniName="${aniFileName%.*}"
+
+        # Chuyển đổi tên thành dạng camelCase
+        aniNameCamelCase=$(echo "$aniName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+
+        # Tạo hằng số
+        echo "  static const String $aniNameCamelCase = '$aniFile';" >> "$outputFile"
+    done  
 else
     for svgFile in "$iconsDir"*.svg; do
         echo "svgFile... $svgFile"
