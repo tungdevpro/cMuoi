@@ -1,4 +1,4 @@
-# Gen Artify
+# ExpressCart
 
 Một số lưu ý / Some notes
 
