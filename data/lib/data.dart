@@ -6,7 +6,5 @@ abstract class DataLayer {
   const DataLayer._();
 
   /// Handle initial data layer
-  static void init() {
-    configureDependencies();
-  }
+  static Future<void> init() async => await configureDependencies();
 }

@@ -49,4 +49,19 @@ abstract class BaseRepository {
       return ValueError(ErrorType.unknow, 'An unknown error');
     }
   }
+
+  Future<Result<Model>> storageHandler<Entity, Model>(Future<Entity?> call, {required EntityToModelMapper<Entity, Model> mapper}) async {
+    try {
+      final response = await call;
+      if (response == null) {
+        _logger.d("DB response is null");
+        return ValueError(ErrorType.unknow, "DB response is null!");
+      }
+      _logger.d("DB success message -> $response");
+      return ValueSuccess(mapper.call(response));
+    } catch (exception) {
+      _logger.d("DB failure message -> $exception");
+      return ValueError(ErrorType.unknow, "Unknown DB error");
+    }
+  }
 }
