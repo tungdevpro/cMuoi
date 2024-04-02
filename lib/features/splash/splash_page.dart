@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:express_cart/common/common.dart';
 
 import '../../common/auth/auth.dart';
-import '../../common/constants/constants.dart';
 import '../login/login_page.dart';
-import 'package:lottie/lottie.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -37,8 +35,7 @@ class _SplashPageState extends State<SplashPage> {
                     children: [
                       Image.asset(ImageResource.logo, width: 140),
                       Gap.lg(),
-                      Lottie.asset('assets/animations/loading_lottie.json'),
-                      // const SizedBox(height: 22, width: 22, child: CircularProgressIndicator(color: Colors.white)),
+                      const SizedBox(height: 22, width: 22, child: CircularProgressIndicator(color: Colors.white)),
                     ],
                   ),
                 ),
