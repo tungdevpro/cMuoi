@@ -1,4 +1,7 @@
 import 'package:core/core.dart';
+import 'package:express_cart/common/app/bloc/app_bloc.dart';
+import 'package:express_cart/common/app/bloc/app_state.dart';
+import 'package:express_cart/common/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:express_cart/common/common.dart';
@@ -23,14 +26,18 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        return AnimatedSwitcher(
-          duration: const LongDuration(),
-          transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
-          child: state is AuthNotLoggedInState ? const LoginPage() : _body(),
-        );
-      },
+    return BlocListener<AppBloc, AppState>(
+      listenWhen: (previous, current) => previous.isOnBoarding == current.isOnBoarding,
+      listener: _onAppListener,
+      child: BlocBuilder<AuthBloc, AuthState>(
+        builder: (context, state) {
+          return AnimatedSwitcher(
+            duration: const LongDuration(),
+            transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
+            child: state is AuthNotLoggedInState ? const LoginPage() : _body(),
+          );
+        },
+      ),
     );
   }
 
@@ -49,5 +56,12 @@ class _SplashPageState extends State<SplashPage> {
         ),
       ),
     );
+  }
+
+  void _onAppListener(BuildContext context, AppState state) {
+    if (!state.isOnBoarding) {
+      AppNavigator.instance().pushNamed(RoutePath.onboarding);
+      return;
+    }
   }
 }

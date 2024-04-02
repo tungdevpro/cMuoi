@@ -23,6 +23,7 @@ class _ExpressCartState extends State<ExpressCart> {
       buildWhen: (previous, current) => previous.isDark != current.isDark,
       builder: (context, state) => MaterialApp(
         title: 'Express Cart',
+        navigatorKey: AppNavigator.instance().navigatorKey,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: ConfigLocalization.loads(),
         supportedLocales: ConfigLocalization.supportedLocales(),

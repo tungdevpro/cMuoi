@@ -30,6 +30,11 @@ class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<voi
 
   void _onCheckOnboardingEvent(CheckOnboardingEvent event, Emitter<AppState> emit) async {
     final res = await _checkOnboardingIsDisplayedUsecase.invoke(null);
-    print('res---->> $res');
+    res.when(
+      error: (type, error, code) {},
+      success: (data) {
+        emit(AppState(isOnBoarding: data!));
+      },
+    );
   }
 }

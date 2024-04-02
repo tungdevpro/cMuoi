@@ -35,4 +35,6 @@ abstract class AppColor {
   static const Color surfaceVariant = Color(0xffEDE1CF);
   static const Color onSurfaceVariant = Color(0xff4D4639);
   static const Color outline = Color(0xff7F7667);
+
+  static const Color buttonPrimary = Color(0xffFFB900);
 }
