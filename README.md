@@ -88,13 +88,13 @@ cd data|domain
 ```
 and run:
 ```bash
-flutter packages pub run build_runner build  --delete-conflicting-outputs
+dart run build_runner build  --delete-conflicting-outputs
 ```
 
 2, Run generate splash/icon
 ```bash
 dart run flutter_native_splash:create
-flutter pub run flutter_launcher_icons
+dart run flutter_launcher_icons
 ```
 
 
