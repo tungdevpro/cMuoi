@@ -26,7 +26,7 @@ class AppInitializer {
           BlocProvider<AuthBloc>(create: (context) => AuthBloc.to),
           BlocProvider<AppBloc>(create: (context) => AppBloc.to),
         ],
-        child: const GenArtify(),
+        child: const ExpressCart(),
       ),
     );
   }
@@ -34,7 +34,7 @@ class AppInitializer {
   Future<void> _dependencies() async {
     // AppwriteModule.instance().init(AppConfig.appwriteId);
     await FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform);
-    DataLayer.init();
+    await DataLayer.init();
     DomainLayer.init();
     configureDependencies();
   }
