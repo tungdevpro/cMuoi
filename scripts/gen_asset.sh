@@ -43,57 +43,57 @@ echo "" >> "$outputFile"
 if [ "$type" == "image" ]; 
 then
     for imageFile in "$iconsDir"*.png; do
-        echo "img... $imageFile"
-        # Lấy tên file mà không có đường dẫn
+        echo "$imageFile"
         imageName=$(basename "$imageFile")
     
-        # Loại bỏ phần mở rộng của file
         imageBaseName="${imageName%.*}"
 
-        # Chuyển đổi tên thành dạng UpperCamelCase
-        imageConstantName=$(echo "$imageBaseName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g')
+        if [[ $(uname) == "Darwin" ]]; then
+            imageConstantName=$(echo "$imageBaseName" | awk '{print tolower(substr($0,1,1)) substr($0,2)}' | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/-//g' -e 's/_//g')
+        else
+            imageConstantName=$(echo "$imageBaseName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+        fi
     
-        # Tạo hằng số
         echo "  static const String $imageConstantName = '$iconsDir$imageName';" >> "$outputFile"
     done
 elif [ "$type" == "lottie" ];
 then
     for aniFile in "$iconsDir"*.json; do
-        echo "lottie... $aniFile"
-        # Lấy tên file mà không có đường dẫn
+        echo "$aniFile"
         aniFileName=$(basename "$aniFile")
         
-        # Loại bỏ phần mở rộng .svg
         aniName="${aniFileName%.*}"
 
-        # Chuyển đổi tên thành dạng camelCase
-        aniNameCamelCase=$(echo "$aniName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+        if [[ $(uname) == "Darwin" ]]; then
+            aniNameCamelCase=$(echo "$aniName" | awk '{print tolower(substr($0,1,1)) substr($0,2)}' | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/-//g' -e 's/_//g')
+        else
+            aniNameCamelCase=$(echo "$aniName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+        fi
 
-        # Tạo hằng số
         echo "  static const String $aniNameCamelCase = '$aniFile';" >> "$outputFile"
     done  
 else
     for svgFile in "$iconsDir"*.svg; do
-        echo "svgFile... $svgFile"
-        # Lấy tên file mà không có đường dẫn
+        echo "$svgFile"
         iconFileName=$(basename "$svgFile")
         
-        # Loại bỏ phần mở rộng .svg
         iconName="${iconFileName%.*}"
 
-        # Chuyển đổi tên thành dạng camelCase
         # iconNameCamelCase=$(echo "$iconName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g')
-        iconNameCamelCase=$(echo "$iconName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+        if [[ $(uname) == "Darwin" ]]; then
+            iconNameCamelCase=$(echo "$iconName" | awk '{print tolower(substr($0,1,1)) substr($0,2)}' | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/-//g' -e 's/_//g')
+        else
+            iconNameCamelCase=$(echo "$iconName" | sed -e 's/_\([a-z]\)/\U\1/g' -e 's/-\([a-z]\)/\U\1/g' -e 's/^./\L&/' -e 's/-//g' -e 's/_//g')
+        fi
 
-        # Tạo hằng số
         echo "  static const String $iconNameCamelCase = '$svgFile';" >> "$outputFile"
     done
 fi
 
 
 
-# Đóng class IconResource
+# End
 echo "" >> "$outputFile"
 echo "}" >> "$outputFile"
 
-echo "Đã tạo xong các hằng số trong Dart từ danh sách file icon $className."
+echo "Đã tạo $className."
