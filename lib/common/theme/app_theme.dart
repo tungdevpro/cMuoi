@@ -9,24 +9,25 @@ class AppTheme {
   }
 
   static ThemeData get light => ThemeData(
-        fontFamily: 'GoogleSans',
+        fontFamily: 'MaisonNeue',
         scaffoldBackgroundColor: Colors.white,
         buttonTheme: ButtonThemeData(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            buttonColor: AppColor.background,
-            colorScheme: ColorScheme(
-              brightness: Brightness.light,
-              primary: AppColor.primary,
-              onPrimary: AppColor.onPrimary,
-              secondary: AppColor.secondary,
-              onSecondary: AppColor.onSecondary,
-              error: AppColor.error,
-              onError: AppColor.onError,
-              background: AppColor.background,
-              onBackground: AppColor.onBackground,
-              surface: AppColor.surface,
-              onSurface: AppColor.onSurface,
-            )),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          buttonColor: AppColor.background,
+          // colorScheme: ColorScheme(
+          //   brightness: Brightness.light,
+          //   primary: AppColor.primary,
+          //   onPrimary: AppColor.onPrimary,
+          //   secondary: AppColor.secondary,
+          //   onSecondary: AppColor.onSecondary,
+          //   error: AppColor.error,
+          //   onError: AppColor.onError,
+          //   background: AppColor.background,
+          //   onBackground: AppColor.onBackground,
+          //   surface: AppColor.surface,
+          //   onSurface: AppColor.onSurface,
+          // ),
+        ),
         appBarTheme: const AppBarTheme(
           elevation: .0,
           backgroundColor: Colors.white,
@@ -34,6 +35,6 @@ class AppTheme {
         ),
       );
   static ThemeData get dark => ThemeData(
-        fontFamily: 'GoogleSans',
+        fontFamily: 'MaisonNeue',
       );
 }

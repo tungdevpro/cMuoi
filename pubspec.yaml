@@ -106,13 +106,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: GoogleSans
+    - family: MaisonNeue
       fonts:
-        - asset: assets/fonts/google_sans/GoogleSans-Bold.ttf
+        - asset: assets/fonts/maison_neue/MaisonNeue-Bold.ttf
           weight: 600
-        - asset: assets/fonts/google_sans/GoogleSans-Medium.ttf
+        - asset: assets/fonts/maison_neue/MaisonNeue-Medium.ttf
           weight: 500
-        - asset: assets/fonts/google_sans/GoogleSans-Regular.ttf
+        - asset: assets/fonts/maison_neue/MaisonNeue-Book.ttf
           weight: 400
+        - asset: assets/fonts/maison_neue/MaisonNeue-Light.ttf
+          weight: 200
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
