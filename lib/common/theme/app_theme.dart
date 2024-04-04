@@ -1,40 +1,24 @@
 import 'package:express_cart/common/constants/app_color.dart';
+import 'package:express_cart/common/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
 
-class AppTheme {
-  bool isLight = true;
+import 'custom_text_button_theme.dart';
 
-  void toggle() {
-    isLight = !isLight;
-  }
+abstract class AppTheme {
+  const AppTheme._();
+
+  static const String _fontFamily = 'MaisonNeue';
 
   static ThemeData get light => ThemeData(
-        fontFamily: 'MaisonNeue',
+        fontFamily: _fontFamily,
         scaffoldBackgroundColor: Colors.white,
-        buttonTheme: ButtonThemeData(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          buttonColor: AppColor.background,
-          // colorScheme: ColorScheme(
-          //   brightness: Brightness.light,
-          //   primary: AppColor.primary,
-          //   onPrimary: AppColor.onPrimary,
-          //   secondary: AppColor.secondary,
-          //   onSecondary: AppColor.onSecondary,
-          //   error: AppColor.error,
-          //   onError: AppColor.onError,
-          //   background: AppColor.background,
-          //   onBackground: AppColor.onBackground,
-          //   surface: AppColor.surface,
-          //   onSurface: AppColor.onSurface,
-          // ),
-        ),
-        appBarTheme: const AppBarTheme(
-          elevation: .0,
-          backgroundColor: Colors.white,
-          // systemOverlayStyle: SystemUiOverlayStyle.dark,
-        ),
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(elevation: .0, backgroundColor: Colors.white),
+        textButtonTheme: CustomTextButtonTheme.lightButton(),
+        textTheme: CustomTextTheme.lightText(),
       );
   static ThemeData get dark => ThemeData(
-        fontFamily: 'MaisonNeue',
+        fontFamily: _fontFamily,
+        useMaterial3: true,
       );
 }

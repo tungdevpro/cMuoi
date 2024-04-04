@@ -11,10 +11,7 @@ class OnboardingPage extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 90,
         padding: const EdgeInsets.symmetric(vertical: AppSize.padding, horizontal: AppSize.padding),
-        child: ButtonBase(
-          onPressed: () {},
-          title: 'Next',
-        ),
+        child: TextButton(onPressed: () {}, child: Text("data")),
         // child: TextButton(
         //   style: ButtonStyle(
         //       backgroundColor: MaterialStateProperty.all<Color>(AppColor.buttonPrimary),
