@@ -1,7 +1,11 @@
+import 'package:core/common/common.dart';
+import 'package:express_cart/features/main/bloc/main_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../common/constants/constants.dart';
+import '../../di/di.dart';
+import '../../model/nav_item_model.dart';
 import '../home/home_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -11,15 +15,19 @@ class MainPage extends StatefulWidget {
   State<MainPage> createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
+
+  @override
+  MainBloc get initBloc => di<MainBloc>();
+
   late ValueNotifier<int> currentIndex;
   late PageController pageController;
 
   var items = <Widget>[
     const HomePage(),
-    // const CameraPage(wantKeepAlive: true),
     Container(),
-    // const ProfilePage(wantKeepAlive: true),
+    Container(),
+    Container(),
   ];
 
   final navs = [
@@ -71,12 +79,4 @@ class _MainPageState extends State<MainPage> {
     currentIndex.value = value;
     pageController.jumpToPage(value);
   }
-}
-
-class NavItem {
-  final String name;
-  final String icon;
-  final String iconSelected;
-
-  NavItem({required this.name, required this.icon, required this.iconSelected});
 }
