@@ -29,7 +29,6 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
         buildWhen: (previous, current) => previous.isOnBoarding == current.isOnBoarding,
-        // listener: _onAppListener,
         builder: (context, appState) {
           if (!appState.isOnBoarding) {
             return const OnboardingPage();

@@ -81,6 +81,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _nextToHome() {
-    AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.main);
+    AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.login);
   }
 }

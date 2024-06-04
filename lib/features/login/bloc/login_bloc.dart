@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -11,7 +12,9 @@ import 'login_state.dart';
 
 @injectable
 class LoginBloc extends BaseBloc<LoginEvent, LoginState> {
-  LoginBloc() : super(LoginState(status: LoginStatus.none));
+  LoginBloc(this._loginUseCase) : super(LoginState(status: LoginStatus.none));
+
+  final LoginUseCase _loginUseCase;
 
   static LoginBloc get to => di<LoginBloc>();
 

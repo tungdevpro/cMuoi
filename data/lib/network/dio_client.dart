@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../common/constants.dart';
 
+@injectable
 class DioClient {
   late Dio _dio;
 
@@ -22,7 +24,13 @@ class DioClient {
 
     if (interceptors?.isNotEmpty ?? false) _dio.interceptors.addAll(interceptors!);
     if (hasLog) {
-      _dio.interceptors.add(PrettyDioLogger(requestHeader: true, requestBody: true, responseBody: true, responseHeader: false, compact: false));
+      _dio.interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        compact: false,
+      ));
     }
   }
 }

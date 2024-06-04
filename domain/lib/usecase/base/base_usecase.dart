@@ -1,7 +1,7 @@
 import 'package:domain/common/result.dart';
 import 'package:equatable/equatable.dart';
 
-abstract class Usecase<Type, Params> {
+abstract class UseCase<Type, Params> {
   Future<Result<Type>> invoke(Params params);
 }
 

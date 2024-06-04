@@ -2,7 +2,7 @@ import 'package:domain/common/result.dart';
 import 'package:domain/entity/user_info_entity.dart';
 import 'package:domain/usecase/base/base_usecase.dart';
 
-abstract class SignUpUsecase extends Usecase<UserInfoEntity, SignUpParam> {
+abstract class SignUpUsecase extends UseCase<UserInfoEntity, SignUpParam> {
   @override
   Future<Result<UserInfoEntity>> invoke(SignUpParam params);
 }

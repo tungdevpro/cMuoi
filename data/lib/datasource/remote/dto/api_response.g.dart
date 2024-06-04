@@ -15,7 +15,7 @@ ApiResponse<T> _$ApiResponseFromJson<T>(
       error: json['error'] as String?,
       codes:
           (json['codes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      status: json['status'] as int?,
+      status: (json['status'] as num?)?.toInt(),
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
     );
 

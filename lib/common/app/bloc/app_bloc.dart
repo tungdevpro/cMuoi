@@ -10,9 +10,9 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<void> {
-  final CheckOnboardingIsDisplayedUsecase _checkOnboardingIsDisplayedUsecase;
+  final CheckOnboardingIsDisplayedUseCase _checkOnboardingIsDisplayedUseCase;
 
-  AppBloc(this._checkOnboardingIsDisplayedUsecase) : super(const AppState(hasNewVersion: false)) {
+  AppBloc(this._checkOnboardingIsDisplayedUseCase) : super(const AppState(hasNewVersion: false)) {
     on<GetConfigGlobalEvent>(_onGetConfigGlobalEvent);
     on<CheckOnboardingEvent>(_onCheckOnboardingEvent);
   }
@@ -21,7 +21,6 @@ class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<voi
 
   @override
   Future<void> init() async {
-    print('object......');
     add(GetConfigGlobalEvent());
     add(CheckOnboardingEvent());
   }
@@ -29,7 +28,7 @@ class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<voi
   void _onGetConfigGlobalEvent(GetConfigGlobalEvent event, Emitter<AppState> emit) {}
 
   void _onCheckOnboardingEvent(CheckOnboardingEvent event, Emitter<AppState> emit) async {
-    final res = await _checkOnboardingIsDisplayedUsecase.invoke(null);
+    final res = await _checkOnboardingIsDisplayedUseCase.invoke(null);
     res.when(
       error: (type, error, code) {},
       success: (data) {

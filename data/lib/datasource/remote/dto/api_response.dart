@@ -5,8 +5,8 @@ enum CodeApiResponse {
   success(200),
   parseErr(-1),
   timeout(-2),
-  tokenExprired(-99),
-  unknowErr(401);
+  tokenExpired(-99),
+  unKnowErr(401);
 
   const CodeApiResponse(this.value);
   final int value;
@@ -26,7 +26,7 @@ class ApiResponse<T> {
 
   bool isTimeOut() => CodeApiResponse.timeout.value == status;
 
-  bool isTokenExprired() => CodeApiResponse.tokenExprired.value == status;
+  bool isTokenExpired() => CodeApiResponse.tokenExpired.value == status;
 
   factory ApiResponse.fromJson(Map<String, dynamic> json, T Function(Object? json) fromJsonT) => _$ApiResponseFromJson<T>(json, fromJsonT);
 

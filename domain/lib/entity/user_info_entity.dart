@@ -1,13 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
 
-part 'user_info_entity.g.dart';
+import 'package:domain/entity/user_entity.dart';
 
-@JsonSerializable()
-class UserInfoEntity {
-  final String name;
-
-  UserInfoEntity({required this.name});
-
-  factory UserInfoEntity.fromJson(Map<String, dynamic> json) => _$UserInfoEntityFromJson(json);
-  Map<String, dynamic> toJson() => _$UserInfoEntityToJson(this);
+class UserInfoEntity extends UserEntity {
+  UserInfoEntity({required super.id, required super.name, required super.phone});
 }
