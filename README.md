@@ -3,7 +3,7 @@
 Một số lưu ý / Some notes
 
 ## Requirements
-- Flutter SDK: 3.13.6
+- Flutter SDK: 3.22.1
 - CocoaPods: 1.12.1
 
 ### For IDE (VS Code, Android Studio)
