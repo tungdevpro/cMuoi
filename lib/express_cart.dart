@@ -23,7 +23,7 @@ class _ExpressCartState extends State<ExpressCart> {
       buildWhen: (previous, current) => previous.isDark != current.isDark,
       builder: (context, state) => MaterialApp(
         title: 'Express Cart',
-        navigatorKey: AppNavigator.instance().navigatorKey,
+        navigatorKey: AppNavigator.shared.navigatorKey,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: ConfigLocalization.loads(),
         supportedLocales: ConfigLocalization.supportedLocales(),
@@ -31,7 +31,7 @@ class _ExpressCartState extends State<ExpressCart> {
         themeMode: ThemeMode.light,
         darkTheme: AppTheme.dark,
         initialRoute: RoutePath.initial,
-        onGenerateRoute: Routings.generateRoutes,
+        onGenerateRoute: AppRouter.generateRoutes,
         navigatorObservers: [CustomRouterObserver()],
         builder: (context, child) {
           return AppOverlayLoading.instance().build().call(context, child);

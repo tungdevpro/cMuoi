@@ -65,7 +65,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void _onAppListener(BuildContext context, AppState state) {
     if (!state.isOnBoarding) {
-      AppNavigator.instance().pushNamed(RoutePath.onboarding);
+      AppNavigator.shared.pushNamed(RoutePath.onboarding);
       return;
     }
   }

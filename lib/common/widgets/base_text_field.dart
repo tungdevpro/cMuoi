@@ -135,8 +135,8 @@ class _BaseTextFieldState extends State<BaseTextField> {
                                           opacity: animation, child: child),
                                   child: SvgPicture.asset(
                                       !obscure
-                                          ? IconResource.iconEye
-                                          : IconResource.iconEyeSlash,
+                                          ? IconResource.eyeUslash
+                                          : IconResource.eyeUslash,
                                       key: ValueKey('icon_$obscure')),
                                 ),
                               ),

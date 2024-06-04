@@ -1,3 +1,4 @@
+import 'package:express_cart/features/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:express_cart/features/sign_up/sign_up_page.dart';
@@ -8,13 +9,14 @@ import '../../features/splash/splash_page.dart';
 
 part 'route_path.dart';
 
-abstract class Routings {
-  const Routings._();
+abstract class AppRouter {
+  const AppRouter._();
 
   static Map<String, WidgetBuilder> routes = {
     RoutePath.initial: (_) => const SplashPage(),
     RoutePath.onboarding: (_) => const OnboardingPage(),
     RoutePath.main: (_) => const MainPage(),
+    RoutePath.home: (_) => const HomePage(),
     RoutePath.signUp: (_) => const SignUpPage(),
     RoutePath.login: (_) => const LoginPage(),
   };

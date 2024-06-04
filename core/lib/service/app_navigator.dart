@@ -7,11 +7,8 @@ import '../common/widgets/transitions/fade_in_page_transition.dart';
 import '../common/widgets/transitions/slide_bottom_page_transition.dart';
 
 class AppNavigator {
-  static AppNavigator? _instance;
-
-  AppNavigator._();
-
-  factory AppNavigator.instance() => _instance ??= AppNavigator._();
+  AppNavigator._internal();
+  static final AppNavigator shared = AppNavigator._internal();
 
   BuildContext? _context;
 
@@ -60,7 +57,7 @@ class AppNavigator {
 
 NavigatorState _navigator(BuildContext? context, {bool useRoot = false}) {
   assert(!(useRoot && (context != null)), "only (useRoot = true) or (context != null) can be specified, not both");
-  final rootState = AppNavigator.instance().navigatorKey.currentState;
+  final rootState = AppNavigator.shared.navigatorKey.currentState;
   if (useRoot) return rootState!;
 
   return context != null ? Navigator.of(context) : (AppNavigator.nestedNavigatorKey?.currentState ?? rootState!);

@@ -1,5 +1,5 @@
+import 'package:express_cart/common/common.dart';
 import 'package:flutter/material.dart';
-import 'package:express_cart/common/routes/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,15 +11,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("data"),
-      ),
-      body: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: Text("data"),
-        ),
+    return CommonScaffold(
+      // appBar: HeaderFix(text: 'Home', leadingIcon: LeadingIcon.none),
+      body: Column(
+        children: [],
       ),
     );
   }

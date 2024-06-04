@@ -1,9 +1,11 @@
 import 'package:core/core.dart';
 import 'package:express_cart/common/constants/constants.dart';
+import 'package:express_cart/common/routes/routes.dart';
 import 'package:express_cart/features/onboarding/component/intro_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/common.dart';
+import '../../di/di.dart';
 import '../../generated/l10n.dart';
 import '../../shared/widgets/bottom_bar_area_widget.dart';
 
@@ -78,5 +80,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     _pageController.animateToPage(i, duration: const Duration(milliseconds: 200), curve: Curves.easeInCubic);
   }
 
-  void _nextToHome() {}
+  void _nextToHome() {
+    AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.main);
+  }
 }

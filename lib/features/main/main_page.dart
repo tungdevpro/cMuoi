@@ -23,10 +23,10 @@ class _MainPageState extends State<MainPage> {
   ];
 
   final navs = [
-    NavItem(icon: IconResource.iconHome, name: '', iconSelected: IconResource.iconHome),
-    NavItem(icon: IconResource.iconDiscovery, name: '', iconSelected: IconResource.iconDiscovery),
-    NavItem(icon: IconResource.iconHeart, name: '', iconSelected: IconResource.iconHeart),
-    NavItem(icon: IconResource.iconUser, name: '', iconSelected: IconResource.iconUser),
+    NavItem(icon: IconResource.home, name: '', iconSelected: IconResource.home),
+    NavItem(icon: IconResource.coffee, name: '', iconSelected: IconResource.coffee),
+    NavItem(icon: IconResource.tag, name: '', iconSelected: IconResource.tag),
+    NavItem(icon: IconResource.profile, name: '', iconSelected: IconResource.profile),
   ];
 
   @override
