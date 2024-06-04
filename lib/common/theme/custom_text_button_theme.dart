@@ -8,8 +8,8 @@ abstract class CustomTextButtonTheme {
 
   static TextButtonThemeData lightButton() => TextButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(AppColor.buttonPrimary),
-          shape: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all<Color>(AppColor.primaryDefault),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.radius)),
           ),
         ),

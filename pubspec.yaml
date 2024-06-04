@@ -58,9 +58,7 @@ dependencies:
   formz: ^0.7.0
   flutter_inappwebview: ^6.0.0
   lottie: ^3.1.0
-  
   cupertino_icons: ^1.0.2
-
 
 dev_dependencies:
   flutter_test:
@@ -71,10 +69,8 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.10
   flutter_lints: ^2.0.0
-
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
+#  flutter_gen_runner: ^5.4.0
+  intl_utils: ^2.8.7
 
 # The following section is specific to Flutter packages.
 flutter:

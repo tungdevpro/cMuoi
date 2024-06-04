@@ -48,7 +48,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Widget _body() {
     return Scaffold(
-      backgroundColor: AppColor.primaryContainer,
+      backgroundColor: AppColor.primaryLight0,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,

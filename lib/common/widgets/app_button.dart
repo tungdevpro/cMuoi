@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   final String title;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final TextStyle? titleStyle;
   final double? height;
-  const AppButton({super.key, required this.title, required this.onTap, this.titleStyle, this.height = 48});
+  const AppButton({super.key,  this.onTap, required this.title, this.titleStyle, this.height = 60});
 
   @override
   Widget build(BuildContext context) {

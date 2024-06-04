@@ -19,7 +19,8 @@ class AppInitializer {
 
   Future<void> run() async {
     WidgetsFlutterBinding.ensureInitialized();
-    await Future.wait([_dependencies(), _configurations()]);
+    await _dependencies();
+    _configurations();
     runApp(
       MultiBlocProvider(
         providers: [
@@ -32,7 +33,6 @@ class AppInitializer {
   }
 
   Future<void> _dependencies() async {
-    // AppwriteModule.instance().init(AppConfig.appwriteId);
     await Future.wait([
       FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform),
       DataLayer.init(),

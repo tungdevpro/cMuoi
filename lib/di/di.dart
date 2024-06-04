@@ -10,4 +10,4 @@ final di = GetIt.instance..allowReassignment = true;
   preferRelativeImports: true,
   asExtension: true,
 )
-void configureDependencies() => di.initialPresentationLayer();
+Future<void> configureDependencies() async => di.initialPresentationLayer();
