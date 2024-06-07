@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../../generated/l10n.dart';
+import '../../import.dart';
 
 abstract class ConfigLocalization {
   const ConfigLocalization._();

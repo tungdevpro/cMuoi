@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../common/validates/email_validate_model.dart';
-import '../../../common/validates/password_validate_model.dart';
+import '../../../helper/validates/email_validate_model.dart';
+import '../../../helper/validates/password_validate_model.dart';
 import '../../../di/di.dart';
 import 'login_event.dart';
 import 'login_state.dart';

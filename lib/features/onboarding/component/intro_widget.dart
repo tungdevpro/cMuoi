@@ -1,8 +1,5 @@
-
-import 'package:flutter/material.dart';
-
 import '../../../common/common.dart';
-import '../../../generated/l10n.dart';
+import '../../../import.dart';
 
 class IntroWidget extends StatelessWidget {
   final String title;

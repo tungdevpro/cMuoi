@@ -1,10 +1,12 @@
-import 'package:core/core.dart';
+
+import 'package:core/common/duration_provider.dart';
+import 'package:express_cart/common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../common.dart';
+import '../constants/app_size.dart';
 
-class BaseTextField extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   final String? labelText;
   final String? hintText;
   final TextEditingController? controller;
@@ -12,24 +14,13 @@ class BaseTextField extends StatefulWidget {
   final String? errorText;
   final ValueChanged<String?>? onChanged;
   final TextStyle? hintStyle;
-  final dynamic prefixIcon;
-  const BaseTextField({
-    super.key,
-    this.labelText,
-    this.hintText,
-    this.controller,
-    this.obscureText = false,
-    this.errorText,
-    this.onChanged,
-    this.hintStyle,
-    this.prefixIcon,
-  });
+  const CustomTextField({super.key, this.labelText, this.hintText, this.controller, this.obscureText = false, this.errorText, this.onChanged, this.hintStyle});
 
   @override
-  State<BaseTextField> createState() => _BaseTextFieldState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _BaseTextFieldState extends State<BaseTextField> {
+class _CustomTextFieldState extends State<CustomTextField> {
   late FocusNode _focusNode;
   late ValueNotifier<bool> hasClearNotifier;
   late TextEditingController _controller;
@@ -48,10 +39,10 @@ class _BaseTextFieldState extends State<BaseTextField> {
   }
 
   @override
-  void didUpdateWidget(covariant BaseTextField oldWidget) {
-    if (oldWidget.controller != widget.controller)
+  void didUpdateWidget(covariant CustomTextField oldWidget) {
+    if (oldWidget.controller != widget.controller) {
       _controller = widget.controller ?? TextEditingController();
-
+    }
     super.didUpdateWidget(oldWidget);
   }
 
@@ -72,79 +63,108 @@ class _BaseTextFieldState extends State<BaseTextField> {
         GestureDetector(
           onTap: _onTap,
           child: Container(
-            height: 50,
+            height: 63,
             decoration: BoxDecoration(
-                // border: Border.all(width: 1, color: widget.errorText != null && widget.errorText != '' ? AppColor.red : AppColor.line),
-                borderRadius: BorderRadius.circular(40)),
-            padding: const EdgeInsets.symmetric(
-                vertical: AppSize.padding - 2, horizontal: AppSize.paddingLG),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (widget.prefixIcon != null) ...[
-                  widget.prefixIcon is String
-                      ? SvgPicture.asset(widget.prefixIcon)
-                      : widget.prefixIcon,
-                ],
-                ValueListenableBuilder<bool>(
-                  valueListenable: _obscureNotifier,
-                  builder: (context, obscure, child) => Expanded(
-                    child: TextFormField(
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 14),
-                      focusNode: _focusNode,
-                      controller: _controller,
-                      obscureText: obscure,
-                      obscuringCharacter: '●',
-                      onChanged: widget.onChanged,
-                      decoration: InputDecoration(
-                        isDense: true,
-                        contentPadding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        focusedErrorBorder: InputBorder.none,
-                        hintText: widget.hintText,
-                        // hintStyle: widget.hintStyle ?? const TextStyle(color: AppColor.text, fontSize: 14, fontWeight: FontWeight.w400),
-                      ),
-                    ),
-                  ),
-                ),
-                if (widget.obscureText)
-                  ValueListenableBuilder<bool>(
-                      valueListenable: hasClearNotifier,
-                      builder: (context, hasClear, child) {
-                        if (!hasClear) return const SizedBox.shrink();
-                        return Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(width: 4),
-                            InkWell(
-                              onTap: _onToggleVisibility,
-                              child: ValueListenableBuilder<bool>(
-                                valueListenable: _obscureNotifier,
-                                builder: (context, obscure, child) =>
-                                    AnimatedSwitcher(
-                                  duration: const ShortDuration(),
-                                  transitionBuilder: (Widget child,
-                                          Animation<double> animation) =>
-                                      FadeTransition(
-                                          opacity: animation, child: child),
-                                  child: SvgPicture.asset(
-                                      !obscure
-                                          ? IconResource.eyeUslash
-                                          : IconResource.eyeUslash,
-                                      key: ValueKey('icon_$obscure')),
-                                ),
+                color: Color(0x26EAEAEA),
+                border: Border.all(width: 1, color: widget.errorText != null && widget.errorText != '' ? AppColor.errorDefault : AppColor.secondaryLight300),
+                borderRadius: BorderRadius.circular(12)),
+            padding: const EdgeInsets.symmetric(vertical: AppSize.padding - 6, horizontal: AppSize.paddingLG),
+            child: ValueListenableBuilder<String?>(
+              valueListenable: _labelNotifier,
+              builder: (context, label, child) {
+                bool isOk = label != null && label != '';
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    if (isOk) Text(label, style: const TextStyle(fontSize: 14, color: AppColor.secondaryLight300)),
+                    // ValueListenableBuilder<String?>(
+                    //   valueListenable: _labelNotifier,
+                    //   builder: (context, label, child) {
+                    //     if (label != null && label != '') {
+                    //       return Text(label,
+                    //           style: const TextStyle(
+                    //             fontSize: AppSizings.tSm,
+                    //             color: AppColors.labelInputColor,
+                    //             height: 19.60 / AppSizings.tSm,
+                    //           ));
+                    //     }
+                    //     return const SizedBox.shrink();
+                    //   },
+                    // ),
+                    // if (widget.labelText != null && widget.labelText != '')
+                    // Text(widget.labelText!, style: const TextStyle(fontSize: 12, color: AppColors.labelInputColor)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ValueListenableBuilder<bool>(
+                          valueListenable: _obscureNotifier,
+                          builder: (context, obscure, child) => Expanded(
+                            child: TextFormField(
+                              style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
+                              focusNode: _focusNode,
+                              controller: _controller,
+                              obscureText: obscure,
+                              obscuringCharacter: '●',
+                              onChanged: widget.onChanged,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                contentPadding: EdgeInsets.fromLTRB(0, isOk ? 0 : 10, 5, 0),
+                                border: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                disabledBorder: InputBorder.none,
+                                focusedErrorBorder: InputBorder.none,
+                                hintText: widget.hintText,
+                                hintStyle: widget.hintStyle ??
+                                    const TextStyle(
+                                        color: AppColor.secondaryDefault, fontSize: 14, fontWeight: FontWeight.w400),
                               ),
-                            )
-                          ],
-                        );
-                      }),
-              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        ValueListenableBuilder<bool>(
+                          valueListenable: hasClearNotifier,
+                          builder: (context, hasClear, child) => InkWell(
+                            onTap: _onClearText,
+                            child: AnimatedSwitcher(
+                              duration: const ShortDuration(),
+                              transitionBuilder: (Widget child, Animation<double> animation) => ScaleTransition(scale: animation, child: child),
+                              child: !hasClear ? const SizedBox.shrink() : const Icon(Icons.clear, size: 16),
+                            ),
+                          ),
+                        ),
+                        if (widget.obscureText)
+                          ValueListenableBuilder<bool>(
+                              valueListenable: hasClearNotifier,
+                              builder: (context, hasClear, child) {
+                                if (!hasClear) return const SizedBox.shrink();
+                                return Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    const SizedBox(width: 4),
+                                    InkWell(
+                                      onTap: _onToggleVisibility,
+                                      child: ValueListenableBuilder<bool>(
+                                        valueListenable: _obscureNotifier,
+                                        builder: (context, obscure, child) => AnimatedSwitcher(
+                                          duration: const ShortDuration(),
+                                          transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
+                                          child: SvgPicture.asset(IconResource.eyeUslash),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                );
+                              }),
+                      ],
+                    ),
+                  ],
+                );
+              },
             ),
           ),
         ),
@@ -159,10 +179,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
               Expanded(
                 child: Text(
                   widget.errorText!,
-                  style: const TextStyle(
-                      // color: AppColor.red,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500),
+                  style: const TextStyle(color: AppColor.errorDefault, fontSize: 12, fontWeight: FontWeight.w500),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

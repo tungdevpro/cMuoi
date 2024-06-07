@@ -1,13 +1,9 @@
-import 'package:core/core.dart';
 import 'package:express_cart/common/constants/constants.dart';
 import 'package:express_cart/common/routes/routes.dart';
 import 'package:express_cart/features/onboarding/component/intro_widget.dart';
-import 'package:flutter/material.dart';
 
 import '../../common/common.dart';
-import '../../di/di.dart';
-import '../../generated/l10n.dart';
-import '../../shared/widgets/bottom_bar_area_widget.dart';
+import '../../import.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});

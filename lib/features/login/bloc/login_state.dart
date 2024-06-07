@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 
-import '../../../common/validates/email_validate_model.dart';
-import '../../../common/validates/password_validate_model.dart';
+import '../../../helper/validates/email_validate_model.dart';
+import '../../../helper/validates/password_validate_model.dart';
 
 enum LoginStatus { none, success, failure, validating }
 
