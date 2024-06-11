@@ -12,6 +12,11 @@ class ConfigRepositoryImpl extends BaseRepository implements ConfigRepository {
 
   @override
   Future<Result<bool>> getOnboarding() async {
-    return storageHandler(Future.value(_appSharedPreferences.getBool(LocalKeys.ob) ?? false), mapper: (entity) => entity);
+    return storageHandler(Future.value(_appSharedPreferences.getBool(LocalKeys.onboarding) ?? false), mapper: (entity) => entity);
+  }
+
+  @override
+  Future<void> hideOnboarding() async {
+    _appSharedPreferences.setBool(LocalKeys.onboarding, true);
   }
 }

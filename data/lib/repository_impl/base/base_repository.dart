@@ -12,6 +12,7 @@ typedef SaveResult<Data> = Future Function(Data? data);
 abstract class BaseRepository {
   final _logger = Logger();
 
+  // Handle call api
   Future<Result<Model>> apiHandler<Data, Model>(
     Future<ApiResponse<Data>> call, {
     required ResponseToModelMapper<Data, Model> mapper,
@@ -50,6 +51,7 @@ abstract class BaseRepository {
     }
   }
 
+  // Handle local storage
   Future<Result<Model>> storageHandler<Entity, Model>(Future<Entity?> call, {required EntityToModelMapper<Entity, Model> mapper}) async {
     try {
       final response = await call;

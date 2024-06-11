@@ -27,22 +27,15 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppBloc, AppState>(
-        buildWhen: (previous, current) => previous.isOnBoarding == current.isOnBoarding,
-        builder: (context, appState) {
-          if (!appState.isOnBoarding) {
-            return const OnboardingPage();
-          }
-          return BlocBuilder<AuthBloc, AuthState>(
-            builder: (context, state) {
-              return AnimatedSwitcher(
-                duration: const LongDuration(),
-                transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
-                child: state is AuthNotLoggedInState ? const LoginPage() : _body(),
-              );
-            },
-          );
-        });
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        return AnimatedSwitcher(
+          duration: const LongDuration(),
+          transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
+          child: state is AuthNotLoggedInState ? const LoginPage() : _body(),
+        );
+      },
+    );
   }
 
   Widget _body() {

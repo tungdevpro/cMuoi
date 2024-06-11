@@ -1,6 +1,8 @@
+import 'package:express_cart/common/app/bloc/app_bloc.dart';
 import 'package:express_cart/common/constants/constants.dart';
 import 'package:express_cart/common/routes/routes.dart';
 import 'package:express_cart/features/onboarding/component/intro_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../common/common.dart';
 import '../../import.dart';
@@ -76,7 +78,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     _pageController.animateToPage(i, duration: const Duration(milliseconds: 200), curve: Curves.easeInCubic);
   }
 
-  void _nextToHome() {
-    AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.login);
+  void _nextToHome() async {
+    context.read<AppBloc>().add(HideOnboardingEvent());
   }
 }

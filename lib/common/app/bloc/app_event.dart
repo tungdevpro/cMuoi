@@ -11,3 +11,8 @@ class CheckOnboardingEvent extends AppEvent {
   @override
   List<Object?> get props => [];
 }
+
+class HideOnboardingEvent extends AppEvent {
+  @override
+  List<Object?> get props => [];
+}

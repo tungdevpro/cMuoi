@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:express_cart/di/di.dart';
-import 'package:express_cart/express_cart.dart';
+import 'package:express_cart/bootstrap.dart';
 
 import 'common/app/bloc/app_bloc.dart';
 import 'common/auth/auth.dart';
