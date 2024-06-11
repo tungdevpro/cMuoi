@@ -10,13 +10,14 @@ import '../mapper/login_mapper.dart';
 
 @LazySingleton(as: LoginRepository)
 class LoginRepositoryImpl extends BaseRepository implements LoginRepository {
-  final ApiRemote _remote;
+  // final ApiRemote _remote;
+  final LoginService _service;
 
-  LoginRepositoryImpl(this._remote);
+  LoginRepositoryImpl(this._service);
 
   @override
   Future<Result<UserInfoEntity>> doLogin(LoginParam param) {
-    final response = _remote.loginService.doLogin(LoginMapper.toLoginDto(param));
+    final response = _service.doLogin(LoginMapper.toLoginDto(param));
     throw UnimplementedError();
   }
 }

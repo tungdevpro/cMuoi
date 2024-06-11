@@ -4,7 +4,6 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../common/constants.dart';
 
-@injectable
 class DioClient {
   late Dio _dio;
 

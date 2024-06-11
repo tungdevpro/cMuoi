@@ -1,3 +1,5 @@
+import 'package:gap/gap.dart';
+
 import '../../../common/common.dart';
 import '../../../import.dart';
 
@@ -18,9 +20,9 @@ class IntroWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(title, style: const TextStyle(fontSize: 40, color: AppColor.primaryLight0)),
-          const Gap(height: 20),
+          const Gap(20),
           Text(subTitle, style: const TextStyle(fontSize: 16, color: AppColor.primaryLight0)),
-          const Gap(height: 32),
+          const Gap(32),
           AppButton(
             title: isEnd ? S.current.get_started : S.current.next,
             onTap: onTap,
