@@ -9,14 +9,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'common/constants/config_localization.dart';
 import 'common/routes/router_observer.dart';
 
-class ExpressCart extends StatefulWidget {
-  const ExpressCart({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
-  State<ExpressCart> createState() => _ExpressCartState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class _ExpressCartState extends State<ExpressCart> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AppBloc, AppState>(

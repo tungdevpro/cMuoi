@@ -27,7 +27,7 @@ class AppInitializer {
           BlocProvider<AuthBloc>(create: (context) => AuthBloc.to),
           BlocProvider<AppBloc>(create: (context) => AppBloc.to),
         ],
-        child: const ExpressCart(),
+        child: const MyApp(),
       ),
     );
   }
