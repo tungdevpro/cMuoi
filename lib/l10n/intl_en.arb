@@ -9,6 +9,8 @@
   "onboarding_sub_3": "Get ready to try the newest coffee variant with your friends",
   "next": "Next",
   "get_started": "Get Started",
-  "email": "Email"
-
+  "email": "Email",
+  "password": "Password",
+  "create_account": "Create Account",
+  "sign_in": "Sign In"
 }

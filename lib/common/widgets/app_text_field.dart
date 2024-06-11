@@ -1,11 +1,11 @@
-
-
 import 'package:express_cart/common/common.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class AppTextField extends StatefulWidget {
   final dynamic label;
-  const AppTextField({super.key, required this.label});
+  final String? hintText;
+  const AppTextField({super.key, required this.label, this.hintText});
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -17,8 +17,31 @@ class _AppTextFieldState extends State<AppTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        widget.label is Widget ? widget.label : Text(widget.label, style: AppTypography.mediumType14),
+        widget.label is Widget
+            ? widget.label
+            : Text(
+                widget.label,
+                style: AppTypography.mediumType14,
+              ),
+        const Gap(12),
+        TextFormField(
+          decoration: InputDecoration(
+            border: _border,
+            errorBorder: _border,
+            enabledBorder: _border,
+            focusedBorder: _border,
+            disabledBorder: _border,
+            focusedErrorBorder: _border,
+            hintText: widget.hintText,
+          ),
+        )
       ],
     );
   }
+
+  OutlineInputBorder get _border => OutlineInputBorder(
+      borderSide: const BorderSide(
+        color: AppColor.secondaryLight100,
+      ),
+      borderRadius: BorderRadius.circular(AppSize.radius));
 }
