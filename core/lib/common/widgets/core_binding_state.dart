@@ -5,8 +5,7 @@ import '../bloc/base_bloc.dart';
 import '../bloc/base_event.dart';
 import '../bloc/base_state.dart';
 
-abstract class CoreBindingState<P extends StatefulWidget,
-    T extends BaseBloc<BaseEvent, BaseState>> extends State<P> {
+abstract class CoreBindingState<P extends StatefulWidget, T extends BaseBloc<BaseEvent, BaseState>> extends State<P> {
   T? _bloc;
 
   T get bloc => _bloc!;
@@ -30,4 +29,11 @@ abstract class CoreBindingState<P extends StatefulWidget,
     _bloc?.close();
     super.dispose();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider.value(value: bloc, child: buildPage(context));
+  }
+
+  Widget buildPage(BuildContext context);
 }

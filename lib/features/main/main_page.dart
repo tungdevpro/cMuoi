@@ -1,5 +1,6 @@
 import 'package:core/common/common.dart';
 import 'package:express_cart/features/main/bloc/main_bloc.dart';
+import 'package:express_cart/import.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -16,7 +17,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
-
   @override
   MainBloc get initBloc => di<MainBloc>();
 
@@ -45,8 +45,8 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget buildPage(BuildContext context) {
+    return CommonScaffold(
       body: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),

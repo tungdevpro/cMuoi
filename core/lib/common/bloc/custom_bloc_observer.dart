@@ -12,7 +12,7 @@ class CustomBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-    if (kDebugMode) log('[BLOC_CREATE]: $bloc (${DateTime.now().millisecondsSinceEpoch})');
+    if (kDebugMode) log('[BLOC_CREATE]: $bloc (${DateTime.now().hour}:${DateTime.now().minute})');
   }
 
   @override
