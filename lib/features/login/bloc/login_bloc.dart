@@ -31,7 +31,13 @@ class LoginBloc extends BaseBloc<LoginEvent, LoginState> {
     emit(state.copyWith(status: LoginStatus.validating, password: pwdModel));
   }
 
-  void _onLoginSubmittedEvent(LoginSubmittedEvent event, Emitter<LoginState> emit) async {}
+  Future<void> _onLoginSubmittedEvent(LoginSubmittedEvent event, Emitter<LoginState> emit) async {
+    return runAction(
+      action: () async {
+        await Future.delayed(const Duration(seconds: 3));
+      },
+    );
+  }
 
   void _onTogglePasswordEvent(LoginTogglePasswordEvent event, Emitter<LoginState> emit) {}
 

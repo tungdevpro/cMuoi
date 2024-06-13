@@ -2,6 +2,7 @@ import 'package:express_cart/common/theme/custom_text_button_theme.dart';
 import 'package:express_cart/common/widgets/app_text_field.dart';
 import 'package:express_cart/common/widgets/logo_text.dart';
 import 'package:express_cart/features/login/bloc/login_bloc.dart';
+import 'package:express_cart/features/login/bloc/login_event.dart';
 import 'package:express_cart/features/widgets/list_social_auth_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:express_cart/import.dart';
@@ -43,7 +44,10 @@ class _LoginPageState extends CoreBindingState<LoginPage, LoginBloc> {
               const Gap(78),
               AppButton.outline(title: S.current.create_account),
               const Gap(20),
-              AppButton(title: S.current.sign_in),
+              AppButton(
+                onTap: () => bloc.add(LoginSubmittedEvent(email: '', password: '')),
+                title: S.current.sign_in,
+              ),
               const Gap(40),
               _buildVia(),
               const Gap(40),
