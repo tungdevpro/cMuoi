@@ -179,6 +179,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Create New Account`
+  String get create_new_account {
+    return Intl.message(
+      'Create New Account',
+      name: 'create_new_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input Your Email`
+  String get input_your_email {
+    return Intl.message(
+      'Input Your Email',
+      name: 'input_your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input Account`
+  String get input_account {
+    return Intl.message(
+      'Input Account',
+      name: 'input_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get first_name {
+    return Intl.message(
+      'First Name',
+      name: 'first_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get last_name {
+    return Intl.message(
+      'Last Name',
+      name: 'last_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Email`
+  String get your_email {
+    return Intl.message(
+      'Your Email',
+      name: 'your_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input Your Account`
+  String get input_your_account {
+    return Intl.message(
+      'Input Your Account',
+      name: 'input_your_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input Your Password`
+  String get input_your_password {
+    return Intl.message(
+      'Input Your Password',
+      name: 'input_your_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your password must include at least one symbol and be 8 or more characters long`
+  String get password_note {
+    return Intl.message(
+      'Your password must include at least one symbol and be 8 or more characters long',
+      name: 'password_note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I would like to receive marketing and policy information from coffee bean`
+  String get email_send_marketing {
+    return Intl.message(
+      'I would like to receive marketing and policy information from coffee bean',
+      name: 'email_send_marketing',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

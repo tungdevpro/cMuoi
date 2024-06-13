@@ -1,3 +1,4 @@
+import 'package:express_cart/common/routes/routes.dart';
 import 'package:express_cart/common/theme/custom_text_button_theme.dart';
 import 'package:express_cart/common/widgets/app_text_field.dart';
 import 'package:express_cart/common/widgets/logo_text.dart';
@@ -40,7 +41,12 @@ class _LoginPageState extends CoreBindingState<LoginPage, LoginBloc> {
               label: S.current.password,
             ),
             const Gap(78),
-            AppButton.outline(title: S.current.create_account),
+            AppButton.outline(
+              title: S.current.create_account,
+              onTap: () => AppNavigator.shared.pushNamed(
+                RoutePath.signUp,
+              ),
+            ),
             const Gap(20),
             AppButton(
               onTap: () => bloc.add(LoginSubmittedEvent(email: '', password: '')),

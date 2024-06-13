@@ -24,8 +24,21 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
+        "create_new_account":
+            MessageLookupByLibrary.simpleMessage("Create New Account"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_send_marketing": MessageLookupByLibrary.simpleMessage(
+            "I would like to receive marketing and policy information from coffee bean"),
+        "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "input_account": MessageLookupByLibrary.simpleMessage("Input Account"),
+        "input_your_account":
+            MessageLookupByLibrary.simpleMessage("Input Your Account"),
+        "input_your_email":
+            MessageLookupByLibrary.simpleMessage("Input Your Email"),
+        "input_your_password":
+            MessageLookupByLibrary.simpleMessage("Input Your Password"),
+        "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboarding_1": MessageLookupByLibrary.simpleMessage(
             "Let\'s explore\nKinds of coffee"),
@@ -40,8 +53,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboarding_sub_3": MessageLookupByLibrary.simpleMessage(
             "Get ready to try the newest coffee variant with your friends"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_note": MessageLookupByLibrary.simpleMessage(
+            "Your password must include at least one symbol and be 8 or more characters long"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "via_social_media":
-            MessageLookupByLibrary.simpleMessage("Via social media")
+            MessageLookupByLibrary.simpleMessage("Via social media"),
+        "your_email": MessageLookupByLibrary.simpleMessage("Your Email")
       };
 }

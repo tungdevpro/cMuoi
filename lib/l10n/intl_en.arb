@@ -12,5 +12,15 @@
   "email": "Email",
   "password": "Password",
   "create_account": "Create Account",
-  "sign_in": "Sign In"
+  "sign_in": "Sign In",
+  "create_new_account": "Create New Account",
+  "input_your_email": "Input Your Email",
+  "input_account": "Input Account",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "your_email": "Your Email",
+  "input_your_account": "Input Your Account",
+  "input_your_password": "Input Your Password",
+  "password_note": "Your password must include at least one symbol and be 8 or more characters long",
+  "email_send_marketing": "I would like to receive marketing and policy information from coffee bean"
 }
