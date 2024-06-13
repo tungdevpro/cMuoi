@@ -5,7 +5,8 @@ import 'package:gap/gap.dart';
 class AppTextField extends StatefulWidget {
   final dynamic label;
   final String? hintText;
-  const AppTextField({super.key, required this.label, this.hintText});
+  final ValueChanged<String>? onChanged;
+  const AppTextField({super.key, required this.label, this.hintText, this.onChanged});
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();

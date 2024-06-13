@@ -4,3 +4,4 @@ export 'package:express_cart/l10n/generated/l10n.dart';
 export 'package:express_cart/di/di.dart';
 export 'common/app/app.dart';
 export 'common/common.dart';
+export 'package:gap/gap.dart';

@@ -279,6 +279,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Input Your Name`
+  String get input_your_name {
+    return Intl.message(
+      'Input Your Name',
+      name: 'input_your_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Input OTP Verfication`
+  String get input_otp_verfication {
+    return Intl.message(
+      'Input OTP Verfication',
+      name: 'input_otp_verfication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification`
+  String get verification {
+    return Intl.message(
+      'Verification',
+      name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

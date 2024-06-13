@@ -1,4 +1,3 @@
-import 'package:express_cart/common/constants/app_color.dart';
 import 'package:express_cart/common/theme/custom_text_theme.dart';
 import 'package:flutter/material.dart';
 

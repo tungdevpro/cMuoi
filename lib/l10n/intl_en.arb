@@ -22,5 +22,9 @@
   "input_your_account": "Input Your Account",
   "input_your_password": "Input Your Password",
   "password_note": "Your password must include at least one symbol and be 8 or more characters long",
-  "email_send_marketing": "I would like to receive marketing and policy information from coffee bean"
+  "email_send_marketing": "I would like to receive marketing and policy information from coffee bean",
+  "input_your_name": "Input Your Name",
+  "input_otp_verfication": "Input OTP Verfication",
+  "verification": "Verification",
+  "submit": "Submit"
 }

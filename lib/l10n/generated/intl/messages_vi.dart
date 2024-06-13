@@ -32,10 +32,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "input_account": MessageLookupByLibrary.simpleMessage("Input Account"),
+        "input_otp_verfication":
+            MessageLookupByLibrary.simpleMessage("Input OTP Verfication"),
         "input_your_account":
             MessageLookupByLibrary.simpleMessage("Input Your Account"),
         "input_your_email":
             MessageLookupByLibrary.simpleMessage("Input Your Email"),
+        "input_your_name":
+            MessageLookupByLibrary.simpleMessage("Input Your Name"),
         "input_your_password":
             MessageLookupByLibrary.simpleMessage("Input Your Password"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
@@ -56,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_note": MessageLookupByLibrary.simpleMessage(
             "Your password must include at least one symbol and be 8 or more characters long"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "via_social_media":
             MessageLookupByLibrary.simpleMessage("Via social media"),
         "your_email": MessageLookupByLibrary.simpleMessage("Your Email")
