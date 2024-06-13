@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
@@ -13,8 +14,7 @@ abstract class JsonCodec<T> {
   T fromJson(Map<String, dynamic> json);
 }
 
-abstract class BaseBloc<T extends BaseEvent, S extends BaseState>
-    extends Bloc<T, S> with WidgetsBindingObserver, RouteAware {
+abstract class BaseBloc<T extends BaseEvent, S extends BaseState> extends Bloc<T, S> with WidgetsBindingObserver, RouteAware {
   late bool _isMounted;
   late BuildContext _context;
   BuildContext get context => _context;
@@ -95,8 +95,24 @@ abstract class BaseBloc<T extends BaseEvent, S extends BaseState>
   }
 
   @protected
-  void showLoading() => EasyLoading.show();
+  void showLoading() => EasyLoading.show(dismissOnTap: true);
 
   @protected
   void hideLoading() => EasyLoading.dismiss();
+
+  Future<void> runAction({
+    required AsyncCallback? action,
+    bool handleLoading = true,
+    bool handleError = true,
+    ValueChanged<Object>? doOnError,
+  }) async {
+    try {
+      if (handleLoading) showLoading();
+      await action?.call();
+      hideLoading();
+    } catch (e) {
+      hideLoading();
+      if (handleError) doOnError?.call(e);
+    }
+  }
 }

@@ -34,14 +34,12 @@ class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<voi
     final res = await _checkOnboardingIsDisplayedUseCase.invoke(null);
     res.when(
       error: (type, error, code) {},
-      success: (data) {
-        print('object..... $data');
-        emit(AppState(isOnBoarding: data ?? false));
-      },
+      success: (data) => emit(AppState(isOnBoarding: data ?? false)),
     );
   }
 
   Future<void> _onHideOnboardingEvent(HideOnboardingEvent event, Emitter<AppState> emit) async {
     await _hideOnboardingIsDisplayedUsecase.invoke(null);
+    emit(state.copyWith(isOnBoarding: true));
   }
 }
