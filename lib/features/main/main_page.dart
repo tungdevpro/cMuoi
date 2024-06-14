@@ -31,10 +31,10 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
   ];
 
   final navs = [
-    NavItem(icon: IconResource.home, name: '', iconSelected: IconResource.home),
-    NavItem(icon: IconResource.coffee, name: '', iconSelected: IconResource.coffee),
-    NavItem(icon: IconResource.tag, name: '', iconSelected: IconResource.tag),
-    NavItem(icon: IconResource.profile, name: '', iconSelected: IconResource.profile),
+    NavItem(icon: IconResource.homeUbottomUbar, name: '', iconSelected: IconResource.homeUselectedUbottomUbar),
+    NavItem(icon: IconResource.coffeeUbottomUbar, name: '', iconSelected: IconResource.coffeeUselectedUbottomUbar),
+    NavItem(icon: IconResource.tagUbottomUbar, name: '', iconSelected: IconResource.tagUselectedUbottomUbar),
+    NavItem(icon: IconResource.profileUbottomUbar, name: '', iconSelected: IconResource.profleUselectedUbottomUbar),
   ];
 
   @override
