@@ -16,7 +16,7 @@ final di = GetIt.instance..allowReassignment = true;
 )
 Future<void> configureDependencies() async {
   await _registerDatabase(di);
-  await _registerNetwork(di);
+  await _registerDio(di);
   di.initializeDataLayer();
 }
 
@@ -26,7 +26,7 @@ Future<void> _registerDatabase(GetIt locator) async {
   di.registerSingleton<AppSharedPreferences>(AppSharedPreferences(prefs: prefs));
 }
 
-Future<void> _registerNetwork(GetIt locator) async {
+Future<void> _registerDio(GetIt locator) async {
   final client = DioClient();
   await client.init();
   final dio = client.build();
