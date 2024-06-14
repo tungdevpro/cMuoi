@@ -1,5 +1,5 @@
 import 'package:express_cart/common/theme/custom_text_theme.dart';
-import 'package:flutter/material.dart';
+import 'package:express_cart/import.dart';
 
 import 'custom_text_button_theme.dart';
 
@@ -10,7 +10,7 @@ abstract class AppTheme {
 
   static ThemeData get light => ThemeData(
         fontFamily: _fontFamily,
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: AppColor.backgroundContent,
         useMaterial3: true,
         appBarTheme: const AppBarTheme(elevation: .0, backgroundColor: Colors.white),
         textButtonTheme: CustomTextButtonTheme.lightButton(),
