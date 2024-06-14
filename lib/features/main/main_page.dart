@@ -22,7 +22,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
 
   late ValueNotifier<int> currentIndex;
   late PageController pageController;
-
+  final double _tabIndicatorWidth = 60;
   var items = <Widget>[
     const HomePage(),
     Container(),
@@ -46,6 +46,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
 
   @override
   Widget buildPage(BuildContext context) {
+    final tabSegmentWidth = MediaQuery.of(context).size.width / navs.length;
     return CommonScaffold(
       body: PageView(
         controller: pageController,
@@ -54,23 +55,39 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
       ),
       bottomNavigationBar: ValueListenableBuilder<int>(
         valueListenable: currentIndex,
-        builder: (context, index, child) => BottomNavigationBar(
-          onTap: _onChangeIndexNavigation,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          enableFeedback: true,
-          backgroundColor: Colors.white,
-          elevation: .0,
-          currentIndex: index,
-          type: BottomNavigationBarType.fixed,
-          fixedColor: Colors.blue,
-          items: navs
-              .asMap()
-              .entries
-              .map<BottomNavigationBarItem>(
-                  (e) => BottomNavigationBarItem(icon: SvgPicture.asset(index == e.key ? e.value.iconSelected : e.value.icon), label: ''))
-              .toList(),
-        ),
+        builder: (context, index, child) {
+          final tabIndicatorOffset = tabSegmentWidth * index + (tabSegmentWidth - _tabIndicatorWidth) / 2;
+          return Stack(
+            children: [
+              BottomNavigationBar(
+                onTap: _onChangeIndexNavigation,
+                showSelectedLabels: false,
+                showUnselectedLabels: false,
+                enableFeedback: true,
+                backgroundColor: Colors.white,
+                elevation: .0,
+                currentIndex: index,
+                type: BottomNavigationBarType.fixed,
+                fixedColor: Colors.blue,
+                items: navs
+                    .asMap()
+                    .entries
+                    .map<BottomNavigationBarItem>(
+                        (e) => BottomNavigationBarItem(icon: SvgPicture.asset(index == e.key ? e.value.iconSelected : e.value.icon), label: ''))
+                    .toList(),
+              ),
+              AnimatedPositioned(
+                left: tabIndicatorOffset,
+                width: _tabIndicatorWidth,
+                duration: const Duration(milliseconds: 300),
+                child: Container(
+                  height: 2,
+                  color: AppColor.primaryDefault,
+                ),
+              )
+            ],
+          );
+        },
       ),
     );
   }

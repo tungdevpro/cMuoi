@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:express_cart/common/app/bloc/app_bloc.dart';
 import 'package:express_cart/common/app/bloc/app_state.dart';
 import 'package:express_cart/common/routes/routes.dart';
+import 'package:express_cart/features/main/main_page.dart';
 import 'package:express_cart/features/onboarding/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
