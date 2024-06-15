@@ -1,12 +1,9 @@
-import 'package:core/common/common.dart';
 import 'package:express_cart/features/main/bloc/main_bloc.dart';
 import 'package:express_cart/import.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../common/constants/constants.dart';
-import '../../di/di.dart';
 import '../../model/nav_item_model.dart';
+import '../account/account_page.dart';
 import '../home/home_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -24,10 +21,10 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
   late PageController pageController;
   final double _tabIndicatorWidth = 60;
   var items = <Widget>[
-    const HomePage(),
+    const KeepAliveWidget(child: HomePage()),
     Container(),
     Container(),
-    Container(),
+    const KeepAliveWidget(child: AccountPage()),
   ];
 
   final navs = [
