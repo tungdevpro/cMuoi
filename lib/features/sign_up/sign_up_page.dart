@@ -2,7 +2,7 @@ import 'package:express_cart/features/sign_up/component/email_sign_up.dart';
 import 'package:express_cart/features/sign_up/component/name_sign_up.dart';
 import 'package:express_cart/features/sign_up/component/otp_sign_up.dart';
 import 'package:express_cart/features/sign_up/component/password_sign_up.dart';
-import 'package:express_cart/shared/widgets/bottom_bar_area_widget.dart';
+import 'package:express_cart/common/widgets/bottom_bar_area_widget.dart';
 import 'package:express_cart/features/sign_up/bloc/sign_up_bloc.dart';
 
 import '../../import.dart';

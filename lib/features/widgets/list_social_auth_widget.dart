@@ -1,15 +1,16 @@
 import 'package:express_cart/import.dart';
 import 'package:express_cart/model/social_media_model.dart';
-import 'package:flutter/material.dart';
-
-import '../../shared/social_media_enum.dart';
 
 class ListSocialAuthWidget extends StatelessWidget {
   const ListSocialAuthWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final items = SocialMedia.values.toList();
+    final items = [
+      SocialMediaModel(image: Assets.images.facebook.image(width: 32)),
+      SocialMediaModel(image: Assets.images.google.image(width: 32)),
+      SocialMediaModel(image: Assets.images.twitter.image(width: 32)),
+    ];
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +24,7 @@ class ListSocialAuthWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildItem(SocialMedia item, bool isLast) {
+  Widget _buildItem(SocialMediaModel item, bool isLast) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
       decoration: BoxDecoration(
@@ -31,7 +32,7 @@ class ListSocialAuthWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppSize.radius),
       ),
       margin: isLast ? null : const EdgeInsets.only(right: 20),
-      child: Image.asset(item.image, width: 32, height: 32),
+      child: item.image,
     );
   }
 }

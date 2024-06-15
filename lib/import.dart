@@ -5,4 +5,5 @@ export 'package:express_cart/di/di.dart';
 export 'common/app/app.dart';
 export 'common/common.dart';
 export 'package:gap/gap.dart';
+export 'package:express_cart/resource/generated/assets.gen.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';

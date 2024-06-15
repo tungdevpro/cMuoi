@@ -34,7 +34,7 @@ class AppInitializer {
 
   Future<void> _dependencies() async {
     await Future.wait([
-      FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform),
+      // FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform),
       DataLayer.init(),
       DomainLayer.init(),
     ]);

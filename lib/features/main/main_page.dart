@@ -1,12 +1,10 @@
-import 'package:core/common/common.dart';
 import 'package:express_cart/features/main/bloc/main_bloc.dart';
 import 'package:express_cart/import.dart';
-import 'package:flutter/material.dart';
+import 'package:express_cart/resource/generated/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../common/constants/constants.dart';
-import '../../di/di.dart';
 import '../../model/nav_item_model.dart';
+import '../account/account_page.dart';
 import '../home/home_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -24,17 +22,17 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
   late PageController pageController;
   final double _tabIndicatorWidth = 60;
   var items = <Widget>[
-    const HomePage(),
+    const KeepAliveWidget(child: HomePage()),
     Container(),
     Container(),
-    Container(),
+    const KeepAliveWidget(child: AccountPage()),
   ];
 
   final navs = [
-    NavItem(icon: IconResource.homeUbottomUbar, name: '', iconSelected: IconResource.homeUselectedUbottomUbar),
-    NavItem(icon: IconResource.coffeeUbottomUbar, name: '', iconSelected: IconResource.coffeeUselectedUbottomUbar),
-    NavItem(icon: IconResource.tagUbottomUbar, name: '', iconSelected: IconResource.tagUselectedUbottomUbar),
-    NavItem(icon: IconResource.profileUbottomUbar, name: '', iconSelected: IconResource.profleUselectedUbottomUbar),
+    NavItem(icon: Assets.icons.homeBottomBar.svg(), name: '', iconSelected: Assets.icons.homeSelectedBottomBar.svg()),
+    NavItem(icon: Assets.icons.coffeeBottomBar.svg(), name: '', iconSelected: Assets.icons.coffeeSelectedBottomBar.svg()),
+    NavItem(icon: Assets.icons.tagBottomBar.svg(), name: '', iconSelected: Assets.icons.tagSelectedBottomBar.svg()),
+    NavItem(icon: Assets.icons.profileBottomBar.svg(), name: '', iconSelected: Assets.icons.profleSelectedBottomBar.svg()),
   ];
 
   @override
@@ -73,7 +71,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
                     .asMap()
                     .entries
                     .map<BottomNavigationBarItem>(
-                        (e) => BottomNavigationBarItem(icon: SvgPicture.asset(index == e.key ? e.value.iconSelected : e.value.icon), label: ''))
+                        (e) => BottomNavigationBarItem(icon: index == e.key ? e.value.iconSelected : e.value.icon, label: ''))
                     .toList(),
               ),
               AnimatedPositioned(

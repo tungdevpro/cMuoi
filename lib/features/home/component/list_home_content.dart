@@ -26,11 +26,11 @@ class ListHomeContent extends StatelessWidget {
                       height: 210,
                       decoration: const BoxDecoration(color: AppColor.primaryDefault),
                     ),
-                    SafeArea(
-                        child: Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(onPressed: () {}, icon: SvgPicture.asset(IconResource.notificationUbing)),
-                    ))
+                    // SafeArea(
+                    //     child: Align(
+                    //   alignment: Alignment.topRight,
+                    //   child: IconButton(onPressed: () {}, icon: SvgPicture.asset(IconResource.notificationUbing)),
+                    // ))
                   ],
                 ),
                 Align(

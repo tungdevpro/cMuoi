@@ -4,6 +4,7 @@ import 'package:express_cart/common/app/bloc/app_state.dart';
 import 'package:express_cart/common/routes/routes.dart';
 import 'package:express_cart/features/main/main_page.dart';
 import 'package:express_cart/features/onboarding/onboarding_page.dart';
+import 'package:express_cart/resource/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:express_cart/common/common.dart';
@@ -48,8 +49,8 @@ class _SplashPageState extends State<SplashPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(ImageResource.logo, width: 140),
-            Lottie.asset(LottieResource.loadingWhite, width: 100),
+            Assets.images.logo.image(),
+            Lottie.asset( Assets.animations.loadingWhite, width: 100),
           ],
         ),
       ),
