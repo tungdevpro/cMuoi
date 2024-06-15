@@ -53,6 +53,10 @@ class $AssetsIconsGen {
   SvgGenImage get homeSelectedBottomBar =>
       const SvgGenImage('assets/icons/home_selected_bottom_bar.svg');
 
+  /// File path: assets/icons/notification-bing.svg
+  SvgGenImage get notificationBing =>
+      const SvgGenImage('assets/icons/notification-bing.svg');
+
   /// File path: assets/icons/notification.png
   AssetGenImage get notification =>
       const AssetGenImage('assets/icons/notification.png');
@@ -89,6 +93,7 @@ class $AssetsIconsGen {
         eyeSlash,
         homeBottomBar,
         homeSelectedBottomBar,
+        notificationBing,
         notification,
         profile,
         profileBottomBar,

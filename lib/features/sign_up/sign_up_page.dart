@@ -37,34 +37,51 @@ class _SignUpPageState extends CoreBindingState<SignUpPage, SignUpBloc> {
 
   @override
   Widget buildPage(BuildContext context) {
-    return CommonScaffold(
-      appBar: HeaderFix(),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppSize.paddingXL),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Gap(40),
-              Text(S.current.create_new_account, style: AppTypography.semiBoldType24),
-              const Gap(8),
-              Expanded(
-                child: PageView(
-                  controller: _pageController,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: _pages,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) {
+        return;
+      },
+      child: CommonScaffold(
+        appBar: HeaderFix(
+          onLeadingPressed: () {
+            int idx = _pageController.page!.toInt();
+            if (idx < 0) idx = 0;
+            if (idx == 0) {
+              AppNavigator.shared.close();
+            } else {
+              // _pageController.
+              // _pageController.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.ease);
+            }
+          },
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: AppSize.paddingXL),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Gap(40),
+                Text(S.current.create_new_account, style: AppTypography.semiBoldType24),
+                const Gap(8),
+                Expanded(
+                  child: PageView(
+                    controller: _pageController,
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: _pages,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-      bottomNavigationBar: BottomBarAreaWidget(
-        child: ValueListenableBuilder<int>(
-          valueListenable: _valueNotifier,
-          builder: (context, index, child) => AppButton(
-            onTap: () => _didTapButton(index),
-            title: _getLabelButton(index),
+        bottomNavigationBar: BottomBarAreaWidget(
+          child: ValueListenableBuilder<int>(
+            valueListenable: _valueNotifier,
+            builder: (context, index, child) => AppButton(
+              onTap: () => _didTapButton(index),
+              title: _getLabelButton(index),
+            ),
           ),
         ),
       ),
