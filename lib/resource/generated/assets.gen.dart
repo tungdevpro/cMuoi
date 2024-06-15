@@ -31,6 +31,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/Arrow-left.svg');
 
+  /// File path: assets/icons/card.png
+  AssetGenImage get card => const AssetGenImage('assets/icons/card.png');
+
   /// File path: assets/icons/coffee_bottom_bar.svg
   SvgGenImage get coffeeBottomBar =>
       const SvgGenImage('assets/icons/coffee_bottom_bar.svg');
@@ -50,6 +53,13 @@ class $AssetsIconsGen {
   SvgGenImage get homeSelectedBottomBar =>
       const SvgGenImage('assets/icons/home_selected_bottom_bar.svg');
 
+  /// File path: assets/icons/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/icons/notification.png');
+
+  /// File path: assets/icons/profile.svg
+  SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
+
   /// File path: assets/icons/profile_bottom_bar.svg
   SvgGenImage get profileBottomBar =>
       const SvgGenImage('assets/icons/profile_bottom_bar.svg');
@@ -57,6 +67,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profle_selected_bottom_bar.svg
   SvgGenImage get profleSelectedBottomBar =>
       const SvgGenImage('assets/icons/profle_selected_bottom_bar.svg');
+
+  /// File path: assets/icons/security_safe.jpeg
+  AssetGenImage get securitySafe =>
+      const AssetGenImage('assets/icons/security_safe.jpeg');
 
   /// File path: assets/icons/tag_bottom_bar.svg
   SvgGenImage get tagBottomBar =>
@@ -67,15 +81,19 @@ class $AssetsIconsGen {
       const SvgGenImage('assets/icons/tag_selected_bottom_bar.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
         arrowLeft,
+        card,
         coffeeBottomBar,
         coffeeSelectedBottomBar,
         eyeSlash,
         homeBottomBar,
         homeSelectedBottomBar,
+        notification,
+        profile,
         profileBottomBar,
         profleSelectedBottomBar,
+        securitySafe,
         tagBottomBar,
         tagSelectedBottomBar
       ];
