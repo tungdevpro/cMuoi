@@ -9,7 +9,7 @@ class OtpSignUp extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          S.current.input_otp_verfication,
+          S.current.verification,
           style: AppTypography.regularType14.copyWith(color: AppColor.secondaryLight300),
         ),
         const Gap(40),

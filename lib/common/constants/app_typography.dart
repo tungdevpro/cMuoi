@@ -25,5 +25,6 @@ abstract class AppTypography {
         fontSize: 16,
         color: AppColor.secondaryDefault,
       );
+  static TextStyle get semiBoldType20 => const TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: AppColor.secondaryDefault);
   static TextStyle get semiBoldType24 => const TextStyle(fontWeight: FontWeight.w600, fontSize: 24, color: AppColor.secondaryDefault);
 }

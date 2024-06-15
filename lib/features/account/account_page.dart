@@ -1,9 +1,7 @@
-import 'package:express_cart/common/common.dart';
 import 'package:express_cart/features/account/bloc/account_bloc.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 import '../../import.dart';
+import 'component/item_account_widget.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -22,23 +20,36 @@ class _AccountPageState extends CoreBindingState<AccountPage, AccountBloc> {
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: AppSize.paddingXL),
-          children: const [
-            Gap(60),
-            Stack(
-              children: [
-                Center(
-                  child: CustomDashedBorder(
-                      padding: EdgeInsets.all(12),
-                      radius: Radius.circular(AppSize.radiusCircle),
-                      color: AppColor.primaryDefault,
-                      child: AvatarWidget('http', name: 'Tung', size: 85)),
-                ),
-
-              ],
-            )
+          children: [
+            _head(),
+            const ItemAccountWidget(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _head() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Gap(60),
+        const Stack(
+          children: [
+            CustomDashedBorder(
+                padding: EdgeInsets.all(12),
+                radius: Radius.circular(AppSize.radiusCircle),
+                color: AppColor.primaryDefault,
+                child: AvatarWidget('http', name: 'Tung', size: 85)),
+          ],
+        ),
+        const Gap(AppSize.padding),
+        Text(S.current.password, style: AppTypography.semiBoldType20),
+        const Gap(8),
+        Text(S.current.password, style: AppTypography.regularType14.copyWith(color: AppColor.secondaryLight300)),
+        const Gap(AppSize.paddingXXL),
+      ],
     );
   }
 }

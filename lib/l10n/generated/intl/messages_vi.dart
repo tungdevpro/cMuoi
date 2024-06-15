@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "bookmark": MessageLookupByLibrary.simpleMessage("Bookmark"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_new_account":
@@ -32,7 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "input_account": MessageLookupByLibrary.simpleMessage("Input Account"),
-        "input_otp_verfication":
+        "input_otp_verification":
             MessageLookupByLibrary.simpleMessage("Input OTP Verfication"),
         "input_your_account":
             MessageLookupByLibrary.simpleMessage("Input Your Account"),
@@ -43,7 +45,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "input_your_password":
             MessageLookupByLibrary.simpleMessage("Input Your Password"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "manage_and_protect_ur_payment": MessageLookupByLibrary.simpleMessage(
+            "Manage and protect your payment"),
+        "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
+            "Manage and protect your account"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "onboarding_1": MessageLookupByLibrary.simpleMessage(
             "Let\'s explore\nKinds of coffee"),
         "onboarding_2":
@@ -59,6 +66,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_note": MessageLookupByLibrary.simpleMessage(
             "Your password must include at least one symbol and be 8 or more characters long"),
+        "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+        "privacy_and_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy and policy"),
+        "set_bookmark": MessageLookupByLibrary.simpleMessage("Set bookmark"),
+        "set_ur_notifications":
+            MessageLookupByLibrary.simpleMessage("Set your notifications"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),

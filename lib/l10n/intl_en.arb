@@ -26,5 +26,7 @@
   "input_your_name": "Input Your Name",
   "input_otp_verfication": "Input OTP Verfication",
   "verification": "Verification",
-  "submit": "Submit"
+  "submit": "Submit",
+  "manage_and_protect_your_account": "Manage and protect your account",
+  "account": "Account"
 }

@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:express_cart/resource/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -93,7 +94,7 @@ class HeaderFix extends StatelessWidget implements PreferredSizeWidget {
               onPressed: onLeadingPressed ?? () => _onPop(context),
               icon: Container(
                 padding: const EdgeInsets.only(left: AppSize.padding),
-                child: SvgPicture.asset(IconResource.arrowUleft, width: 24),
+                child: Assets.icons.arrowLeft.svg(width: 24),
               ),
             ),
       centerTitle: centerTitle,
@@ -103,7 +104,7 @@ class HeaderFix extends StatelessWidget implements PreferredSizeWidget {
         child: titleType == AppBarTitle.text
             ? Text(text ?? '', style: titleTextStyle)
             : titleType == AppBarTitle.logo
-                ? SvgPicture.asset(IconResource.arrowUleft, width: 24)
+                ? Assets.icons.arrowLeft.svg(width: 24)
                 : null,
       ),
       actions: actions,

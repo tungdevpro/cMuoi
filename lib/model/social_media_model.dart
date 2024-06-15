@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+
 
 class SocialMediaModel with EquatableMixin {
   String? name;
   String? code;
-  String? image;
+  Image? image;
 
   SocialMediaModel({
     this.name,

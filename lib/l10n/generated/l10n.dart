@@ -291,10 +291,10 @@ class S {
   }
 
   /// `Input OTP Verfication`
-  String get input_otp_verfication {
+  String get input_otp_verification {
     return Intl.message(
       'Input OTP Verfication',
-      name: 'input_otp_verfication',
+      name: 'input_otp_verification',
       desc: '',
       args: [],
     );
@@ -315,6 +315,96 @@ class S {
     return Intl.message(
       'Submit',
       name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage and protect your account`
+  String get manage_and_protect_your_account {
+    return Intl.message(
+      'Manage and protect your account',
+      name: 'manage_and_protect_your_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set your notifications`
+  String get set_ur_notifications {
+    return Intl.message(
+      'Set your notifications',
+      name: 'set_ur_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage and protect your payment`
+  String get manage_and_protect_ur_payment {
+    return Intl.message(
+      'Manage and protect your payment',
+      name: 'manage_and_protect_ur_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookmark`
+  String get bookmark {
+    return Intl.message(
+      'Bookmark',
+      name: 'bookmark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set bookmark`
+  String get set_bookmark {
+    return Intl.message(
+      'Set bookmark',
+      name: 'set_bookmark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy and policy`
+  String get privacy_and_policy {
+    return Intl.message(
+      'Privacy and policy',
+      name: 'privacy_and_policy',
       desc: '',
       args: [],
     );

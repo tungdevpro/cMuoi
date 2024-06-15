@@ -72,8 +72,24 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 #  flutter_gen_runner: ^5.4.0
   intl_utils: ^2.8.7
-
+  flutter_gen_runner:
 # The following section is specific to Flutter packages.
+
+flutter_gen:
+  output: lib/resource/generated
+  line_lenght: 160
+  null_safety: true
+
+  integrations:
+    flutter_svg: true
+
+  assets:
+    enabled: true
+
+  fonts:
+    enabled: true
+
+
 flutter:
   generate: true
   # The following line ensures that the Material Icons font is
