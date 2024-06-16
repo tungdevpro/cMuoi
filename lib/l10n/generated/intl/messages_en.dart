@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_send_marketing": MessageLookupByLibrary.simpleMessage(
             "I would like to receive marketing and policy information from coffee bean"),
+        "favorite_place":
+            MessageLookupByLibrary.simpleMessage("Favorite Place"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
@@ -45,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your account"),
+        "my_reward": MessageLookupByLibrary.simpleMessage("My Reward"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboarding_1": MessageLookupByLibrary.simpleMessage(
             "Let\'s explore\nKinds of coffee"),
@@ -62,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_note": MessageLookupByLibrary.simpleMessage(
             "Your password must include at least one symbol and be 8 or more characters long"),
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
+        "popular_place": MessageLookupByLibrary.simpleMessage("Popular Place"),
         "promo": MessageLookupByLibrary.simpleMessage("Promo"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
@@ -71,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "via_social_media":
             MessageLookupByLibrary.simpleMessage("Via social media"),
+        "view_all": MessageLookupByLibrary.simpleMessage("View All"),
         "your_email": MessageLookupByLibrary.simpleMessage("Your Email")
       };
 }

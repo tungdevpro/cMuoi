@@ -459,6 +459,46 @@ class S {
       args: [],
     );
   }
+
+  /// `My Reward`
+  String get my_reward {
+    return Intl.message(
+      'My Reward',
+      name: 'my_reward',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get view_all {
+    return Intl.message(
+      'View All',
+      name: 'view_all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite Place`
+  String get favorite_place {
+    return Intl.message(
+      'Favorite Place',
+      name: 'favorite_place',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Place`
+  String get popular_place {
+    return Intl.message(
+      'Popular Place',
+      name: 'popular_place',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

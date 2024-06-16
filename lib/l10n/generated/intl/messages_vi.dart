@@ -31,6 +31,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_send_marketing": MessageLookupByLibrary.simpleMessage(
             "I would like to receive marketing and policy information from coffee bean"),
+        "favorite_place":
+            MessageLookupByLibrary.simpleMessage("Favorite Place"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
@@ -50,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Manage and protect your payment"),
         "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your account"),
+        "my_reward": MessageLookupByLibrary.simpleMessage("My Reward"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "onboarding_1": MessageLookupByLibrary.simpleMessage(
@@ -69,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your password must include at least one symbol and be 8 or more characters long"),
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+        "popular_place": MessageLookupByLibrary.simpleMessage("Popular Place"),
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("Privacy and policy"),
         "promo": MessageLookupByLibrary.simpleMessage("Promo"),
@@ -83,6 +87,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "via_social_media":
             MessageLookupByLibrary.simpleMessage("Via social media"),
+        "view_all": MessageLookupByLibrary.simpleMessage("View All"),
         "your_email": MessageLookupByLibrary.simpleMessage("Your Email")
       };
 }

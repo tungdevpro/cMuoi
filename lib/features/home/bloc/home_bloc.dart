@@ -11,8 +11,11 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
 
   @override
   void listEvent() {
+    on<GetYourCardBalanceEvent>(_onGetYourCardBalanceEvent);
     on<GetTheLatestPromotionInformationEvent>(_onGetTheLatestPromotionInformationEvent);
   }
 
   Future<void> _onGetTheLatestPromotionInformationEvent(GetTheLatestPromotionInformationEvent event, Emitter<HomeState> emit) async {}
+
+  Future<void> _onGetYourCardBalanceEvent(GetYourCardBalanceEvent event, Emitter<HomeState> emit) async {}
 }

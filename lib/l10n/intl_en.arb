@@ -33,5 +33,9 @@
   "history": "History",
   "promo": "Promo",
   "pay": "Pay",
-  "top_up": "Top Up"
+  "top_up": "Top Up",
+  "my_reward": "My Reward",
+  "view_all": "View All",
+  "favorite_place": "Favorite Place",
+  "popular_place": "Popular Place"
 }

@@ -1,4 +1,7 @@
 import 'package:express_cart/common/widgets/logo_text.dart';
+import 'package:express_cart/features/home/component/favorite_place_widget.dart';
+import 'package:express_cart/features/home/component/my_reward_widget.dart';
+import 'package:express_cart/features/home/component/popular_place_widget.dart';
 
 import '../../../import.dart';
 
@@ -123,10 +126,16 @@ class ListHomeContent extends StatelessWidget {
   }
 
   Padding _body() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppSize.padding),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSize.padding),
       child: Column(
-        children: List<Widget>.generate(20, (e) => ListTile(title: Text("data"))),
+        children: [
+          MyRewardWidget(),
+          Gap(24),
+          FavoritePlaceWidget(),
+          Gap(24),
+          PopularPlaceWidget(),
+        ],
       ),
     );
   }
