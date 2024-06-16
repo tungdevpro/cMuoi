@@ -11,9 +11,9 @@ class ItemAccountWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _item(icon: Assets.icons.profile.svg(width: 24), label: S.current.account, subtitle: S.current.manage_and_protect_your_account),
-        _item(icon: Assets.icons.profile.svg(width: 24), label: S.current.payment, subtitle: S.current.manage_and_protect_your_account),
-        _item(icon: Assets.icons.profile.svg(width: 24), label: S.current.notification, subtitle: S.current.set_ur_notifications),
-        _item(icon: Assets.icons.profile.svg(width: 24), label: S.current.bookmark, subtitle: S.current.set_bookmark),
+        _item(icon: Assets.icons.notification.svg(width: 24), label: S.current.payment, subtitle: S.current.manage_and_protect_your_account),
+        _item(icon: Assets.icons.payment.svg(width: 24), label: S.current.notification, subtitle: S.current.set_ur_notifications),
+        _item(icon: Assets.icons.bookmark.svg(width: 24), label: S.current.bookmark, subtitle: S.current.set_bookmark),
         _item(icon: Assets.icons.profile.svg(width: 24), label: S.current.privacy_and_policy, subtitle: S.current.privacy_and_policy),
       ],
     );
@@ -41,10 +41,7 @@ class ItemAccountWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(label, style: AppTypography.semiBoldType18),
-                Text(subtitle)
-              ],
+              children: [Text(label, style: AppTypography.semiBoldType18), Text(subtitle)],
             )
           ],
         ),

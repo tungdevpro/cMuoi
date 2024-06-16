@@ -409,6 +409,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Your card balance`
+  String get ur_card_balance {
+    return Intl.message(
+      'Your card balance',
+      name: 'ur_card_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message(
+      'History',
+      name: 'history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promo`
+  String get promo {
+    return Intl.message(
+      'Promo',
+      name: 'promo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message(
+      'Pay',
+      name: 'pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Up`
+  String get top_up {
+    return Intl.message(
+      'Top Up',
+      name: 'top_up',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

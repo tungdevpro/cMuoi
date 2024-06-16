@@ -31,8 +31,8 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/Arrow-left.svg');
 
-  /// File path: assets/icons/card.png
-  AssetGenImage get card => const AssetGenImage('assets/icons/card.png');
+  /// File path: assets/icons/bookmark.svg
+  SvgGenImage get bookmark => const SvgGenImage('assets/icons/bookmark.svg');
 
   /// File path: assets/icons/coffee_bottom_bar.svg
   SvgGenImage get coffeeBottomBar =>
@@ -57,9 +57,16 @@ class $AssetsIconsGen {
   SvgGenImage get notificationBing =>
       const SvgGenImage('assets/icons/notification-bing.svg');
 
-  /// File path: assets/icons/notification.png
-  AssetGenImage get notification =>
-      const AssetGenImage('assets/icons/notification.png');
+  /// File path: assets/icons/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icons/notification.svg');
+
+  /// File path: assets/icons/notification_bold.svg
+  SvgGenImage get notificationBold =>
+      const SvgGenImage('assets/icons/notification_bold.svg');
+
+  /// File path: assets/icons/payment.svg
+  SvgGenImage get payment => const SvgGenImage('assets/icons/payment.svg');
 
   /// File path: assets/icons/profile.svg
   SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
@@ -72,9 +79,9 @@ class $AssetsIconsGen {
   SvgGenImage get profleSelectedBottomBar =>
       const SvgGenImage('assets/icons/profle_selected_bottom_bar.svg');
 
-  /// File path: assets/icons/security_safe.jpeg
-  AssetGenImage get securitySafe =>
-      const AssetGenImage('assets/icons/security_safe.jpeg');
+  /// File path: assets/icons/security-safe.svg
+  SvgGenImage get securitySafe =>
+      const SvgGenImage('assets/icons/security-safe.svg');
 
   /// File path: assets/icons/tag_bottom_bar.svg
   SvgGenImage get tagBottomBar =>
@@ -84,10 +91,26 @@ class $AssetsIconsGen {
   SvgGenImage get tagSelectedBottomBar =>
       const SvgGenImage('assets/icons/tag_selected_bottom_bar.svg');
 
+  /// File path: assets/icons/twotone_clock.svg
+  SvgGenImage get twotoneClock =>
+      const SvgGenImage('assets/icons/twotone_clock.svg');
+
+  /// File path: assets/icons/twotone_discount-shape.svg
+  SvgGenImage get twotoneDiscountShape =>
+      const SvgGenImage('assets/icons/twotone_discount-shape.svg');
+
+  /// File path: assets/icons/twotone_empty-wallet-tick.svg
+  SvgGenImage get twotoneEmptyWalletTick =>
+      const SvgGenImage('assets/icons/twotone_empty-wallet-tick.svg');
+
+  /// File path: assets/icons/twotone_wallet-add.svg
+  SvgGenImage get twotoneWalletAdd =>
+      const SvgGenImage('assets/icons/twotone_wallet-add.svg');
+
   /// List of all assets
-  List<dynamic> get values => [
+  List<SvgGenImage> get values => [
         arrowLeft,
-        card,
+        bookmark,
         coffeeBottomBar,
         coffeeSelectedBottomBar,
         eyeSlash,
@@ -95,12 +118,18 @@ class $AssetsIconsGen {
         homeSelectedBottomBar,
         notificationBing,
         notification,
+        notificationBold,
+        payment,
         profile,
         profileBottomBar,
         profleSelectedBottomBar,
         securitySafe,
         tagBottomBar,
-        tagSelectedBottomBar
+        tagSelectedBottomBar,
+        twotoneClock,
+        twotoneDiscountShape,
+        twotoneEmptyWalletTick,
+        twotoneWalletAdd
       ];
 }
 

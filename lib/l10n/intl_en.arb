@@ -28,5 +28,10 @@
   "verification": "Verification",
   "submit": "Submit",
   "manage_and_protect_your_account": "Manage and protect your account",
-  "account": "Account"
+  "account": "Account",
+  "ur_card_balance": "Your card balance",
+  "history": "History",
+  "promo": "Promo",
+  "pay": "Pay",
+  "top_up": "Top Up"
 }

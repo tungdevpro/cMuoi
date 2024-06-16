@@ -35,5 +35,10 @@
   "manage_and_protect_ur_payment": "Manage and protect your payment",
   "bookmark": "Bookmark",
   "set_bookmark": "Set bookmark",
-  "privacy_and_policy": "Privacy and policy"
+  "privacy_and_policy": "Privacy and policy",
+  "ur_card_balance": "Your card balance",
+  "history": "History",
+  "promo": "Promo",
+  "pay": "Pay",
+  "top_up": "Top Up"
 }

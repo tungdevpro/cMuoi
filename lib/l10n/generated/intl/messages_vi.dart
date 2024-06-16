@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "I would like to receive marketing and policy information from coffee bean"),
         "first_name": MessageLookupByLibrary.simpleMessage("First Name"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
         "input_account": MessageLookupByLibrary.simpleMessage("Input Account"),
         "input_otp_verification":
             MessageLookupByLibrary.simpleMessage("Input OTP Verfication"),
@@ -66,14 +67,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_note": MessageLookupByLibrary.simpleMessage(
             "Your password must include at least one symbol and be 8 or more characters long"),
+        "pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("Privacy and policy"),
+        "promo": MessageLookupByLibrary.simpleMessage("Promo"),
         "set_bookmark": MessageLookupByLibrary.simpleMessage("Set bookmark"),
         "set_ur_notifications":
             MessageLookupByLibrary.simpleMessage("Set your notifications"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
+        "ur_card_balance":
+            MessageLookupByLibrary.simpleMessage("Your card balance"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),
         "via_social_media":
             MessageLookupByLibrary.simpleMessage("Via social media"),
