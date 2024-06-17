@@ -1,5 +1,3 @@
-import 'package:data/datasource/remote/dto/login/login_email_dto.dart';
-import 'package:data/datasource/remote/dto/login/login_phone_dto.dart';
 import 'package:data/datasource/remote/service/login_service.dart';
 import 'package:domain/domain.dart';
 import 'package:data/repository_impl/base/base_repository.dart';
@@ -14,12 +12,12 @@ class LoginRepositoryImpl extends BaseRepository implements LoginRepository {
   LoginRepositoryImpl(this._service);
 
   @override
-  Future<Result<UserInfoEntity>> doLogin(LoginParam param) async {
-    final response = _service.doLogin(LoginMapper.toLoginDto(param));
-    return ValueSuccess(UserInfoEntity(
-      id: '0',
-      name: '',
-      phone: '',
-    ));
+  Future<Result<LoginEntity>> doLogin(LoginParam param) async {
+    return apiHandler(
+      _service.doLogin(LoginMapper.toLoginUsernameDto(param)),
+      mapper: (data) {
+        return LoginMapper.toEntity(data);
+      },
+    );
   }
 }

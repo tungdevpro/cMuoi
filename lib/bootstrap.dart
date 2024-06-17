@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     return BlocListener<AppBloc, AppState>(
       listener: (context, state) {
         if (state.isOnBoarding) {
-          AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.main);
+          AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.login);
           return;
         }
 

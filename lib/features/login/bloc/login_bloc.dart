@@ -34,7 +34,14 @@ class LoginBloc extends BaseBloc<LoginEvent, LoginState> {
   Future<void> _onLoginSubmittedEvent(LoginSubmittedEvent event, Emitter<LoginState> emit) async {
     return runAction(
       action: () async {
-        await Future.delayed(const Duration(seconds: 3));
+        await Future.delayed(const Duration(seconds: 1));
+        final response = await _loginUseCase.invoke(LoginParam(username: "emilys", password: "emilyspass"));
+        response.when(
+          error: (type, error, code) {},
+          success: (data) {
+            print('..... ${data?.email}');
+          },
+        );
       },
     );
   }

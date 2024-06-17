@@ -33,7 +33,7 @@ class _SignUpService implements SignUpService {
     )
             .compose(
               _dio.options,
-              '/sign-up',
+              '/auth/sign-up',
               queryParameters: queryParameters,
               data: _data,
             )
