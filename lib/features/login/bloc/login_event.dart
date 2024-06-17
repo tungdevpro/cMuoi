@@ -1,8 +1,8 @@
 import 'package:core/core.dart';
 
-abstract class LoginEvent extends BaseEvent {}
+sealed class LoginEvent extends BaseEvent {}
 
-class LoginEmailChanged extends LoginEvent {
+final class LoginEmailChanged extends LoginEvent {
   final String email;
   LoginEmailChanged(this.email);
 
@@ -10,7 +10,7 @@ class LoginEmailChanged extends LoginEvent {
   List<Object?> get props => [email];
 }
 
-class LoginPasswordChanged extends LoginEvent {
+final class LoginPasswordChanged extends LoginEvent {
   final String password;
   LoginPasswordChanged(this.password);
 
@@ -18,7 +18,7 @@ class LoginPasswordChanged extends LoginEvent {
   List<Object?> get props => [password];
 }
 
-class LoginSubmittedEvent extends LoginEvent {
+final class LoginSubmittedEvent extends LoginEvent {
   final String email;
   final String password;
 
@@ -28,7 +28,7 @@ class LoginSubmittedEvent extends LoginEvent {
   List<Object?> get props => [email, password];
 }
 
-class LoginTogglePasswordEvent extends LoginEvent {
+final class LoginTogglePasswordEvent extends LoginEvent {
   @override
   List<Object?> get props => [];
 }

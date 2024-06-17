@@ -29,15 +29,16 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        return AnimatedSwitcher(
-          duration: const LongDuration(),
-          transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
-          child: state is AuthNotLoggedInState ? const LoginPage() : _body(),
-        );
-      },
-    );
+    return _body();
+    // return BlocBuilder<AuthBloc, AuthState>(
+    //   builder: (context, state) {
+    //     return AnimatedSwitcher(
+    //       duration: const LongDuration(),
+    //       transitionBuilder: (Widget child, Animation<double> animation) => FadeTransition(opacity: animation, child: child),
+    //       child:  _body(),
+    //     );
+    //   },
+    // );
   }
 
   Widget _body() {
@@ -50,7 +51,7 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Assets.images.logo.image(),
-            Lottie.asset( Assets.animations.loadingWhite, width: 100),
+            Lottie.asset(Assets.animations.loadingWhite, width: 100),
           ],
         ),
       ),

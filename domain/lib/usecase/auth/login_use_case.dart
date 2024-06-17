@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class LoginUseCase extends UseCase<LoginEntity, LoginParam> {
-  final LoginRepository _repository;
+  final AuthenticationRepository _repository;
 
   LoginUseCase(this._repository);
 

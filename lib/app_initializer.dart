@@ -43,6 +43,8 @@ class AppInitializer {
 
   Future<void> _configurations() async {
     Bloc.observer = CustomBlocObserver();
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark),
+    );
   }
 }
