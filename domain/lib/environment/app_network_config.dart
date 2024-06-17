@@ -18,15 +18,15 @@ class AppNetworkConfig extends NetworkConfig {
 class AppNetworkEnv extends NetworkEnv<AppNetworkConfig> {
   @override
   AppNetworkConfig get devConfig => AppNetworkConfig(
-        baseUrl: 'https://google.com',
+        baseUrl: 'http://169.254.150.34:3000',
         webUrl: 'https://google.com',
-        brandName: 'cMuoi',
+        brandName: 'DEV: cMuoi',
       );
 
   @override
   AppNetworkConfig get prodConfig => AppNetworkConfig(
-        baseUrl: 'https://facebook.com',
-        webUrl: 'https://facebook.com',
+        baseUrl: 'http://169.254.150.34:8000',
+        webUrl: 'http://169.254.150.34:8000',
         brandName: 'cMuoi',
       );
 }

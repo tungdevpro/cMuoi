@@ -1,7 +1,5 @@
 import 'package:express_cart/features/home/component/box_label_widget.dart';
 import 'package:express_cart/import.dart';
-import 'package:express_cart/l10n/generated/l10n.dart';
-import 'package:flutter/widgets.dart';
 
 class MyRewardWidget extends StatelessWidget {
   const MyRewardWidget({super.key});

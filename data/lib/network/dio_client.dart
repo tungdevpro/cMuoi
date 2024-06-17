@@ -1,5 +1,7 @@
+import 'package:data/di/di.dart';
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
+import 'package:domain/environment/app_network_config.dart';
+import 'package:domain/environment/network.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../common/constants.dart';
@@ -14,7 +16,7 @@ class DioClient {
   Future<void> init({List<InterceptorsWrapper>? interceptors, bool hasLog = true, String? baseUrl}) async {
     _dio = Dio()
       ..options = BaseOptions(
-        baseUrl: baseUrl ?? '',
+        baseUrl: baseUrl ?? (di<Network>().network as AppNetworkConfig).baseUrl,
         contentType: NetworkRequestValues.contentType,
         sendTimeout: const Duration(milliseconds: Constants.timeOut),
         connectTimeout: const Duration(milliseconds: Constants.timeOut),
