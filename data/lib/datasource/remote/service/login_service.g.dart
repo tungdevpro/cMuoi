@@ -19,21 +19,21 @@ class _LoginService implements LoginService {
   String? baseUrl;
 
   @override
-  Future<ApiResponse<dynamic>> doLogin(LoginPhoneDto body) async {
+  Future<ApiResponse<LoginResponse?>> doLogin(LoginUsernameDto body) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ApiResponse<dynamic>>(Options(
+        _setStreamType<ApiResponse<LoginResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/login',
+              '/auth/login',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -42,9 +42,11 @@ class _LoginService implements LoginService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = ApiResponse<dynamic>.fromJson(
+    final value = ApiResponse<LoginResponse?>.fromJson(
       _result.data!,
-      (json) => json as dynamic,
+      (json) => json == null
+          ? null
+          : LoginResponse.fromJson(json as Map<String, dynamic>),
     );
     return value;
   }

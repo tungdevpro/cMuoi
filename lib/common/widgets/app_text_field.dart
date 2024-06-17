@@ -27,6 +27,8 @@ class _AppTextFieldState extends State<AppTextField> {
         const Gap(12),
         TextFormField(
           decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
             border: _border,
             errorBorder: _border,
             enabledBorder: _border,

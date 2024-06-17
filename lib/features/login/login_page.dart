@@ -39,6 +39,7 @@ class _LoginPageState extends CoreBindingState<LoginPage, LoginBloc> {
             const Gap(AppSize.paddingXL),
             AppTextField(
               label: S.current.password,
+              onChanged: (value) {},
             ),
             const Gap(78),
             AppButton.outline(

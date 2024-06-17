@@ -11,7 +11,6 @@
 import 'package:domain/domain.dart' as _i6;
 import 'package:domain/usecase/config/check_onboarding_is_displayed_usecase.dart'
     as _i5;
-import 'package:domain/usecase/sign_up/sign_up_usecase.dart' as _i12;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -39,12 +38,12 @@ extension GetItInjectableX on _i1.GetIt {
       gh<_i5.CheckOnboardingIsDisplayedUseCase>(),
       gh<_i6.HideOnboardingIsDisplayedUsecase>(),
     ));
-    gh.singleton<_i7.AuthBloc>(_i7.AuthBloc());
+    gh.singleton<_i7.AuthBloc>(
+        _i7.AuthBloc(gh<_i6.GetAuthStatusStreamUseCase>()));
     gh.factory<_i8.HomeBloc>(() => _i8.HomeBloc());
     gh.factory<_i9.LoginBloc>(() => _i9.LoginBloc(gh<_i6.LoginUseCase>()));
     gh.factory<_i10.MainBloc>(() => _i10.MainBloc());
-    gh.factory<_i11.SignUpBloc>(
-        () => _i11.SignUpBloc(gh<_i12.SignUpUsecase>()));
+    gh.factory<_i11.SignUpBloc>(() => _i11.SignUpBloc(gh<_i6.SignUpUseCase>()));
     return this;
   }
 }
