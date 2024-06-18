@@ -5,6 +5,7 @@ export 'repository/repository.dart';
 export 'entity/entity.dart';
 export 'usecase/usecase.dart';
 export 'enum/enum.dart';
+export 'environment/setup_env.dart';
 
 import 'package:domain/di/di.dart';
 

@@ -38,8 +38,10 @@ extension GetItInjectableX on _i1.GetIt {
       gh<_i5.CheckOnboardingIsDisplayedUseCase>(),
       gh<_i6.HideOnboardingIsDisplayedUsecase>(),
     ));
-    gh.singleton<_i7.AuthBloc>(
-        _i7.AuthBloc(gh<_i6.GetAuthStatusStreamUseCase>()));
+    gh.singleton<_i7.AuthBloc>(_i7.AuthBloc(
+      gh<_i6.GetAuthStatusStreamUseCase>(),
+      gh<_i6.CheckLoggedInUseCase>(),
+    ));
     gh.factory<_i8.HomeBloc>(() => _i8.HomeBloc());
     gh.factory<_i9.LoginBloc>(() => _i9.LoginBloc(gh<_i6.LoginUseCase>()));
     gh.factory<_i10.MainBloc>(() => _i10.MainBloc());

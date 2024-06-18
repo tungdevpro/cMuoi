@@ -10,7 +10,7 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<void> {
-  AuthBloc(this._getAuthStatusStreamUseCase) : super(const AuthState.unknown()) {
+  AuthBloc(this._getAuthStatusStreamUseCase, this._checkLoggedInUseCase) : super(const AuthState.unknown()) {
     on<AuthStatusChanged>(_onAuthStatusChanged);
     on<AuthLogoutRequested>(_onAuthLogoutRequested);
     on<AuthCheckLoggedIn>(_onAuthCheckLoggedIn);
@@ -18,6 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
   }
 
   final GetAuthStatusStreamUseCase _getAuthStatusStreamUseCase;
+  final CheckLoggedInUseCase _checkLoggedInUseCase;
 
   late StreamSubscription<AuthenticationStatus> _streamSubscription;
 
@@ -39,6 +40,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
   Future<void> _onAuthLogoutRequested(AuthLogoutRequested event, Emitter<AuthState> emit) async {}
 
   Future<void> _onAuthCheckLoggedIn(AuthCheckLoggedIn event, Emitter<AuthState> emit) async {
-    print('object.....');
+    _checkLoggedInUseCase.invoke(null);
   }
 }

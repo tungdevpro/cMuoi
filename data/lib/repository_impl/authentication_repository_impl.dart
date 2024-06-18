@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:data/datasource/local/db/app_database.dart';
 import 'package:data/datasource/remote/service/login_service.dart';
 import 'package:data/datasource/remote/service/sign_up_service.dart';
 import 'package:data/repository_impl/base/base_repository.dart';
@@ -10,10 +11,11 @@ import '../mapper/login_mapper.dart';
 
 @LazySingleton(as: AuthenticationRepository)
 class AuthenticationRepositoryImpl extends BaseRepository implements AuthenticationRepository {
+  AuthenticationRepositoryImpl(this._loginService, this._signUpService, this._appDatabase);
+
   final LoginService _loginService;
   final SignUpService _signUpService;
-
-  AuthenticationRepositoryImpl(this._loginService, this._signUpService);
+  final AppDatabase _appDatabase;
 
   final _controller = StreamController<AuthenticationStatus>();
 
@@ -54,5 +56,17 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
   @override
   Future<void> logOut() async {
     _controller.add(AuthenticationStatus.unauthenticated);
+  }
+
+  @override
+  Future<void> saveUserToLocal() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> isLoggedIn() async {
+    final response = await _appDatabase.userDao.findAllUser();
+    print('.... $response');
+    return false;
   }
 }
