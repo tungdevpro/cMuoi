@@ -28,25 +28,31 @@ abstract class BaseRepository {
       }
       return ValueError(ErrorType.unknow, response.error ?? "An unknown error");
     } catch (e) {
-      _logger.e("Api error message -> ${e.toString()}");
-      _logger.e(e);
+      var loadException = e;
+      _logger.e("Api error message -> ${loadException.toString()}");
+      _logger.e(loadException);
 
-      if (e is DioExceptionType) {
-        switch (e) {
+      if (e is DioException) {
+        loadException = e.type;
+      }
+
+      if (loadException is DioExceptionType) {
+        switch (loadException) {
           case DioExceptionType.connectionTimeout:
           case DioExceptionType.sendTimeout:
           case DioExceptionType.receiveTimeout:
           case DioExceptionType.cancel:
           case DioExceptionType.connectionError:
-            return ValueError(ErrorType.slowNetwork, e.name);
+            return ValueError(ErrorType.slowNetwork, loadException.name);
           case DioExceptionType.unknown:
-            return ValueError(ErrorType.noNetwork, e.name);
+            return ValueError(ErrorType.noNetwork, loadException.name);
           case DioExceptionType.badResponse:
-            return ValueError(ErrorType.unknow, e.name);
+            return ValueError(ErrorType.unknow, loadException.name);
           case DioExceptionType.badCertificate:
-            return ValueError(ErrorType.badCertificate, e.name);
+            return ValueError(ErrorType.badCertificate, loadException.name);
         }
       }
+
       return ValueError(ErrorType.unknow, 'An unknown error');
     }
   }
