@@ -1,6 +1,7 @@
 import 'package:data/datasource/local/db/app_database.dart';
 import 'package:data/datasource/local/db/app_shared_preferences.dart';
 import 'package:dio/dio.dart';
+import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart' as sp;
@@ -25,9 +26,8 @@ Future<void> configureDependencies() async {
 Future<void> _registerDatabase(GetIt locator) async {
   final resps = await Future.wait([
     sp.SharedPreferences.getInstance(),
-    $FloorAppDatabase.databaseBuilder("app_database.db").build(),
+    $FloorAppDatabase.databaseBuilder(DbConstant.databaseName).build(),
   ]);
-  // final prefs = await sp.SharedPreferences.getInstance();
   di.registerSingleton<AppSharedPreferences>(AppSharedPreferences(prefs: resps[0] as sp.SharedPreferences));
   di.registerLazySingleton<AppDatabase>(() => resps[1] as AppDatabase);
 }

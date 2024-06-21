@@ -1,8 +1,6 @@
 import 'package:core/core.dart';
 import 'package:data/data.dart';
 import 'package:domain/domain.dart';
-import 'package:express_cart/firebase_options.dart';
-import 'package:firebase_module/firebase_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,11 +31,9 @@ class AppInitializer {
   }
 
   Future<void> _dependencies() async {
-    await Future.wait([
-      // FirebaseModule().initialize(options: DefaultFirebaseOptions.currentPlatform),
-      DataLayer.init(),
-      DomainLayer.init(),
-    ]);
+    await setupEnvironment(di);
+    await DataLayer.init();
+    await DomainLayer.init();
     configureDependencies();
   }
 

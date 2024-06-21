@@ -10,4 +10,8 @@ abstract class AuthenticationRepository {
   Stream<AuthenticationStatus> getAuthStream();
 
   void close();
+
+  Future<void> saveUserToLocal();
+
+  Future<bool> isLoggedIn();
 }

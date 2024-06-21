@@ -9,7 +9,8 @@ class CheckLoggedInUseCase extends UseCase<bool, NoParam?> {
   CheckLoggedInUseCase(this._repository);
 
   @override
-  Future<Result<bool>> invoke(NoParam? param) {
-    throw UnimplementedError();
+  Future<Result<bool>> invoke(NoParam? param) async {
+    final isLoggedIn = await _repository.isLoggedIn();
+    return ValueSuccess(isLoggedIn);
   }
 }

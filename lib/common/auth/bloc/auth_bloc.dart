@@ -10,14 +10,17 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<void> {
-  AuthBloc(this._getAuthStatusStreamUseCase) : super(const AuthState.unknown()) {
+  AuthBloc(this._getAuthStatusStreamUseCase, this._checkLoggedInUseCase) : super(const AuthState.unknown()) {
     on<AuthStatusChanged>(_onAuthStatusChanged);
     on<AuthLogoutRequested>(_onAuthLogoutRequested);
     on<AuthCheckLoggedIn>(_onAuthCheckLoggedIn);
-    _streamSubscription = _getAuthStatusStreamUseCase.invoke(null).listen((data) {});
+    _streamSubscription = _getAuthStatusStreamUseCase.invoke(null).listen((data) {
+      add(AuthStatusChanged(data));
+    });
   }
 
   final GetAuthStatusStreamUseCase _getAuthStatusStreamUseCase;
+  final CheckLoggedInUseCase _checkLoggedInUseCase;
 
   late StreamSubscription<AuthenticationStatus> _streamSubscription;
 
@@ -34,11 +37,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
     return super.close();
   }
 
-  Future<void> _onAuthStatusChanged(AuthStatusChanged event, Emitter<AuthState> emit) async {}
+  Future<void> _onAuthStatusChanged(AuthStatusChanged event, Emitter<AuthState> emit) async {
+    switch (event.status) {
+      case AuthenticationStatus.unknown:
+        return;
+      case AuthenticationStatus.authenticated:
+        // return emit(const AuthState.authenticated());
+        return;
+      case AuthenticationStatus.unauthenticated:
+        return emit(const AuthState.unauthenticated());
+    }
+  }
 
   Future<void> _onAuthLogoutRequested(AuthLogoutRequested event, Emitter<AuthState> emit) async {}
 
   Future<void> _onAuthCheckLoggedIn(AuthCheckLoggedIn event, Emitter<AuthState> emit) async {
-    print('object.....');
+    _checkLoggedInUseCase.invoke(null);
   }
 }
