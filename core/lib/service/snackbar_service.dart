@@ -6,9 +6,9 @@ typedef ControllerCallback = void Function(AnimationController);
 enum DismissType { onSwipe, none }
 
 enum SnackbarStatus {
-  info('Thông báo', Colors.blue, Icon(Icons.info, color: Colors.white)),
-  success('Thành công', Colors.green, Icon(Icons.expand_circle_down_outlined, color: Colors.white)),
-  failure('Có lỗi', Colors.red, Icon(Icons.error, color: Colors.white));
+  info('Notify', Colors.blue, Icon(Icons.info, color: Colors.white)),
+  success('Successfully', Colors.green, Icon(Icons.expand_circle_down_outlined, color: Colors.white)),
+  failure('Error', Colors.red, Icon(Icons.error, color: Colors.white));
 
   const SnackbarStatus(this.text, this.color, this.icon);
   final String text;
@@ -37,6 +37,7 @@ class SnackBarService {
       CustomSnackbarWidget(
         onCloseClick: () => localAnimationController?.reverse(),
         message: message,
+        status: status,
       ),
     );
   }
