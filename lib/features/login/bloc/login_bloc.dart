@@ -37,7 +37,9 @@ class LoginBloc extends BaseBloc<LoginEvent, LoginState> {
         // await Future.delayed(const Duration(seconds: 1));
         final response = await _loginUseCase.invoke(LoginParam(username: "emilys", password: "emilyspass"));
         response.when(
-          error: (type, error, code) {},
+          error: (type, error, code) {
+            SnackBarService.instance().show(context, error, status: SnackbarStatus.failure);
+          },
           success: (data) {
             print('..... ${data?.email}');
           },

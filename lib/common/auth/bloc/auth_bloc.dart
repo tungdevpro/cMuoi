@@ -14,7 +14,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
     on<AuthStatusChanged>(_onAuthStatusChanged);
     on<AuthLogoutRequested>(_onAuthLogoutRequested);
     on<AuthCheckLoggedIn>(_onAuthCheckLoggedIn);
-    _streamSubscription = _getAuthStatusStreamUseCase.invoke(null).listen((data) {});
+    _streamSubscription = _getAuthStatusStreamUseCase.invoke(null).listen((data) {
+      add(AuthStatusChanged(data));
+    });
   }
 
   final GetAuthStatusStreamUseCase _getAuthStatusStreamUseCase;
@@ -35,7 +37,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
     return super.close();
   }
 
-  Future<void> _onAuthStatusChanged(AuthStatusChanged event, Emitter<AuthState> emit) async {}
+  Future<void> _onAuthStatusChanged(AuthStatusChanged event, Emitter<AuthState> emit) async {
+    switch (event.status) {
+      case AuthenticationStatus.unknown:
+        return;
+      case AuthenticationStatus.authenticated:
+        // return emit(const AuthState.authenticated());
+        return;
+      case AuthenticationStatus.unauthenticated:
+        return emit(const AuthState.unauthenticated());
+    }
+  }
 
   Future<void> _onAuthLogoutRequested(AuthLogoutRequested event, Emitter<AuthState> emit) async {}
 

@@ -24,7 +24,6 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
-        print('----- ${state.status}');
         switch (state.status) {
           case AuthenticationStatus.unknown:
             break;
@@ -32,7 +31,7 @@ class _MyAppState extends State<MyApp> {
             AppNavigator.shared.pushNamed(RoutePath.main);
             break;
           case AuthenticationStatus.unauthenticated:
-            AppNavigator.shared.pushNamed(RoutePath.main);
+            AppNavigator.shared.pushNamed(RoutePath.login);
             break;
         }
       },

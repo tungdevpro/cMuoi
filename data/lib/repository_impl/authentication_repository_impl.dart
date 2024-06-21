@@ -66,7 +66,8 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
   @override
   Future<bool> isLoggedIn() async {
     final response = await _appDatabase.userDao.findAllUser();
-    print('.... $response');
-    return false;
+    bool hasUser = response.isNotEmpty;
+    _controller.add(hasUser ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated);
+    return hasUser;
   }
 }

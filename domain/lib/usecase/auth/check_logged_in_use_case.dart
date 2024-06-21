@@ -10,7 +10,7 @@ class CheckLoggedInUseCase extends UseCase<bool, NoParam?> {
 
   @override
   Future<Result<bool>> invoke(NoParam? param) async {
-    final response = await _repository.isLoggedIn();
-    return ValueSuccess(true);
+    final isLoggedIn = await _repository.isLoggedIn();
+    return ValueSuccess(isLoggedIn);
   }
 }
