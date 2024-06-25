@@ -1,8 +1,6 @@
 import 'package:data/datasource/local/db/app_shared_preferences.dart';
 import 'package:data/repository_impl/base/base_repository.dart';
-import 'package:domain/common/local_keys.dart';
-import 'package:domain/common/result.dart';
-import 'package:domain/repository/config_repository.dart';
+import 'package:domain/domain.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: ConfigRepository)

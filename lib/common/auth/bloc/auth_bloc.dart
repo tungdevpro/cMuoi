@@ -42,8 +42,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
       case AuthenticationStatus.unknown:
         return;
       case AuthenticationStatus.authenticated:
-        // return emit(const AuthState.authenticated());
-        return;
+        return emit(const AuthState.authenticated());
       case AuthenticationStatus.unauthenticated:
         return emit(const AuthState.unauthenticated());
     }
@@ -52,6 +51,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
   Future<void> _onAuthLogoutRequested(AuthLogoutRequested event, Emitter<AuthState> emit) async {}
 
   Future<void> _onAuthCheckLoggedIn(AuthCheckLoggedIn event, Emitter<AuthState> emit) async {
-    _checkLoggedInUseCase.invoke(null);
+    final result = await _checkLoggedInUseCase.invoke(null);
+    result.when(success: (data) {
+      print('data.... $data');
+    });
   }
 }

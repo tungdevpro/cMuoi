@@ -7,15 +7,17 @@ import 'package:data/repository_impl/base/base_repository.dart';
 import 'package:domain/domain.dart';
 import 'package:injectable/injectable.dart';
 
+import '../datasource/local/db/app_shared_preferences.dart';
 import '../mapper/login_mapper.dart';
 
 @LazySingleton(as: AuthenticationRepository)
 class AuthenticationRepositoryImpl extends BaseRepository implements AuthenticationRepository {
-  AuthenticationRepositoryImpl(this._loginService, this._signUpService, this._appDatabase);
+  AuthenticationRepositoryImpl(this._loginService, this._signUpService, this._appDatabase, this._appSharedPreferences);
 
   final LoginService _loginService;
   final SignUpService _signUpService;
   final AppDatabase _appDatabase;
+  final AppSharedPreferences _appSharedPreferences;
 
   final _controller = StreamController<AuthenticationStatus>();
 
@@ -31,7 +33,11 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
       error: (type, error, code) {
         _controller.add(AuthenticationStatus.unauthenticated);
       },
-      success: (data) {
+      success: (data) async {
+        await Future.wait([
+          _appSharedPreferences.setString(TokenKeys.accessToken, data!.token),
+          _appSharedPreferences.setString(TokenKeys.refreshToken, data.refreshToken),
+        ]);
         _controller.add(AuthenticationStatus.authenticated);
       },
     );
@@ -65,9 +71,13 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
 
   @override
   Future<bool> isLoggedIn() async {
-    final response = await _appDatabase.userDao.findAllUser();
-    bool hasUser = response.isNotEmpty;
-    _controller.add(hasUser ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated);
-    return hasUser;
+    // final response = await _appDatabase.userDao.findAllUser();
+    // bool hasUser = response.isNotEmpty;
+    // return hasUser;
+    final response = _appSharedPreferences.getString(TokenKeys.accessToken);
+    bool isLoggin = response != null && response != '';
+    _controller.add(isLoggin ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated);
+
+    return isLoggin;
   }
 }

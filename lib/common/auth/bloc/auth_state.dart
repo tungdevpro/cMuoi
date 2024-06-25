@@ -10,7 +10,8 @@ class AuthState extends Equatable {
 
   const AuthState.unknown() : this._();
 
-  const AuthState.authenticated(UserEntity user) : this._(status: AuthenticationStatus.authenticated, user: user);
+  // const AuthState.authenticated(UserEntity user) : this._(status: AuthenticationStatus.authenticated, user: user);
+  const AuthState.authenticated() : this._(status: AuthenticationStatus.authenticated);
 
   const AuthState.unauthenticated() : this._(status: AuthenticationStatus.unauthenticated);
 
