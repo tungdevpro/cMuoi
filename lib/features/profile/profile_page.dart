@@ -1,18 +1,18 @@
-import 'package:express_cart/features/account/bloc/account_bloc.dart';
+import 'package:express_cart/features/profile/bloc/profile_bloc.dart';
 
 import '../../import.dart';
 import 'component/item_account_widget.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _AccountPageState extends CoreBindingState<AccountPage, AccountBloc> {
+class _ProfilePageState extends CoreBindingState<ProfilePage, ProfileBloc> {
   @override
-  AccountBloc get initBloc => di<AccountBloc>();
+  ProfileBloc get initBloc => di<ProfileBloc>();
 
   @override
   Widget buildPage(BuildContext context) {
