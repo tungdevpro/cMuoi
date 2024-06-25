@@ -12,17 +12,19 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../domain.dart' as _i6;
-import '../repository/config_repository.dart' as _i13;
+import '../repository/authentication_repository.dart' as _i11;
+import '../repository/config_repository.dart' as _i15;
 import '../usecase/auth/check_logged_in_use_case.dart' as _i5;
 import '../usecase/auth/get_auth_status_stream_use_case.dart' as _i9;
 import '../usecase/auth/login_use_case.dart' as _i8;
+import '../usecase/auth/logout_use_case.dart' as _i10;
 import '../usecase/auth/sign_up_use_case.dart' as _i7;
-import '../usecase/config/check_onboarding_is_displayed_usecase.dart' as _i11;
+import '../usecase/config/check_onboarding_is_displayed_usecase.dart' as _i13;
 import '../usecase/config/check_onboarding_is_displayed_usecase_impl.dart'
-    as _i12;
+    as _i14;
 import '../usecase/config/config_usecase.dart' as _i3;
 import '../usecase/config/config_usecase_impl.dart' as _i4;
-import '../usecase/config/hide_onboarding_is_displayed_usecase.dart' as _i10;
+import '../usecase/config/hide_onboarding_is_displayed_usecase.dart' as _i12;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -44,11 +46,13 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i8.LoginUseCase(gh<_i6.AuthenticationRepository>()));
     gh.factory<_i9.GetAuthStatusStreamUseCase>(() =>
         _i9.GetAuthStatusStreamUseCase(gh<_i6.AuthenticationRepository>()));
-    gh.factory<_i10.HideOnboardingIsDisplayedUsecase>(() =>
-        _i10.HideOnboardingIsDisplayedUsecase(gh<_i6.ConfigRepository>()));
-    gh.factory<_i11.CheckOnboardingIsDisplayedUseCase>(() =>
-        _i12.CheckOnboardingIsDisplayedUseCaseImpl(
-            gh<_i13.ConfigRepository>()));
+    gh.factory<_i10.LogoutUseCase>(
+        () => _i10.LogoutUseCase(gh<_i11.AuthenticationRepository>()));
+    gh.factory<_i12.HideOnboardingIsDisplayedUsecase>(() =>
+        _i12.HideOnboardingIsDisplayedUsecase(gh<_i6.ConfigRepository>()));
+    gh.factory<_i13.CheckOnboardingIsDisplayedUseCase>(() =>
+        _i14.CheckOnboardingIsDisplayedUseCaseImpl(
+            gh<_i15.ConfigRepository>()));
     return this;
   }
 }

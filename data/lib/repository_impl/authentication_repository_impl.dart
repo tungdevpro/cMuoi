@@ -80,4 +80,16 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
 
     return isLoggin;
   }
+
+  @override
+  Future<Result<bool>> doLogout() async {
+    await Future.wait(
+      [
+        _appSharedPreferences.remove(TokenKeys.accessToken),
+        _appSharedPreferences.remove(TokenKeys.refreshToken),
+      ],
+    );
+    _controller.add(AuthenticationStatus.unauthenticated);
+    return ValueSuccess(true);
+  }
 }

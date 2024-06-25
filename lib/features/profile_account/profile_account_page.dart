@@ -1,3 +1,4 @@
+import 'package:domain/domain.dart';
 import 'package:express_cart/features/widgets/custom_list_tile_profile_widget.dart';
 import 'package:express_cart/import.dart';
 
@@ -47,5 +48,8 @@ class ProfileAccountPage extends StatelessWidget {
     );
   }
 
-  void _onDeleteAccount() {}
+  void _onDeleteAccount() async {
+    final LogoutUseCase logoutUseCase = di.get();
+    await logoutUseCase.invoke(null);
+  }
 }
