@@ -4,7 +4,7 @@ import 'package:express_cart/resource/generated/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../model/nav_item_model.dart';
-import '../account/account_page.dart';
+import '../profile/profile_page.dart';
 import '../home/home_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -25,7 +25,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
     const KeepAliveWidget(child: HomePage()),
     Container(),
     Container(),
-    const KeepAliveWidget(child: AccountPage()),
+    const KeepAliveWidget(child: ProfilePage()),
   ];
 
   final navs = [
@@ -70,8 +70,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
                 items: navs
                     .asMap()
                     .entries
-                    .map<BottomNavigationBarItem>(
-                        (e) => BottomNavigationBarItem(icon: index == e.key ? e.value.iconSelected : e.value.icon, label: ''))
+                    .map<BottomNavigationBarItem>((e) => BottomNavigationBarItem(icon: index == e.key ? e.value.iconSelected : e.value.icon, label: ''))
                     .toList(),
               ),
               AnimatedPositioned(

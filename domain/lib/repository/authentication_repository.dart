@@ -14,4 +14,6 @@ abstract class AuthenticationRepository {
   Future<void> saveUserToLocal();
 
   Future<bool> isLoggedIn();
+
+  Future<Result<bool>> doLogout();
 }

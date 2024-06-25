@@ -12,7 +12,11 @@ abstract class AppTheme {
         fontFamily: _fontFamily,
         scaffoldBackgroundColor: AppColor.backgroundContent,
         useMaterial3: true,
-        appBarTheme: const AppBarTheme(elevation: .0, backgroundColor: Colors.white),
+        appBarTheme: const AppBarTheme(
+          elevation: .0,
+          backgroundColor: Colors.white,
+          scrolledUnderElevation: 0,
+        ),
         textButtonTheme: CustomTextButtonTheme.lightButton(),
         textTheme: CustomTextTheme.lightText(),
       );
