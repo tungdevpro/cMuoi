@@ -1,7 +1,7 @@
 import 'package:express_cart/features/profile/bloc/profile_bloc.dart';
 
 import '../../import.dart';
-import 'component/item_account_widget.dart';
+import 'component/item_profile_widget.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -22,7 +22,7 @@ class _ProfilePageState extends CoreBindingState<ProfilePage, ProfileBloc> {
           padding: const EdgeInsets.symmetric(horizontal: AppSize.paddingXL),
           children: [
             _head(),
-            const ItemAccountWidget(),
+            const ItemProfileWidget(),
           ],
         ),
       ),

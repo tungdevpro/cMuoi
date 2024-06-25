@@ -1,4 +1,6 @@
 import 'package:express_cart/features/home/home_page.dart';
+import 'package:express_cart/features/profile/profile_page.dart';
+import 'package:express_cart/features/profile_account/profile_account_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:express_cart/features/sign_up/sign_up_page.dart';
@@ -19,11 +21,19 @@ abstract class AppRouter {
     RoutePath.home: (_) => const HomePage(),
     RoutePath.signUp: (_) => const SignUpPage(),
     RoutePath.login: (_) => const LoginPage(),
+    RoutePath.profile: (_) => const ProfilePage(),
+    RoutePath.profileAccount: const ProfileAccountPage()._toBuilder(),
   };
 
   static Route<dynamic> generateRoutes(RouteSettings settings) {
     String? routeName = settings.name?.split('?').first;
 
     return CupertinoPageRoute(builder: routes[routeName] ?? (_) => const Scaffold(body: Center(child: Text('Not found'))), settings: settings);
+  }
+}
+
+extension on Widget {
+  WidgetBuilder _toBuilder() {
+    return (BuildContext context) => this;
   }
 }
