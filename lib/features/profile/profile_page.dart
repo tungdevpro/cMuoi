@@ -17,6 +17,7 @@ class _ProfilePageState extends CoreBindingState<ProfilePage, ProfileBloc> {
   @override
   Widget buildPage(BuildContext context) {
     return CommonScaffold(
+      backgroundColor: AppColor.backgroundWhite,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: AppSize.paddingXL),

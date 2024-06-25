@@ -42,6 +42,10 @@ class $AssetsIconsGen {
   SvgGenImage get coffeeSelectedBottomBar =>
       const SvgGenImage('assets/icons/coffee_selected_bottom_bar.svg');
 
+  /// File path: assets/icons/document-text.svg
+  SvgGenImage get documentText =>
+      const SvgGenImage('assets/icons/document-text.svg');
+
   /// File path: assets/icons/eye-slash.svg
   SvgGenImage get eyeSlash => const SvgGenImage('assets/icons/eye-slash.svg');
 
@@ -52,6 +56,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home_selected_bottom_bar.svg
   SvgGenImage get homeSelectedBottomBar =>
       const SvgGenImage('assets/icons/home_selected_bottom_bar.svg');
+
+  /// File path: assets/icons/lock.svg
+  SvgGenImage get lock => const SvgGenImage('assets/icons/lock.svg');
 
   /// File path: assets/icons/notification-bing.svg
   SvgGenImage get notificationBing =>
@@ -64,6 +71,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notification_bold.svg
   SvgGenImage get notificationBold =>
       const SvgGenImage('assets/icons/notification_bold.svg');
+
+  /// File path: assets/icons/password-check.svg
+  SvgGenImage get passwordCheck =>
+      const SvgGenImage('assets/icons/password-check.svg');
 
   /// File path: assets/icons/payment.svg
   SvgGenImage get payment => const SvgGenImage('assets/icons/payment.svg');
@@ -83,6 +94,9 @@ class $AssetsIconsGen {
   SvgGenImage get securitySafe =>
       const SvgGenImage('assets/icons/security-safe.svg');
 
+  /// File path: assets/icons/shield.svg
+  SvgGenImage get shield => const SvgGenImage('assets/icons/shield.svg');
+
   /// File path: assets/icons/tag_bottom_bar.svg
   SvgGenImage get tagBottomBar =>
       const SvgGenImage('assets/icons/tag_bottom_bar.svg');
@@ -90,6 +104,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/tag_selected_bottom_bar.svg
   SvgGenImage get tagSelectedBottomBar =>
       const SvgGenImage('assets/icons/tag_selected_bottom_bar.svg');
+
+  /// File path: assets/icons/trash.svg
+  SvgGenImage get trash => const SvgGenImage('assets/icons/trash.svg');
 
   /// File path: assets/icons/twotone_clock.svg
   SvgGenImage get twotoneClock =>
@@ -113,19 +130,24 @@ class $AssetsIconsGen {
         bookmark,
         coffeeBottomBar,
         coffeeSelectedBottomBar,
+        documentText,
         eyeSlash,
         homeBottomBar,
         homeSelectedBottomBar,
+        lock,
         notificationBing,
         notification,
         notificationBold,
+        passwordCheck,
         payment,
         profile,
         profileBottomBar,
         profleSelectedBottomBar,
         securitySafe,
+        shield,
         tagBottomBar,
         tagSelectedBottomBar,
+        trash,
         twotoneClock,
         twotoneDiscountShape,
         twotoneEmptyWalletTick,

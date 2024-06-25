@@ -291,10 +291,10 @@ class S {
   }
 
   /// `Input OTP Verfication`
-  String get input_otp_verification {
+  String get input_otp_verfication {
     return Intl.message(
       'Input OTP Verfication',
-      name: 'input_otp_verification',
+      name: 'input_otp_verfication',
       desc: '',
       args: [],
     );
@@ -305,6 +305,186 @@ class S {
     return Intl.message(
       'Verification',
       name: 'verification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your card balance`
+  String get ur_card_balance {
+    return Intl.message(
+      'Your card balance',
+      name: 'ur_card_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message(
+      'History',
+      name: 'history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promo`
+  String get promo {
+    return Intl.message(
+      'Promo',
+      name: 'promo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message(
+      'Pay',
+      name: 'pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top Up`
+  String get top_up {
+    return Intl.message(
+      'Top Up',
+      name: 'top_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Reward`
+  String get my_reward {
+    return Intl.message(
+      'My Reward',
+      name: 'my_reward',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get view_all {
+    return Intl.message(
+      'View All',
+      name: 'view_all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite Place`
+  String get favorite_place {
+    return Intl.message(
+      'Favorite Place',
+      name: 'favorite_place',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Place`
+  String get popular_place {
+    return Intl.message(
+      'Popular Place',
+      name: 'popular_place',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy`
+  String get privacy {
+    return Intl.message(
+      'Privacy',
+      name: 'privacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set and protect your privacy`
+  String get set_and_protect_your_privacy {
+    return Intl.message(
+      'Set and protect your privacy',
+      name: 'set_and_protect_your_privacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Security`
+  String get security {
+    return Intl.message(
+      'Security',
+      name: 'security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage your account security`
+  String get manage_ur_account_security {
+    return Intl.message(
+      'Manage your account security',
+      name: 'manage_ur_account_security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2-step verification`
+  String get two_step_verifycation {
+    return Intl.message(
+      '2-step verification',
+      name: 'two_step_verifycation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2-step verification of your security`
+  String get two_step_verification_of_ur_security {
+    return Intl.message(
+      '2-step verification of your security',
+      name: 'two_step_verification_of_ur_security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request account info`
+  String get request_account_info {
+    return Intl.message(
+      'Request account info',
+      name: 'request_account_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request your account info`
+  String get request_ur_account_info {
+    return Intl.message(
+      'Request your account info',
+      name: 'request_ur_account_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete your account`
+  String get delete_ur_account {
+    return Intl.message(
+      'Delete your account',
+      name: 'delete_ur_account',
       desc: '',
       args: [],
     );
@@ -405,96 +585,6 @@ class S {
     return Intl.message(
       'Privacy and policy',
       name: 'privacy_and_policy',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your card balance`
-  String get ur_card_balance {
-    return Intl.message(
-      'Your card balance',
-      name: 'ur_card_balance',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `History`
-  String get history {
-    return Intl.message(
-      'History',
-      name: 'history',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Promo`
-  String get promo {
-    return Intl.message(
-      'Promo',
-      name: 'promo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Pay`
-  String get pay {
-    return Intl.message(
-      'Pay',
-      name: 'pay',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Top Up`
-  String get top_up {
-    return Intl.message(
-      'Top Up',
-      name: 'top_up',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `My Reward`
-  String get my_reward {
-    return Intl.message(
-      'My Reward',
-      name: 'my_reward',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `View All`
-  String get view_all {
-    return Intl.message(
-      'View All',
-      name: 'view_all',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorite Place`
-  String get favorite_place {
-    return Intl.message(
-      'Favorite Place',
-      name: 'favorite_place',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Popular Place`
-  String get popular_place {
-    return Intl.message(
-      'Popular Place',
-      name: 'popular_place',
       desc: '',
       args: [],
     );
