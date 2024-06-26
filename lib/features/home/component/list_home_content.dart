@@ -1,7 +1,7 @@
-import 'package:express_cart/common/widgets/logo_text.dart';
-import 'package:express_cart/features/home/component/favorite_place_widget.dart';
-import 'package:express_cart/features/home/component/my_reward_widget.dart';
-import 'package:express_cart/features/home/component/popular_place_widget.dart';
+import 'package:cmuoi/common/widgets/logo_text.dart';
+import 'package:cmuoi/features/home/component/favorite_place_widget.dart';
+import 'package:cmuoi/features/home/component/my_reward_widget.dart';
+import 'package:cmuoi/features/home/component/popular_place_widget.dart';
 
 import '../../../import.dart';
 

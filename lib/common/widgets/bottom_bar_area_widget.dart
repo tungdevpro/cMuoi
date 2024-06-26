@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:express_cart/common/constants/constants.dart';
+import 'package:cmuoi/common/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarAreaWidget extends StatelessWidget {

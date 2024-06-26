@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:express_cart/di/di.dart';
-import 'package:express_cart/features/sign_up/bloc/sign_up_event.dart';
-import 'package:express_cart/features/sign_up/bloc/sign_up_state.dart';
+import 'package:cmuoi/di/di.dart';
+import 'package:cmuoi/features/sign_up/bloc/sign_up_event.dart';
+import 'package:cmuoi/features/sign_up/bloc/sign_up_state.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
