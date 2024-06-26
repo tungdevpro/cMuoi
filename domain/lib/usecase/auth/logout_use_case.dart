@@ -1,7 +1,6 @@
-import 'package:domain/common/result.dart';
-import 'package:domain/repository/authentication_repository.dart';
-import 'package:domain/usecase/base/base_usecase.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../domain.dart';
 
 @injectable
 class LogoutUseCase extends UseCase<bool, NoParam?> {
