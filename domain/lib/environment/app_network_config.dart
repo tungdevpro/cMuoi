@@ -19,14 +19,14 @@ class AppNetworkEnv extends NetworkEnv<AppNetworkConfig> {
   @override
   AppNetworkConfig get devConfig => AppNetworkConfig(
         baseUrl: 'http://192.168.0.3:3000',
-        webUrl: 'https://google.com',
+        webUrl: 'https://web.cmuoi.io.vn',
         brandName: 'DEV: cMuoi',
       );
 
   @override
   AppNetworkConfig get prodConfig => AppNetworkConfig(
-        baseUrl: 'http://169.254.150.34:8000',
-        webUrl: 'http://169.254.150.34:8000',
+        baseUrl: 'https://cmuoi.io.vn',
+        webUrl: 'https://web.cmuoi.io.vn',
         brandName: 'cMuoi',
       );
 }

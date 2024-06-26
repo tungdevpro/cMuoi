@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:data/data.dart';
 import 'package:domain/domain.dart';
+import 'package:domain/environment/env.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,9 +16,12 @@ class AppInitializer {
 
   static final AppInitializer instance = AppInitializer._internal();
 
-  Future<void> run() async {
+  Future<void> run(Env env) async {
     WidgetsFlutterBinding.ensureInitialized();
-    await _dependencies();
+    await setupEnvironment(di, env: env);
+    await DataLayer.init();
+    await DomainLayer.init();
+    configureDependencies();
     _configurations();
     runApp(
       MultiBlocProvider(
@@ -28,13 +32,6 @@ class AppInitializer {
         child: const MyApp(),
       ),
     );
-  }
-
-  Future<void> _dependencies() async {
-    await setupEnvironment(di);
-    await DataLayer.init();
-    await DomainLayer.init();
-    configureDependencies();
   }
 
   Future<void> _configurations() async {
