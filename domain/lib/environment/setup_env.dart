@@ -5,12 +5,12 @@ import 'app_network_config.dart';
 import 'env.dart';
 import 'network.dart';
 
-Future<void> setupEnvironment(GetIt sl) async {
+Future<void> setupEnvironment(GetIt sl, {required Env env}) async {
   sl.registerLazySingleton<NetworkEnv>(() => AppNetworkEnv());
   sl.registerLazySingleton<Network>(() => Network<AppNetworkConfig>());
-  sl<Network>().init();
+  sl<Network>().init(env);
 
-  Env env = sl<Network>().env;
+  Env getGetEnvironment = sl<Network>().getGetEnvironment;
   String baseUrl = (sl<Network>().network as AppNetworkConfig).baseUrl;
-  debugPrint('env= $env baseUrl= $baseUrl');
+  debugPrint('env= $getGetEnvironment baseUrl= $baseUrl');
 }

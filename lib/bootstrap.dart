@@ -1,9 +1,12 @@
+import 'package:cmuoi/di/di.dart';
 import 'package:core/core.dart';
 import 'package:domain/enum/auth.dart';
 import 'package:cmuoi/common/app/bloc/app_bloc.dart';
 import 'package:cmuoi/common/app/bloc/app_state.dart';
 import 'package:cmuoi/common/auth/bloc/auth_bloc.dart';
 import 'package:cmuoi/common/auth/bloc/auth_state.dart';
+import 'package:domain/environment/app_network_config.dart';
+import 'package:domain/environment/network.dart';
 import 'package:flutter/material.dart';
 import 'package:cmuoi/common/routes/routes.dart';
 import 'package:cmuoi/common/theme/app_theme.dart';
@@ -36,15 +39,18 @@ class _MyAppState extends State<MyApp> {
         }
       },
       child: BlocListener<AppBloc, AppState>(
+        // listenWhen: (),
         listener: (context, state) {
           if (!state.isOnBoarding) {
             AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.onboarding);
+            return;
           }
+          // AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.login);
         },
         child: BlocBuilder<AppBloc, AppState>(
           buildWhen: (previous, current) => previous.isDark != current.isDark,
           builder: (context, state) => MaterialApp(
-            title: 'Express Cart',
+            title: (di<Network>().network as AppNetworkConfig).brandName,
             navigatorKey: AppNavigator.shared.navigatorKey,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: ConfigLocalization.loads(),
