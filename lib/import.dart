@@ -1,9 +1,9 @@
 export 'package:flutter/material.dart';
 export 'package:core/core.dart';
-export 'package:express_cart/l10n/generated/l10n.dart';
-export 'package:express_cart/di/di.dart';
+export 'package:cmuoi/l10n/generated/l10n.dart';
+export 'package:cmuoi/di/di.dart';
 export 'common/app/app.dart';
 export 'common/common.dart';
 export 'package:gap/gap.dart';
-export 'package:express_cart/resource/generated/assets.gen.dart';
+export 'package:cmuoi/resource/generated/assets.gen.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,4 +1,4 @@
-import 'package:express_cart/resource/generated/assets.gen.dart';
+import 'package:cmuoi/resource/generated/assets.gen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 

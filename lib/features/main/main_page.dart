@@ -1,6 +1,6 @@
-import 'package:express_cart/features/main/bloc/main_bloc.dart';
-import 'package:express_cart/import.dart';
-import 'package:express_cart/resource/generated/assets.gen.dart';
+import 'package:cmuoi/features/main/bloc/main_bloc.dart';
+import 'package:cmuoi/import.dart';
+import 'package:cmuoi/resource/generated/assets.gen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../model/nav_item_model.dart';

@@ -1,6 +1,6 @@
 import 'package:domain/domain.dart';
-import 'package:express_cart/features/widgets/custom_list_tile_profile_widget.dart';
-import 'package:express_cart/import.dart';
+import 'package:cmuoi/features/widgets/custom_list_tile_profile_widget.dart';
+import 'package:cmuoi/import.dart';
 
 class ProfileAccountPage extends StatelessWidget {
   const ProfileAccountPage({super.key});

@@ -1,7 +1,7 @@
-import 'package:express_cart/common/app/bloc/app_bloc.dart';
-import 'package:express_cart/common/constants/constants.dart';
-import 'package:express_cart/common/routes/routes.dart';
-import 'package:express_cart/features/onboarding/component/intro_widget.dart';
+import 'package:cmuoi/common/app/bloc/app_bloc.dart';
+import 'package:cmuoi/common/constants/constants.dart';
+import 'package:cmuoi/common/routes/routes.dart';
+import 'package:cmuoi/features/onboarding/component/intro_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../common/common.dart';

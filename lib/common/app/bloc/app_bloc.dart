@@ -4,9 +4,9 @@ import 'package:core/core.dart';
 import 'package:domain/domain.dart';
 import 'package:domain/usecase/config/check_onboarding_is_displayed_usecase.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:express_cart/common/app/bloc/app_event.dart';
-import 'package:express_cart/common/app/bloc/app_state.dart';
-import 'package:express_cart/di/di.dart';
+import 'package:cmuoi/common/app/bloc/app_event.dart';
+import 'package:cmuoi/common/app/bloc/app_state.dart';
+import 'package:cmuoi/di/di.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton

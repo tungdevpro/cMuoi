@@ -1,5 +1,5 @@
-import 'package:express_cart/import.dart';
-import 'package:express_cart/model/social_media_model.dart';
+import 'package:cmuoi/import.dart';
+import 'package:cmuoi/model/social_media_model.dart';
 
 class ListSocialAuthWidget extends StatelessWidget {
   const ListSocialAuthWidget({super.key});

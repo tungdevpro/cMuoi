@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "769910920769",
-    "project_id": "expresscart-16358",
-    "storage_bucket": "expresscart-16358.appspot.com"
+    "project_number": "212952356838",
+    "project_id": "cmuoi-25da5",
+    "storage_bucket": "cmuoi-25da5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:769910920769:android:a116cc53d9ad7f2d78d8c0",
+        "mobilesdk_app_id": "1:212952356838:android:dbc2683057e70cd105e827",
         "android_client_info": {
-          "package_name": "com.yh.express_cart"
+          "package_name": "com.yh.cmuoi"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAwNSBvxOTkaRZXjTeF7AvIarZ3yoyyVko"
+          "current_key": "AIzaSyC42rGKjeL4WaNPBPqu1ZyUs63NEApn1Eg"
         }
       ],
       "services": {

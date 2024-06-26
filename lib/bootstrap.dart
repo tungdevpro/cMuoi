@@ -1,12 +1,12 @@
 import 'package:core/core.dart';
 import 'package:domain/enum/auth.dart';
-import 'package:express_cart/common/app/bloc/app_bloc.dart';
-import 'package:express_cart/common/app/bloc/app_state.dart';
-import 'package:express_cart/common/auth/bloc/auth_bloc.dart';
-import 'package:express_cart/common/auth/bloc/auth_state.dart';
+import 'package:cmuoi/common/app/bloc/app_bloc.dart';
+import 'package:cmuoi/common/app/bloc/app_state.dart';
+import 'package:cmuoi/common/auth/bloc/auth_bloc.dart';
+import 'package:cmuoi/common/auth/bloc/auth_state.dart';
 import 'package:flutter/material.dart';
-import 'package:express_cart/common/routes/routes.dart';
-import 'package:express_cart/common/theme/app_theme.dart';
+import 'package:cmuoi/common/routes/routes.dart';
+import 'package:cmuoi/common/theme/app_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'common/constants/config_localization.dart';

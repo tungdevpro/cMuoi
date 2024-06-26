@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCzp4jNAYTpvGEWiQMq75N4orMukbaoV4Y</string>
+	<string>AIzaSyBaMR6AdxHWqk90cBFELSQL1zE3Vb7UJUw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>769910920769</string>
+	<string>212952356838</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.yh.expresscart</string>
+	<string>com.yh.cmuoi</string>
 	<key>PROJECT_ID</key>
-	<string>expresscart-16358</string>
+	<string>cmuoi-25da5</string>
 	<key>STORAGE_BUCKET</key>
-	<string>expresscart-16358.appspot.com</string>
+	<string>cmuoi-25da5.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:769910920769:ios:de32e89625c59d3f78d8c0</string>
+	<string>1:212952356838:ios:bdbd94e78540b8d805e827</string>
 </dict>
 </plist>

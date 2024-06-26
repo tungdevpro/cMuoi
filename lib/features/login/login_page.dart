@@ -1,12 +1,12 @@
-import 'package:express_cart/common/routes/routes.dart';
-import 'package:express_cart/common/theme/custom_text_button_theme.dart';
-import 'package:express_cart/common/widgets/app_text_field.dart';
-import 'package:express_cart/common/widgets/logo_text.dart';
-import 'package:express_cart/features/login/bloc/login_bloc.dart';
-import 'package:express_cart/features/login/bloc/login_event.dart';
-import 'package:express_cart/features/widgets/list_social_auth_widget.dart';
+import 'package:cmuoi/common/routes/routes.dart';
+import 'package:cmuoi/common/theme/custom_text_button_theme.dart';
+import 'package:cmuoi/common/widgets/app_text_field.dart';
+import 'package:cmuoi/common/widgets/logo_text.dart';
+import 'package:cmuoi/features/login/bloc/login_bloc.dart';
+import 'package:cmuoi/features/login/bloc/login_event.dart';
+import 'package:cmuoi/features/widgets/list_social_auth_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:express_cart/import.dart';
+import 'package:cmuoi/import.dart';
 import 'package:gap/gap.dart';
 
 class LoginPage extends StatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:express_cart/features/home/component/box_label_widget.dart';
-import 'package:express_cart/import.dart';
+import 'package:cmuoi/features/home/component/box_label_widget.dart';
+import 'package:cmuoi/import.dart';
 
 class MyRewardWidget extends StatelessWidget {
   const MyRewardWidget({super.key});
