@@ -1,3 +1,3 @@
-import 'package:domain/usecase/base/base_usecase.dart';
+import '../../domain.dart';
 
 abstract class CheckOnboardingIsDisplayedUseCase extends UseCase<bool, NoParam?> {}
