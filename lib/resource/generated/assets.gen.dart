@@ -11,18 +11,21 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vector_graphics/vector_graphics.dart';
+import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
   /// File path: assets/animations/loading_primary.json
-  String get loadingPrimary => 'assets/animations/loading_primary.json';
+  LottieGenImage get loadingPrimary =>
+      const LottieGenImage('assets/animations/loading_primary.json');
 
   /// File path: assets/animations/loading_white.json
-  String get loadingWhite => 'assets/animations/loading_white.json';
+  LottieGenImage get loadingWhite =>
+      const LottieGenImage('assets/animations/loading_white.json');
 
   /// List of all assets
-  List<String> get values => [loadingPrimary, loadingWhite];
+  List<LottieGenImage> get values => [loadingPrimary, loadingWhite];
 }
 
 class $AssetsIconsGen {
@@ -33,6 +36,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/bookmark.svg
   SvgGenImage get bookmark => const SvgGenImage('assets/icons/bookmark.svg');
+
+  /// File path: assets/icons/cMuoi.svg
+  SvgGenImage get cMuoi => const SvgGenImage('assets/icons/cMuoi.svg');
 
   /// File path: assets/icons/coffee_bottom_bar.svg
   SvgGenImage get coffeeBottomBar =>
@@ -128,6 +134,7 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [
         arrowLeft,
         bookmark,
+        cMuoi,
         coffeeBottomBar,
         coffeeSelectedBottomBar,
         documentText,
@@ -185,9 +192,37 @@ class $AssetsImagesGen {
   AssetGenImage get whatsapp =>
       const AssetGenImage('assets/images/Whatsapp.png');
 
+  /// File path: assets/images/cMuoi_1x.png
+  AssetGenImage get cMuoi1x =>
+      const AssetGenImage('assets/images/cMuoi_1x.png');
+
+  /// File path: assets/images/cMuoi_1x5.png
+  AssetGenImage get cMuoi1x5 =>
+      const AssetGenImage('assets/images/cMuoi_1x5.png');
+
+  /// File path: assets/images/cMuoi_2x.png
+  AssetGenImage get cMuoi2x =>
+      const AssetGenImage('assets/images/cMuoi_2x.png');
+
+  /// File path: assets/images/cMuoi_3x.png
+  AssetGenImage get cMuoi3x =>
+      const AssetGenImage('assets/images/cMuoi_3x.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [facebook, google, logo, twitter, wechat, welcome, welcome2, whatsapp];
+  List<AssetGenImage> get values => [
+        facebook,
+        google,
+        logo,
+        twitter,
+        wechat,
+        welcome,
+        welcome2,
+        whatsapp,
+        cMuoi1x,
+        cMuoi1x5,
+        cMuoi2x,
+        cMuoi3x
+      ];
 }
 
 class Assets {
@@ -336,6 +371,65 @@ class SvgGenImage {
           (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class LottieGenImage {
+  const LottieGenImage(this._assetName);
+
+  final String _assetName;
+
+  LottieBuilder lottie({
+    Animation<double>? controller,
+    bool? animate,
+    FrameRate? frameRate,
+    bool? repeat,
+    bool? reverse,
+    LottieDelegates? delegates,
+    LottieOptions? options,
+    void Function(LottieComposition)? onLoaded,
+    LottieImageProviderFactory? imageProviderFactory,
+    Key? key,
+    AssetBundle? bundle,
+    Widget Function(BuildContext, Widget, LottieComposition?)? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    double? width,
+    double? height,
+    BoxFit? fit,
+    AlignmentGeometry? alignment,
+    String? package,
+    bool? addRepaintBoundary,
+    FilterQuality? filterQuality,
+    void Function(String)? onWarning,
+  }) {
+    return Lottie.asset(
+      _assetName,
+      controller: controller,
+      animate: animate,
+      frameRate: frameRate,
+      repeat: repeat,
+      reverse: reverse,
+      delegates: delegates,
+      options: options,
+      onLoaded: onLoaded,
+      imageProviderFactory: imageProviderFactory,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      package: package,
+      addRepaintBoundary: addRepaintBoundary,
+      filterQuality: filterQuality,
+      onWarning: onWarning,
     );
   }
 

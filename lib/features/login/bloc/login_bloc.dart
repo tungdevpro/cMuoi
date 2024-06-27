@@ -1,3 +1,4 @@
+import 'package:cmuoi/import.dart';
 import 'package:core/core.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,7 +42,7 @@ class LoginBloc extends BaseBloc<LoginEvent, LoginState> {
             SnackBarService.instance().show(context, error, status: SnackbarStatus.failure);
           },
           success: (data) {
-            print('..... ${data?.email}');
+            SnackBarService.instance().show(context, S.current.logged_in_successfully, status: SnackbarStatus.success);
           },
         );
       },

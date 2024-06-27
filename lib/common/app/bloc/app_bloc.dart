@@ -39,7 +39,6 @@ class AppBloc extends Bloc<AppEvent, AppState> implements LibraryInitializer<voi
   }
 
   Future<void> _onHideOnboardingEvent(HideOnboardingEvent event, Emitter<AppState> emit) async {
-    print('_onHideOnboardingEvent...... ');
     await _hideOnboardingIsDisplayedUsecase.invoke(null);
     emit(state.copyWith(isOnBoarding: true));
   }

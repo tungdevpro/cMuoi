@@ -82,6 +82,7 @@ flutter_gen:
 
   integrations:
     flutter_svg: true
+    lottie: true
 
   assets:
     enabled: true

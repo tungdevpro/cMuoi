@@ -1,13 +1,9 @@
 import 'package:cmuoi/common/routes/routes.dart';
-import 'package:cmuoi/common/theme/custom_text_button_theme.dart';
-import 'package:cmuoi/common/widgets/app_text_field.dart';
 import 'package:cmuoi/common/widgets/logo_text.dart';
 import 'package:cmuoi/features/login/bloc/login_bloc.dart';
 import 'package:cmuoi/features/login/bloc/login_event.dart';
 import 'package:cmuoi/features/widgets/list_social_auth_widget.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cmuoi/import.dart';
-import 'package:gap/gap.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -44,9 +40,7 @@ class _LoginPageState extends CoreBindingState<LoginPage, LoginBloc> {
             const Gap(78),
             AppButton.outline(
               title: S.current.create_account,
-              onTap: () => AppNavigator.shared.pushNamed(
-                RoutePath.signUp,
-              ),
+              onTap: () => AppNavigator.shared.pushNamed(RoutePath.signUp),
             ),
             const Gap(20),
             AppButton(

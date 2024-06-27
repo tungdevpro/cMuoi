@@ -51,7 +51,7 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Assets.images.logo.image(),
-            Lottie.asset(Assets.animations.loadingWhite, width: 100),
+            // Assets.animations.loadingWhite.lottie(),
           ],
         ),
       ),

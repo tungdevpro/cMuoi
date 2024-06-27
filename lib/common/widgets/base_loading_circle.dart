@@ -1,6 +1,5 @@
 import 'package:cmuoi/resource/generated/assets.gen.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lottie/lottie.dart';
 
 class BaseLoadingCircle extends StatelessWidget {
   final double? width;
@@ -13,6 +12,6 @@ class BaseLoadingCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Lottie.asset(isPrimary ? Assets.animations.loadingPrimary : Assets.animations.loadingWhite, width: width ?? 100);
+    return Assets.animations.loadingPrimary.lottie(width: width ?? 100);
   }
 }

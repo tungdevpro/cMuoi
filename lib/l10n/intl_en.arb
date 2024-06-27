@@ -46,5 +46,7 @@
   "two_step_verification_of_ur_security": "2-step verification of your security",
   "request_account_info": "Request account info",
   "request_ur_account_info": "Request your account info",
-  "delete_ur_account": "Delete your account"
+  "delete_ur_account": "Delete your account",
+  "logged_in_successfully": "Logged in successfully",
+  "account_successfully_created": "Account successfully created"
 }

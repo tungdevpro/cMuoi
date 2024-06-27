@@ -26,6 +26,9 @@
   "input_your_name": "Input Your Name",
   "input_otp_verfication": "Input OTP Verfication",
   "verification": "Verification",
+  "submit": "Submit",
+  "manage_and_protect_your_account": "Manage and protect your account",
+  "account": "Account",
   "ur_card_balance": "Your card balance",
   "history": "History",
   "promo": "Promo",
@@ -44,14 +47,6 @@
   "request_account_info": "Request account info",
   "request_ur_account_info": "Request your account info",
   "delete_ur_account": "Delete your account",
-  "submit": "Submit",
-  "manage_and_protect_your_account": "Manage and protect your account",
-  "account": "Account",
-  "notification": "Notification",
-  "set_ur_notifications": "Set your notifications",
-  "payment": "Payment",
-  "manage_and_protect_ur_payment": "Manage and protect your payment",
-  "bookmark": "Bookmark",
-  "set_bookmark": "Set bookmark",
-  "privacy_and_policy": "Privacy and policy"
+  "logged_in_successfully": "Logged in successfully",
+  "account_successfully_created": "Account successfully created"
 }
