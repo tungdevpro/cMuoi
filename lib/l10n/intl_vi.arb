@@ -48,5 +48,13 @@
   "request_ur_account_info": "Request your account info",
   "delete_ur_account": "Delete your account",
   "logged_in_successfully": "Logged in successfully",
-  "account_successfully_created": "Account successfully created"
+  "account_successfully_created": "Account successfully created",
+  "notification": "Notification",
+  "set_ur_notifications": "Set your notifications",
+  "payment": "Payment",
+  "manage_and_protect_ur_payment": "Manage and protect your payment",
+  "bookmark": "Bookmark",
+  "set_bookmark": "Set bookmark",
+  "privacy_and_policy": "Privacy and policy"
+
 }

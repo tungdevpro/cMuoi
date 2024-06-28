@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "account_successfully_created": MessageLookupByLibrary.simpleMessage(
             "Account successfully created"),
+        "bookmark": MessageLookupByLibrary.simpleMessage("Bookmark"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_new_account":
@@ -53,12 +54,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "logged_in_successfully":
             MessageLookupByLibrary.simpleMessage("Logged in successfully"),
+        "manage_and_protect_ur_payment": MessageLookupByLibrary.simpleMessage(
+            "Manage and protect your payment"),
         "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your account"),
         "manage_ur_account_security": MessageLookupByLibrary.simpleMessage(
             "Manage your account security"),
         "my_reward": MessageLookupByLibrary.simpleMessage("My Reward"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "onboarding_1": MessageLookupByLibrary.simpleMessage(
             "Let\'s explore\nKinds of coffee"),
         "onboarding_2":
@@ -75,8 +79,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "password_note": MessageLookupByLibrary.simpleMessage(
             "Your password must include at least one symbol and be 8 or more characters long"),
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
+        "payment": MessageLookupByLibrary.simpleMessage("Payment"),
         "popular_place": MessageLookupByLibrary.simpleMessage("Popular Place"),
         "privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
+        "privacy_and_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy and policy"),
         "promo": MessageLookupByLibrary.simpleMessage("Promo"),
         "request_account_info":
             MessageLookupByLibrary.simpleMessage("Request account info"),
@@ -85,6 +92,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "security": MessageLookupByLibrary.simpleMessage("Security"),
         "set_and_protect_your_privacy": MessageLookupByLibrary.simpleMessage(
             "Set and protect your privacy"),
+        "set_bookmark": MessageLookupByLibrary.simpleMessage("Set bookmark"),
+        "set_ur_notifications":
+            MessageLookupByLibrary.simpleMessage("Set your notifications"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),

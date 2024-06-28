@@ -539,6 +539,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set your notifications`
+  String get set_ur_notifications {
+    return Intl.message(
+      'Set your notifications',
+      name: 'set_ur_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage and protect your payment`
+  String get manage_and_protect_ur_payment {
+    return Intl.message(
+      'Manage and protect your payment',
+      name: 'manage_and_protect_ur_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookmark`
+  String get bookmark {
+    return Intl.message(
+      'Bookmark',
+      name: 'bookmark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set bookmark`
+  String get set_bookmark {
+    return Intl.message(
+      'Set bookmark',
+      name: 'set_bookmark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy and policy`
+  String get privacy_and_policy {
+    return Intl.message(
+      'Privacy and policy',
+      name: 'privacy_and_policy',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
