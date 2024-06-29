@@ -16,4 +16,6 @@ abstract class AuthenticationRepository {
   Future<bool> isLoggedIn();
 
   Future<Result<bool>> doLogout();
+
+  Future<Result<UserInfoEntity>> getCurrentAuthUser();
 }

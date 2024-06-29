@@ -1,13 +1,9 @@
 import 'package:cmuoi/import.dart';
-import 'package:core/core.dart';
 import 'package:domain/domain.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../helper/validates/email_validate_model.dart';
 import '../../../helper/validates/password_validate_model.dart';
-import '../../../di/di.dart';
 import 'login_event.dart';
 import 'login_state.dart';
 

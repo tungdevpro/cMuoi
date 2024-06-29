@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:data/datasource/local/db/app_database.dart';
-import 'package:data/datasource/remote/service/login_service.dart';
-import 'package:data/datasource/remote/service/sign_up_service.dart';
+import 'package:data/datasource/remote/service/auth_service.dart';
+import 'package:data/mapper/auth_mapper.dart';
 import 'package:data/repository_impl/base/base_repository.dart';
 import 'package:domain/domain.dart';
 import 'package:injectable/injectable.dart';
@@ -12,10 +12,9 @@ import '../mapper/login_mapper.dart';
 
 @LazySingleton(as: AuthenticationRepository)
 class AuthenticationRepositoryImpl extends BaseRepository implements AuthenticationRepository {
-  AuthenticationRepositoryImpl(this._loginService, this._signUpService, this._appDatabase, this._appSharedPreferences);
+  AuthenticationRepositoryImpl(this._authService, this._appDatabase, this._appSharedPreferences);
 
-  final LoginService _loginService;
-  final SignUpService _signUpService;
+  final AuthService _authService;
   final AppDatabase _appDatabase;
   final AppSharedPreferences _appSharedPreferences;
 
@@ -24,7 +23,7 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
   @override
   Future<Result<LoginEntity>> doLogin(LoginParam param) async {
     final response = await apiHandler(
-      _loginService.doLogin(LoginMapper.toDto(param)),
+      _authService.doLogin(LoginMapper.toDto(param)),
       mapper: (data) {
         return LoginMapper.toEntity(data);
       },
@@ -75,10 +74,10 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
     // bool hasUser = response.isNotEmpty;
     // return hasUser;
     final response = _appSharedPreferences.getString(TokenKeys.accessToken);
-    bool isLoggin = response != null && response != '';
-    _controller.add(isLoggin ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated);
+    bool isLoggIn = response != null && response != '';
+    _controller.add(isLoggIn ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated);
 
-    return isLoggin;
+    return isLoggIn;
   }
 
   @override
@@ -91,5 +90,10 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
     );
     _controller.add(AuthenticationStatus.unauthenticated);
     return ValueSuccess(true);
+  }
+
+  @override
+  Future<Result<UserInfoEntity>> getCurrentAuthUser() {
+    return apiHandler(_authService.getCurrentAuthUser(), mapper: (data) => AuthMapper.mapToUserInfo(data));
   }
 }

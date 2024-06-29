@@ -40,6 +40,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i6.AuthBloc>(_i6.AuthBloc(
       gh<_i5.GetAuthStatusStreamUseCase>(),
       gh<_i5.CheckLoggedInUseCase>(),
+      gh<_i5.GetCurrentAuthUserUseCase>(),
     ));
     gh.factory<_i7.HomeBloc>(() => _i7.HomeBloc());
     gh.factory<_i8.LoginBloc>(() => _i8.LoginBloc(gh<_i5.LoginUseCase>()));

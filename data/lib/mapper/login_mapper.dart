@@ -16,7 +16,7 @@ abstract class LoginMapper {
       email: data?.email ?? stringEmpty,
       firstName: data?.firstName ?? stringEmpty,
       lastName: data?.lastName ?? stringEmpty,
-      gender: data?.gender == Gender.female.name ? Gender.female : (data?.gender == Gender.male.name ? Gender.male : Gender.other),
+      gender: Gender.fromString(data?.gender),
       image: data?.image ?? stringEmpty,
       token: data?.token ?? stringEmpty,
       refreshToken: data?.refreshToken ?? stringEmpty,

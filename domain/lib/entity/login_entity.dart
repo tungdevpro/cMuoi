@@ -1,24 +1,17 @@
-import '../enum/gender.dart';
+import 'package:domain/entity/user/user_info_entity.dart';
 
-class LoginEntity {
-  final int id;
-  final String username;
-  final String email;
-  final String firstName;
-  final String lastName;
-  final Gender gender;
-  final String image;
+class LoginEntity extends UserInfoEntity{
   final String token;
   final String refreshToken;
 
   LoginEntity({
-    required this.id,
-    required this.username,
-    required this.email,
-    required this.firstName,
-    required this.lastName,
-    required this.gender,
-    required this.image,
+    required super.id,
+    required super.username,
+    required super.email,
+    required super.firstName,
+    required super.lastName,
+    required super.gender,
+    required super.image,
     required this.token,
     required this.refreshToken,
   });

@@ -1,5 +1,6 @@
 import 'package:data/datasource/local/db/app_database.dart';
 import 'package:data/datasource/local/db/app_shared_preferences.dart';
+import 'package:data/network/interceptors/token_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
@@ -24,17 +25,17 @@ Future<void> configureDependencies() async {
 
 // Register DB (shared_preferences, sqlite, v.v.v...)
 Future<void> _registerDatabase(GetIt locator) async {
-  final resps = await Future.wait([
+  final resp = await Future.wait([
     sp.SharedPreferences.getInstance(),
     $FloorAppDatabase.databaseBuilder(DbConstant.databaseName).build(),
   ]);
-  di.registerSingleton<AppSharedPreferences>(AppSharedPreferences(prefs: resps[0] as sp.SharedPreferences));
-  di.registerLazySingleton<AppDatabase>(() => resps[1] as AppDatabase);
+  di.registerSingleton<AppSharedPreferences>(AppSharedPreferences(prefs: resp[0] as sp.SharedPreferences));
+  di.registerLazySingleton<AppDatabase>(() => resp[1] as AppDatabase);
 }
 
 Future<void> _registerDio(GetIt locator) async {
   final client = DioClient();
-  await client.init();
+  await client.init(interceptors: [TokenInterceptor(di.get<AppSharedPreferences>())]);
   final dio = client.build();
   di.registerSingleton<Dio>(dio);
 }
