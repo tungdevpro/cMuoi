@@ -1,3 +1,4 @@
+import 'package:cmuoi/common/auth/auth.dart';
 import 'package:cmuoi/features/profile/bloc/profile_bloc.dart';
 
 import '../../import.dart';
@@ -36,13 +37,16 @@ class _ProfilePageState extends CoreBindingState<ProfilePage, ProfileBloc> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Gap(60),
-        const Stack(
+        Stack(
           children: [
-            CustomDashedBorder(
-                padding: EdgeInsets.all(12),
-                radius: Radius.circular(AppSize.radiusCircle),
-                color: AppColor.primaryDefault,
-                child: AvatarWidget('http', name: 'Tung', size: 85)),
+            BlocBuilder<AuthBloc, AuthState>(builder: (_, state) {
+              final user = state.user;
+              return CustomDashedBorder(
+                  padding: const EdgeInsets.all(12),
+                  radius: const Radius.circular(AppSize.radiusCircle),
+                  color: AppColor.primaryDefault,
+                  child: AvatarWidget(user?.image ?? '', name: user?.firstName ?? '', size: 85));
+            }),
           ],
         ),
         const Gap(AppSize.padding),
