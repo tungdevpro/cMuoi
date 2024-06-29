@@ -9,19 +9,18 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:domain/domain.dart' as _i5;
-import 'package:domain/usecase/config/check_onboarding_is_displayed_usecase.dart'
-    as _i4;
+import 'package:domain/usecase/config/check_onboarding_is_displayed_usecase.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../common/app/bloc/app_bloc.dart' as _i3;
 import '../common/auth/bloc/auth_bloc.dart' as _i6;
-import '../features/coffee/bloc/coffee_bloc.dart' as _i7;
-import '../features/home/bloc/home_bloc.dart' as _i8;
-import '../features/login/bloc/login_bloc.dart' as _i9;
-import '../features/main/bloc/main_bloc.dart' as _i11;
-import '../features/profile/bloc/profile_bloc.dart' as _i12;
-import '../features/sign_up/bloc/sign_up_bloc.dart' as _i13;
+import '../ui/coffee/bloc/coffee_bloc.dart' as _i7;
+import '../ui/home/bloc/home_bloc.dart' as _i8;
+import '../ui/login/bloc/login_bloc.dart' as _i9;
+import '../ui/main/bloc/main_bloc.dart' as _i11;
+import '../ui/profile/bloc/profile_bloc.dart' as _i12;
+import '../ui/sign_up/bloc/sign_up_bloc.dart' as _i13;
 import '../import.dart' as _i10;
 
 extension GetItInjectableX on _i1.GetIt {

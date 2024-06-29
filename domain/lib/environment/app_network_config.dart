@@ -18,8 +18,8 @@ class AppNetworkConfig extends NetworkConfig {
 class AppNetworkEnv extends NetworkEnv<AppNetworkConfig> {
   @override
   AppNetworkConfig get devConfig => AppNetworkConfig(
-        // baseUrl: 'http://192.168.0.3:3000',
-        baseUrl: 'http://192.168.110.127:3000',
+        baseUrl: 'http://192.168.0.3:3000',
+        // baseUrl: 'http://192.168.110.127:3000',
         webUrl: 'https://web.cmuoi.io.vn',
         brandName: 'DEV: cMuoi',
       );
