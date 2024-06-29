@@ -58,7 +58,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> implements LibraryInitializer<
   Future<void> _onAuthCheckLoggedIn(AuthCheckLoggedIn event, Emitter<AuthState> emit) async {
     final result = await _checkLoggedInUseCase.invoke(null);
     result.when(success: (data) {
-      print('data.... $data');
     });
   }
 }

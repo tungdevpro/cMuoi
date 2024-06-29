@@ -1,6 +1,7 @@
 import 'package:data/datasource/local/db/app_database.dart';
 import 'package:data/datasource/local/db/app_shared_preferences.dart';
-import 'package:data/network/interceptors/token_interceptor.dart';
+import 'package:data/network/interceptors/access_token_interceptor.dart';
+import 'package:data/network/interceptors/refresh_token_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:domain/domain.dart';
 import 'package:get_it/get_it.dart';
@@ -35,7 +36,9 @@ Future<void> _registerDatabase(GetIt locator) async {
 
 Future<void> _registerDio(GetIt locator) async {
   final client = DioClient();
-  await client.init(interceptors: [TokenInterceptor(di.get<AppSharedPreferences>())]);
-  final dio = client.build();
-  di.registerSingleton<Dio>(dio);
+  client.buildInterceptor([
+    AccessTokenInterceptor(di.get<AppSharedPreferences>()),
+    RefreshTokenInterceptor(di.get<AppSharedPreferences>(), client.build()),
+  ]);
+  di.registerSingleton<Dio>(client.build());
 }

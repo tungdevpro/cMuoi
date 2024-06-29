@@ -12,9 +12,18 @@ class AvatarWidget extends StatelessWidget {
   final Color? defaultColor;
   final AvatarRadiusType radiusType;
   final double? radius;
+  final bool hasBorder;
 
-  const AvatarWidget(this.url,
-      {super.key, this.size = 50, this.name = '', this.defaultColor, this.radiusType = AvatarRadiusType.circle, this.radius});
+  const AvatarWidget(
+    this.url, {
+    super.key,
+    this.size = 50,
+    this.name = '',
+    this.defaultColor,
+    this.radiusType = AvatarRadiusType.circle,
+    this.radius,
+    this.hasBorder = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +32,25 @@ class AvatarWidget extends StatelessWidget {
     final fontSize = size / 2;
     return ClipRRect(
       borderRadius: BorderRadius.circular(radius ?? _defaultBorderRadius()),
-      child: CustomPaint(
-        child: SizedBox(
-          width: size,
-          height: size,
-          child: AspectRatio(
-            aspectRatio: 1.0,
-            child: !empty(url)
-                ? CachedNetworkImage(imageUrl: url, fit: BoxFit.cover)
-                : Container(
-                    color: color,
-                    alignment: Alignment.center,
-                    child: Text(
-                      first.toUpperCase(),
-                      style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w600, color: Colors.white),
-                    ),
+      child: Container(
+        width: size,
+        height: size,
+        // padding: hasBorder ? EdgeInsets.all(2) : EdgeInsets.zero,
+        decoration: BoxDecoration(
+          border: hasBorder ? Border.all(color: Colors.white, width: 1) : null,
+        ),
+        child: AspectRatio(
+          aspectRatio: 1.0,
+          child: !empty(url)
+              ? CachedNetworkImage(imageUrl: url, fit: BoxFit.contain)
+              : Container(
+                  color: color,
+                  alignment: Alignment.center,
+                  child: Text(
+                    first.toUpperCase(),
+                    style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w600, color: Colors.white),
                   ),
-          ),
+                ),
         ),
       ),
     );

@@ -7,13 +7,17 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../common/constants.dart';
 
 class DioClient {
+  DioClient() {
+    init();
+  }
+
   late Dio _dio;
 
   Dio build() {
     return _dio;
   }
 
-  Future<void> init({List<InterceptorsWrapper>? interceptors, bool hasLog = true, String? baseUrl}) async {
+  Future<void> init({List<Interceptor>? interceptors, bool hasLog = true, String? baseUrl}) async {
     _dio = Dio()
       ..options = BaseOptions(
         baseUrl: baseUrl ?? (di<Network>().network as AppNetworkConfig).baseUrl,
@@ -33,5 +37,10 @@ class DioClient {
         compact: false,
       ));
     }
+  }
+
+  DioClient buildInterceptor(List<Interceptor> interceptors) {
+    _dio.interceptors.addAll(interceptors);
+    return this;
   }
 }

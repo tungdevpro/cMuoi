@@ -72,6 +72,7 @@ class ListHomeContent extends StatelessWidget {
                                 user.image,
                                 name: user.firstName,
                                 size: 45,
+                                hasBorder: true,
                               ),
                             );
                           })
