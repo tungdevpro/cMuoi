@@ -1,10 +1,6 @@
-import 'package:cmuoi/common/app/bloc/app_bloc.dart';
-import 'package:cmuoi/common/constants/constants.dart';
 import 'package:cmuoi/common/routes/routes.dart';
 import 'package:cmuoi/features/onboarding/component/intro_widget.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../common/common.dart';
 import '../../import.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -80,5 +76,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   void _nextToHome() async {
     context.read<AppBloc>().add(HideOnboardingEvent());
+    AppNavigator.shared.pushNamed(RoutePath.login);
   }
 }

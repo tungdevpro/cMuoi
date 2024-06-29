@@ -5,7 +5,7 @@ import 'package:domain/domain.dart';
 abstract class LoginMapper {
   const LoginMapper._();
 
-  static LoginUsernameDto toLoginUsernameDto(LoginParam param) {
+  static LoginUsernameDto toDto(LoginParam param) {
     return LoginUsernameDto(username: param.username, password: param.password);
   }
 

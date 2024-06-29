@@ -1,6 +1,6 @@
 import 'package:data/datasource/remote/dto/api_response.dart';
 import 'package:dio/dio.dart';
-import 'package:domain/common/result.dart';
+import 'package:domain/common/common.dart';
 import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
 
@@ -8,11 +8,11 @@ typedef ResponseToModelMapper<Data, Model> = Model? Function(Data? data);
 typedef EntityToModelMapper<Entity, Model> = Model? Function(Entity? entity);
 typedef SaveResult<Data> = Future Function(Data? data);
 
-// Nơi bọc wrap repository. Sử dụng (isolate) để parse json sang model để tăng tốc performance
+/// Nơi bọc wrap repository. Sử dụng (isolate) để parse json sang model để tăng tốc performance
 abstract class BaseRepository {
   final _logger = Logger();
 
-  // Handle call api
+  /// Handle call api
   Future<Result<Model>> apiHandler<Data, Model>(
     Future<ApiResponse<Data>> call, {
     required ResponseToModelMapper<Data, Model> mapper,
@@ -23,10 +23,9 @@ abstract class BaseRepository {
       if (response.isSuccess()) {
         saveResult?.call(response.data);
         final result = await compute(mapper, response.data);
-
         return ValueSuccess(result);
       }
-      return ValueError(ErrorType.unknow, response.error ?? "An unknown error");
+      return ValueError(ErrorType.unknow, response.error ?? ErrorMessage.anKnowError);
     } catch (e) {
       var loadException = e;
       _logger.e("Api error message -> ${loadException.toString()}");
@@ -53,23 +52,23 @@ abstract class BaseRepository {
         }
       }
 
-      return ValueError(ErrorType.unknow, 'An unknown error');
+      return ValueError(ErrorType.unknow, ErrorMessage.anKnowError);
     }
   }
 
-  // Handle local storage
+  /// Handle local storage
   Future<Result<Model>> storageHandler<Entity, Model>(Future<Entity?> call, {required EntityToModelMapper<Entity, Model> mapper}) async {
     try {
       final response = await call;
       if (response == null) {
         _logger.d("DB response is null");
-        return ValueError(ErrorType.unknow, "DB response is null!");
+        return ValueError(ErrorType.unknow, ErrorMessage.dbResponseIsNull);
       }
       _logger.d("DB success message -> $response");
       return ValueSuccess(mapper.call(response));
     } catch (exception) {
       _logger.d("DB failure message -> $exception");
-      return ValueError(ErrorType.unknow, "Unknown DB error");
+      return ValueError(ErrorType.unknow, ErrorMessage.unKnowDbError);
     }
   }
 }

@@ -24,14 +24,14 @@ class AuthenticationRepositoryImpl extends BaseRepository implements Authenticat
   @override
   Future<Result<LoginEntity>> doLogin(LoginParam param) async {
     final response = await apiHandler(
-      _loginService.doLogin(LoginMapper.toLoginUsernameDto(param)),
+      _loginService.doLogin(LoginMapper.toDto(param)),
       mapper: (data) {
         return LoginMapper.toEntity(data);
       },
     );
     response.when(
       error: (type, error, code) {
-        _controller.add(AuthenticationStatus.unauthenticated);
+        // _controller.add(AuthenticationStatus.unauthenticated);
       },
       success: (data) async {
         await Future.wait([

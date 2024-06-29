@@ -43,9 +43,7 @@ class _MyAppState extends State<MyApp> {
         listener: (context, state) {
           if (!state.isOnBoarding) {
             AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.onboarding);
-            return;
           }
-          // AppNavigator.shared.pushNamedAndRemoveUntil(RoutePath.login);
         },
         child: BlocBuilder<AppBloc, AppState>(
           buildWhen: (previous, current) => previous.isDark != current.isDark,
