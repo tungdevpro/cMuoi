@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/common/common.dart';
 import 'package:core/common/helpers/func.dart';
 import 'package:flutter/material.dart';
@@ -28,14 +29,16 @@ class AvatarWidget extends StatelessWidget {
           height: size,
           child: AspectRatio(
             aspectRatio: 1.0,
-            child: !empty(url) ? Image.network(url, fit: BoxFit.contain) : Container(
-              color: color,
-              alignment: Alignment.center,
-              child: Text(
-                first.toUpperCase(),
-                style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w600, color: Colors.white),
-              ),
-            ),
+            child: !empty(url)
+                ? CachedNetworkImage(imageUrl: url, fit: BoxFit.cover)
+                : Container(
+                    color: color,
+                    alignment: Alignment.center,
+                    child: Text(
+                      first.toUpperCase(),
+                      style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w600, color: Colors.white),
+                    ),
+                  ),
           ),
         ),
       ),

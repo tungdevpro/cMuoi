@@ -8,7 +8,8 @@ import 'package:domain/common/common.dart';
 import '../../../import.dart';
 
 class ListHomeContent extends StatelessWidget {
-  const ListHomeContent({super.key});
+  final ScrollController scrollController;
+  const ListHomeContent({super.key, required this.scrollController});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +19,12 @@ class ListHomeContent extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () async {},
       child: ListView(
+        controller: scrollController,
         padding: EdgeInsets.zero,
         children: [
           _header(boxHeight, width, backgroundHeight),
           _body(),
+          ...List<Widget>.generate(20, (i) => ListTile(title: Text("$i"))),
           const SizedBox(height: kBottomNavigationBarHeight),
         ],
       ),
@@ -62,7 +65,7 @@ class ListHomeContent extends StatelessWidget {
                           const Gap(8),
                           BlocBuilder<AuthBloc, AuthState>(builder: (_, state) {
                             final user = state.user;
-                            if(user == null || user.id == idEmpty) return const SizedBox.shrink();
+                            if (user == null || user.id == idEmpty) return const SizedBox.shrink();
                             return Container(
                               margin: const EdgeInsets.only(right: AppSize.padding),
                               child: AvatarWidget(
