@@ -23,13 +23,12 @@ class AvatarWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(radius ?? _defaultBorderRadius()),
       child: CustomPaint(
-        // painter: DottedLine(Colors.red),
         child: SizedBox(
           width: size,
           height: size,
           child: AspectRatio(
             aspectRatio: 1.0,
-            child: Container(
+            child: !empty(url) ? Image.network(url, fit: BoxFit.contain) : Container(
               color: color,
               alignment: Alignment.center,
               child: Text(

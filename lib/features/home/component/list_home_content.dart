@@ -1,7 +1,9 @@
+import 'package:cmuoi/common/auth/auth.dart';
 import 'package:cmuoi/common/widgets/logo_text.dart';
 import 'package:cmuoi/features/home/component/favorite_place_widget.dart';
 import 'package:cmuoi/features/home/component/my_reward_widget.dart';
 import 'package:cmuoi/features/home/component/popular_place_widget.dart';
+import 'package:domain/common/common.dart';
 
 import '../../../import.dart';
 
@@ -16,7 +18,6 @@ class ListHomeContent extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () async {},
       child: ListView(
-        // controller: controller.scrollController,
         padding: EdgeInsets.zero,
         children: [
           _header(boxHeight, width, backgroundHeight),
@@ -49,11 +50,30 @@ class ListHomeContent extends StatelessWidget {
                         child: LogoText(color: Colors.white),
                       ),
                       const Spacer(),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Assets.icons.notificationBold.svg(
-                            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-                          )),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Assets.icons.notificationBold.svg(
+                              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                            ),
+                          ),
+                          const Gap(8),
+                          BlocBuilder<AuthBloc, AuthState>(builder: (_, state) {
+                            final user = state.user;
+                            if(user == null || user.id == idEmpty) return const SizedBox.shrink();
+                            return Container(
+                              margin: const EdgeInsets.only(right: AppSize.padding),
+                              child: AvatarWidget(
+                                user.image,
+                                name: user.firstName,
+                                size: 45,
+                              ),
+                            );
+                          })
+                        ],
+                      ),
                     ],
                   ),
                 ),

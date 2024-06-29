@@ -1,11 +1,9 @@
 import 'dart:async';
 
-import 'package:cmuoi/common/common.dart';
 import 'package:cmuoi/features/home/bloc/home_bloc.dart';
 import 'package:cmuoi/features/home/bloc/home_event.dart';
 import 'package:cmuoi/features/home/component/list_home_content.dart';
 import 'package:cmuoi/import.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends CoreBindingState<HomePage, HomeBloc> {
   @override
   HomeBloc get initBloc => di<HomeBloc>();
+
 
   @override
   void didChangeDependencies() {

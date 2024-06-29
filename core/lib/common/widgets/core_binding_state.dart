@@ -12,7 +12,6 @@ abstract class CoreBindingState<P extends StatefulWidget, T extends BaseBloc<Bas
 
   @override
   void initState() {
-    super.initState();
     _bloc = initBloc;
     _bloc?.setContext(context);
 
@@ -20,6 +19,7 @@ abstract class CoreBindingState<P extends StatefulWidget, T extends BaseBloc<Bas
       _bloc?.setContext(context);
       _bloc?.initialRouteSetting(ModalRoute.of(context)?.settings);
     });
+    super.initState();
   }
 
   T get initBloc => context.read<T>();
