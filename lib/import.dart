@@ -7,3 +7,4 @@ export 'common/common.dart';
 export 'package:gap/gap.dart';
 export 'package:cmuoi/resource/generated/assets.gen.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
+export 'package:domain/domain.dart';

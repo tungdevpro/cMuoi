@@ -30,7 +30,7 @@ class RefreshTokenInterceptor extends QueuedInterceptor {
     if (err.response?.statusCode == HttpStatus.unauthorized) {
       var res = await _didRefreshToken();
       if (res != null && res) {
-        await _retry(err.requestOptions);
+        _retry(err.requestOptions, handler);
       }
     }
     super.onError(err, handler);
@@ -56,11 +56,21 @@ class RefreshTokenInterceptor extends QueuedInterceptor {
     return null;
   }
 
-  Future<Response<dynamic>> _retry(RequestOptions requestOptions) async {
-    final options = Options(
-      method: requestOptions.method,
-      headers: requestOptions.headers,
-    );
-    return dio.request<dynamic>(requestOptions.path, data: requestOptions.data, queryParameters: requestOptions.queryParameters, options: options);
+  Future<void> _retry(RequestOptions requestOptions, ErrorInterceptorHandler handler) async {
+    try {
+      final options = Options(
+        method: requestOptions.method,
+        headers: requestOptions.headers,
+      );
+      final response = await dio.request<dynamic>(
+        requestOptions.path,
+        data: requestOptions.data,
+        queryParameters: requestOptions.queryParameters,
+        options: options,
+      );
+      return handler.resolve(response);
+    } catch (e) {
+      return handler.reject(DioException(requestOptions: requestOptions, error: e));
+    }
   }
 }

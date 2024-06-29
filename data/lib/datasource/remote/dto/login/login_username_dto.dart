@@ -15,5 +15,6 @@ class LoginUsernameDto {
   Map<String, dynamic> toJson() => {
         "username": username,
         "password": password,
+        "expiresInMins": 1,
       };
 }

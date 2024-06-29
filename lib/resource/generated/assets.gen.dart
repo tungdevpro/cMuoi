@@ -40,6 +40,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/cMuoi.svg
   SvgGenImage get cMuoi => const SvgGenImage('assets/icons/cMuoi.svg');
 
+  /// File path: assets/icons/camera-bold.svg
+  SvgGenImage get cameraBold =>
+      const SvgGenImage('assets/icons/camera-bold.svg');
+
+  /// File path: assets/icons/clock_history.svg
+  SvgGenImage get clockHistory =>
+      const SvgGenImage('assets/icons/clock_history.svg');
+
+  /// File path: assets/icons/close-circle.svg
+  SvgGenImage get closeCircle =>
+      const SvgGenImage('assets/icons/close-circle.svg');
+
   /// File path: assets/icons/coffee_bottom_bar.svg
   SvgGenImage get coffeeBottomBar =>
       const SvgGenImage('assets/icons/coffee_bottom_bar.svg');
@@ -65,6 +77,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/icons/lock.svg');
+
+  /// File path: assets/icons/logout.svg
+  SvgGenImage get logout => const SvgGenImage('assets/icons/logout.svg');
 
   /// File path: assets/icons/notification-bing.svg
   SvgGenImage get notificationBing =>
@@ -95,6 +110,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profle_selected_bottom_bar.svg
   SvgGenImage get profleSelectedBottomBar =>
       const SvgGenImage('assets/icons/profle_selected_bottom_bar.svg');
+
+  /// File path: assets/icons/search-normal.svg
+  SvgGenImage get searchNormal =>
+      const SvgGenImage('assets/icons/search-normal.svg');
 
   /// File path: assets/icons/security-safe.svg
   SvgGenImage get securitySafe =>
@@ -135,6 +154,9 @@ class $AssetsIconsGen {
         arrowLeft,
         bookmark,
         cMuoi,
+        cameraBold,
+        clockHistory,
+        closeCircle,
         coffeeBottomBar,
         coffeeSelectedBottomBar,
         documentText,
@@ -142,6 +164,7 @@ class $AssetsIconsGen {
         homeBottomBar,
         homeSelectedBottomBar,
         lock,
+        logout,
         notificationBing,
         notification,
         notificationBold,
@@ -150,6 +173,7 @@ class $AssetsIconsGen {
         profile,
         profileBottomBar,
         profleSelectedBottomBar,
+        searchNormal,
         securitySafe,
         shield,
         tagBottomBar,

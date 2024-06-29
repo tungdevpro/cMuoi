@@ -1,9 +1,8 @@
 import 'package:cmuoi/features/main/bloc/main_bloc.dart';
 import 'package:cmuoi/import.dart';
-import 'package:cmuoi/resource/generated/assets.gen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../model/nav_item_model.dart';
+import '../coffee/coffee_page.dart';
 import '../profile/profile_page.dart';
 import '../home/home_page.dart';
 
@@ -22,10 +21,10 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
   late PageController pageController;
   final double _tabIndicatorWidth = 60;
   var items = <Widget>[
-    const KeepAliveWidget(child: HomePage()),
-    Container(),
-    Container(),
-    const KeepAliveWidget(child: ProfilePage()),
+    const HomePage(),
+    const CoffeePage(),
+    const CoffeePage(),
+    const ProfilePage(),
   ];
 
   final navs = [
@@ -49,7 +48,7 @@ class _MainPageState extends CoreBindingState<MainPage, MainBloc> {
       body: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: items,
+        children: items.map<Widget>((e) => KeepAliveWidget(child: e)).toList(),
       ),
       bottomNavigationBar: ValueListenableBuilder<int>(
         valueListenable: currentIndex,

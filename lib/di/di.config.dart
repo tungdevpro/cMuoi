@@ -16,11 +16,13 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../common/app/bloc/app_bloc.dart' as _i3;
 import '../common/auth/bloc/auth_bloc.dart' as _i6;
-import '../features/home/bloc/home_bloc.dart' as _i7;
-import '../features/login/bloc/login_bloc.dart' as _i8;
-import '../features/main/bloc/main_bloc.dart' as _i9;
-import '../features/profile/bloc/profile_bloc.dart' as _i10;
-import '../features/sign_up/bloc/sign_up_bloc.dart' as _i11;
+import '../features/coffee/bloc/coffee_bloc.dart' as _i7;
+import '../features/home/bloc/home_bloc.dart' as _i8;
+import '../features/login/bloc/login_bloc.dart' as _i9;
+import '../features/main/bloc/main_bloc.dart' as _i11;
+import '../features/profile/bloc/profile_bloc.dart' as _i12;
+import '../features/sign_up/bloc/sign_up_bloc.dart' as _i13;
+import '../import.dart' as _i10;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -42,11 +44,12 @@ extension GetItInjectableX on _i1.GetIt {
       gh<_i5.CheckLoggedInUseCase>(),
       gh<_i5.GetCurrentAuthUserUseCase>(),
     ));
-    gh.factory<_i7.HomeBloc>(() => _i7.HomeBloc());
-    gh.factory<_i8.LoginBloc>(() => _i8.LoginBloc(gh<_i5.LoginUseCase>()));
-    gh.factory<_i9.MainBloc>(() => _i9.MainBloc());
-    gh.factory<_i10.ProfileBloc>(() => _i10.ProfileBloc());
-    gh.factory<_i11.SignUpBloc>(() => _i11.SignUpBloc(gh<_i5.SignUpUseCase>()));
+    gh.factory<_i7.CoffeeBloc>(() => _i7.CoffeeBloc());
+    gh.factory<_i8.HomeBloc>(() => _i8.HomeBloc());
+    gh.factory<_i9.LoginBloc>(() => _i9.LoginBloc(gh<_i10.LoginUseCase>()));
+    gh.factory<_i11.MainBloc>(() => _i11.MainBloc());
+    gh.factory<_i12.ProfileBloc>(() => _i12.ProfileBloc());
+    gh.factory<_i13.SignUpBloc>(() => _i13.SignUpBloc(gh<_i5.SignUpUseCase>()));
     return this;
   }
 }

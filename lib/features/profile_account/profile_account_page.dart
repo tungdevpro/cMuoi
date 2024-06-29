@@ -38,10 +38,18 @@ class ProfileAccountPage extends StatelessWidget {
             onTap: () {},
           ),
           CustomListTileProfileWidget(
+            icon: Assets.icons.logout.svg(),
+            label: S.current.logout,
+            subtitle: S.current.logout,
+            onTap: _onDeleteAccount,
+          ),
+          CustomListTileProfileWidget(
             icon: Assets.icons.trash.svg(),
             label: S.current.delete_ur_account,
             subtitle: S.current.delete_ur_account,
-            onTap: _onDeleteAccount,
+            onTap: () {
+
+            },
             hasBorder: false,
           ),
         ],

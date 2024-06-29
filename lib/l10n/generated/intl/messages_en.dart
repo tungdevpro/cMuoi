@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "logged_in_successfully":
             MessageLookupByLibrary.simpleMessage("Logged in successfully"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "manage_and_protect_ur_payment": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your payment"),
         "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
