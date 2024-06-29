@@ -42,6 +42,7 @@ class ProfileAccountPage extends StatelessWidget {
             label: S.current.delete_ur_account,
             subtitle: S.current.delete_ur_account,
             onTap: _onDeleteAccount,
+            hasBorder: false,
           ),
         ],
       ),

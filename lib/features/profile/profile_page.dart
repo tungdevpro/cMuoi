@@ -32,29 +32,29 @@ class _ProfilePageState extends CoreBindingState<ProfilePage, ProfileBloc> {
   }
 
   Widget _head() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Gap(60),
-        Stack(
-          children: [
-            BlocBuilder<AuthBloc, AuthState>(builder: (_, state) {
-              final user = state.user;
-              return CustomDashedBorder(
+    return BlocBuilder<AuthBloc, AuthState>(builder: (_, state) {
+      final user = state.user;
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Gap(60),
+          Stack(
+            children: [
+              CustomDashedBorder(
                   padding: const EdgeInsets.all(12),
                   radius: const Radius.circular(AppSize.radiusCircle),
                   color: AppColor.primaryDefault,
-                  child: AvatarWidget(user?.image ?? '', name: user?.firstName ?? '', size: 85));
-            }),
-          ],
-        ),
-        const Gap(AppSize.padding),
-        Text(S.current.password, style: AppTypography.semiBoldType20),
-        const Gap(8),
-        Text(S.current.password, style: AppTypography.regularType14.copyWith(color: AppColor.secondaryLight300)),
-        const Gap(AppSize.paddingXXL),
-      ],
-    );
+                  child: AvatarWidget(user?.image ?? '', name: user?.firstName ?? '', size: 85)),
+            ],
+          ),
+          const Gap(AppSize.padding),
+          Text(user?.firstName ?? '', style: AppTypography.semiBoldType20),
+          const Gap(8),
+          Text(user?.email ?? '', style: AppTypography.regularType14.copyWith(color: AppColor.secondaryLight300)),
+          const Gap(AppSize.paddingXXL),
+        ],
+      );
+    });
   }
 }

@@ -36,6 +36,7 @@ class ItemProfileWidget extends StatelessWidget {
           icon: Assets.icons.profile.svg(width: 24),
           label: S.current.privacy_and_policy,
           subtitle: S.current.privacy_and_policy,
+          hasBorder: false,
         ),
       ],
     );
