@@ -20,14 +20,21 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
+  static String m0(total) => "${total}+ people have explored";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "account_successfully_created": MessageLookupByLibrary.simpleMessage(
+            "Account successfully created"),
         "bookmark": MessageLookupByLibrary.simpleMessage("Bookmark"),
+        "coffee": MessageLookupByLibrary.simpleMessage("Coffee"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_new_account":
             MessageLookupByLibrary.simpleMessage("Create New Account"),
+        "delete_ur_account":
+            MessageLookupByLibrary.simpleMessage("Delete your account"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_send_marketing": MessageLookupByLibrary.simpleMessage(
             "I would like to receive marketing and policy information from coffee bean"),
@@ -37,7 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "input_account": MessageLookupByLibrary.simpleMessage("Input Account"),
-        "input_otp_verification":
+        "input_otp_verfication":
             MessageLookupByLibrary.simpleMessage("Input OTP Verfication"),
         "input_your_account":
             MessageLookupByLibrary.simpleMessage("Input Your Account"),
@@ -48,10 +55,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "input_your_password":
             MessageLookupByLibrary.simpleMessage("Input Your Password"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "logged_in_successfully":
+            MessageLookupByLibrary.simpleMessage("Logged in successfully"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "manage_and_protect_ur_payment": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your payment"),
         "manage_and_protect_your_account": MessageLookupByLibrary.simpleMessage(
             "Manage and protect your account"),
+        "manage_ur_account_security": MessageLookupByLibrary.simpleMessage(
+            "Manage your account security"),
         "my_reward": MessageLookupByLibrary.simpleMessage("My Reward"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
@@ -73,15 +85,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
         "popular_place": MessageLookupByLibrary.simpleMessage("Popular Place"),
+        "privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "privacy_and_policy":
             MessageLookupByLibrary.simpleMessage("Privacy and policy"),
         "promo": MessageLookupByLibrary.simpleMessage("Promo"),
+        "request_account_info":
+            MessageLookupByLibrary.simpleMessage("Request account info"),
+        "request_ur_account_info":
+            MessageLookupByLibrary.simpleMessage("Request your account info"),
+        "security": MessageLookupByLibrary.simpleMessage("Security"),
+        "see_more": MessageLookupByLibrary.simpleMessage("See more"),
+        "set_and_protect_your_privacy": MessageLookupByLibrary.simpleMessage(
+            "Set and protect your privacy"),
         "set_bookmark": MessageLookupByLibrary.simpleMessage("Set bookmark"),
         "set_ur_notifications":
             MessageLookupByLibrary.simpleMessage("Set your notifications"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
+        "total_people_have_explored": m0,
+        "two_step_verification_of_ur_security":
+            MessageLookupByLibrary.simpleMessage(
+                "2-step verification of your security"),
+        "two_step_verifycation":
+            MessageLookupByLibrary.simpleMessage("2-step verification"),
         "ur_card_balance":
             MessageLookupByLibrary.simpleMessage("Your card balance"),
         "verification": MessageLookupByLibrary.simpleMessage("Verification"),

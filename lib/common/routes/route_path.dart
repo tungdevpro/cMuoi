@@ -13,6 +13,7 @@ abstract class RoutePath {
   static const String profile = "/profile";
   static const String profileAccount = "/profile_account";
   static const String coffee = "/coffee";
+  static const String coverPlace = "/cover-place";
 }
 
 extension RouteLocationExts on String {

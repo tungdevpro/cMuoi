@@ -23,7 +23,7 @@ class _CoffeePageState extends CoreBindingState<CoffeePage, CoffeeBloc> {
   Widget buildPage(BuildContext context) {
     return CommonScaffold(
       appBar: HeaderFix(
-        text: S.current.account,
+        text: S.current.coffee,
         automaticallyImplyLeading: false,
         leadingIcon: LeadingIcon.none,
       ),

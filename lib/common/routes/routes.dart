@@ -1,4 +1,5 @@
 import 'package:cmuoi/ui/coffee/coffee_page.dart';
+import 'package:cmuoi/ui/cover_place/cover_place_page.dart';
 import 'package:cmuoi/ui/home/home_page.dart';
 import 'package:cmuoi/ui/profile/profile_page.dart';
 import 'package:cmuoi/ui/profile_account/profile_account_page.dart';
@@ -25,6 +26,7 @@ abstract class AppRouter {
     RoutePath.profile: (_) => const ProfilePage(),
     RoutePath.profileAccount: const ProfileAccountPage()._toBuilder(),
     RoutePath.coffee: const CoffeePage()._toBuilder(),
+    RoutePath.coverPlace: const CoverPlacePage()._toBuilder(),
   };
 
   static Route<dynamic> generateRoutes(RouteSettings settings) {

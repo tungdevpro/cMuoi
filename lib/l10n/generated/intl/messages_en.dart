@@ -20,12 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(total) => "${total}+ people have explored";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "account_successfully_created": MessageLookupByLibrary.simpleMessage(
             "Account successfully created"),
         "bookmark": MessageLookupByLibrary.simpleMessage("Bookmark"),
+        "coffee": MessageLookupByLibrary.simpleMessage("Coffee"),
         "create_account":
             MessageLookupByLibrary.simpleMessage("Create Account"),
         "create_new_account":
@@ -91,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "request_ur_account_info":
             MessageLookupByLibrary.simpleMessage("Request your account info"),
         "security": MessageLookupByLibrary.simpleMessage("Security"),
+        "see_more": MessageLookupByLibrary.simpleMessage("See more"),
         "set_and_protect_your_privacy": MessageLookupByLibrary.simpleMessage(
             "Set and protect your privacy"),
         "set_bookmark": MessageLookupByLibrary.simpleMessage("Set bookmark"),
@@ -99,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "top_up": MessageLookupByLibrary.simpleMessage("Top Up"),
+        "total_people_have_explored": m0,
         "two_step_verification_of_ur_security":
             MessageLookupByLibrary.simpleMessage(
                 "2-step verification of your security"),

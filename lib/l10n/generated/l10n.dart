@@ -619,6 +619,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Coffee`
+  String get coffee {
+    return Intl.message(
+      'Coffee',
+      name: 'coffee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{total}+ people have explored`
+  String total_people_have_explored(Object total) {
+    return Intl.message(
+      '$total+ people have explored',
+      name: 'total_people_have_explored',
+      desc: '',
+      args: [total],
+    );
+  }
+
+  /// `See more`
+  String get see_more {
+    return Intl.message(
+      'See more',
+      name: 'see_more',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
