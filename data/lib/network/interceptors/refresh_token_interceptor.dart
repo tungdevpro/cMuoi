@@ -33,7 +33,7 @@ class RefreshTokenInterceptor extends QueuedInterceptor {
         _retry(err.requestOptions, handler);
       }
     }
-    super.onError(err, handler);
+    Future.delayed(const Duration(seconds: 5), () => super.onError(err, handler));
   }
 
   Future<bool?> _didRefreshToken() async {
